@@ -85,11 +85,11 @@ h1,h2,h3,h4{font-family:var(--head);font-weight:700;line-height:1.02;margin:0;le
   border-bottom:1px solid rgba(255,255,255,.08);
 }
 .nav{display:flex;align-items:center;gap:26px;height:74px}
-.brand{display:flex;align-items:center;gap:13px;margin-right:auto}
+.brand{display:flex;align-items:center;gap:13px;margin-right:auto;flex-shrink:0}
 .brand img{height:46px;width:auto;filter:drop-shadow(0 4px 10px rgba(0,0,0,.3))}
-.brand .bt{font-family:var(--head);color:#fff;line-height:1}
-.brand .bt b{display:block;font-size:1.18rem;letter-spacing:.5px;text-transform:uppercase}
-.brand .bt span{font-size:.74rem;letter-spacing:2.5px;color:var(--gold-400);text-transform:uppercase}
+.brand .bt{font-family:var(--head);color:#fff;line-height:1.05}
+.brand .bt b{display:block;font-size:1.18rem;letter-spacing:.5px;text-transform:uppercase;white-space:nowrap}
+.brand .bt span{display:block;font-size:.74rem;letter-spacing:2.5px;color:var(--gold-400);text-transform:uppercase;white-space:nowrap}
 .nav-links{display:flex;gap:6px;align-items:center}
 .nav-links a{
   font-family:var(--head);text-transform:uppercase;letter-spacing:1.2px;font-weight:600;
@@ -138,6 +138,12 @@ h1,h2,h3,h4{font-family:var(--head);font-weight:700;line-height:1.02;margin:0;le
 .crest-tag{position:absolute;bottom:-6px;left:50%;transform:translateX(-50%);
   background:var(--gold-500);color:var(--blue-900);font-family:var(--head);font-weight:700;
   text-transform:uppercase;letter-spacing:1.5px;font-size:.8rem;padding:6px 16px;border-radius:999px;white-space:nowrap}
+
+/* hero table-tennis vector art (replaces low-res crest) */
+.tt-art{position:relative;width:min(390px,84vw);margin-inline:auto;padding-bottom:14px}
+.tt-art svg{width:100%;height:auto;display:block;
+  filter:drop-shadow(0 26px 52px rgba(0,0,0,.45))}
+.tt-art .crest-tag{bottom:0}
 
 /* scoreboard stat strip */
 .statbar{background:var(--gold-500);color:var(--blue-900);position:relative;z-index:3}
