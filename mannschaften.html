@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mannschaften — ESV München-Ost · Tischtennis</title>
+<meta name="description" content="Die Mannschaften der Tischtennis-Abteilung des ESV München-Ost: 9 Herren-, 1 Damen- und 2 Jugendteams von der Bezirksklasse C bis zur Bezirksoberliga.">
+<link rel="icon" href="assets/esv-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .roster.full{grid-template-columns:repeat(3,1fr)}
+  .team-card.photo{padding:0;overflow:hidden}
+  .team-card.photo::before{display:none}
+  .tc-img{height:158px;position:relative;display:grid;place-items:center;
+    background:repeating-linear-gradient(135deg,#16387f,#16387f 16px,#13316f 16px,#13316f 32px);color:#9fb4e6}
+  .team-card.d .tc-img{background:repeating-linear-gradient(135deg,#b8920a,#b8920a 16px,#a8850a 16px,#a8850a 32px);color:#fff2c0}
+  .team-card.j .tc-img{background:repeating-linear-gradient(135deg,#187a52,#187a52 16px,#156b48 16px,#156b48 32px);color:#c7f0dd}
+  .tc-img .mono{font-family:var(--head);font-weight:700;font-size:2.6rem;letter-spacing:1px;opacity:.85}
+  .tc-img .ftag{position:absolute;bottom:10px;left:12px;font-size:.66rem;letter-spacing:1px;text-transform:uppercase;
+    background:rgba(0,0,0,.28);padding:4px 9px;border-radius:6px;font-family:var(--body)}
+  .tc-img .lg{position:absolute;top:12px;right:12px}
+  .team-card.photo .tc-pad{padding:20px 22px 22px}
+  @media(max-width:960px){.roster.full{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.roster.full{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <img src="assets/esv-logo.png" alt="ESV München-Ost Wappen">
+      <span class="bt"><b>ESV München-Ost</b><span>Abteilung Tischtennis</span></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Start</a>
+      <a href="mannschaften.html" class="active">Mannschaften</a>
+      <a href="training.html">Training</a>
+      <a href="historie.html">Historie</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <a href="training.html" class="btn sm nav-cta">Schnuppertraining</a>
+    <button class="burger" id="burger" aria-label="Menü"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Start</a> &nbsp;/&nbsp; Mannschaften</div>
+    <h1>Unsere Mannschaften</h1>
+    <p>Neun Herren-, eine Damen- und zwei Jugendmannschaften – von der Bezirksklasse C bis zur
+       Bezirksoberliga ist jede Spielstärke vertreten. Ein Klick aufs Team führt zu den aktuellen
+       Spielerbilanzen auf myTischtennis.</p>
+  </div>
+</section>
+
+<!-- HERREN -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="section-num">Herren</span><h2>Neun Herren-Teams</h2></div>
+      <div class="team-legend">
+        <span><i class="swatch sw-h"></i>Herren</span>
+        <span><i class="swatch sw-d"></i>Damen</span>
+        <span><i class="swatch sw-j"></i>Jugend</span>
+      </div>
+    </div>
+    <div class="roster full">
+
+      <article class="team-card photo reveal">
+        <div class="tc-img"><span class="mono">I</span><span class="badge top lg">Bezirksoberliga</span><span class="ftag">Teamfoto folgt</span></div>
+        <div class="tc-pad">
+          <h3 style="color:var(--blue-900);text-transform:uppercase;font-size:1.5rem">Herren I</h3>
+          <p style="color:var(--muted);margin:8px 0 14px;font-size:.93rem">Das Spitzenteam der Abteilung – spielt in der Bezirksoberliga um die vorderen Plätze. Eingespielt, ehrgeizig und Vorbild für den Nachwuchs.</p>
+          <div class="tc-foot" style="border-top:1px solid var(--line);padding-top:12px"><span class="lvl">Saison 25/26</span>
+            <a href="https://www.mytischtennis.de/clicktt/ByTTV/25-26/ligen/Erwachsene-Bezirksoberliga-Bayerischer-TTV-Oberbayern-Mitte-/gruppe/492023/mannschaft/2948793/Erwachsene%20(4er)/spielerbilanzen/gesamt/" target="_blank" rel="noopener">Bilanzen &rarr;</a></div>
+        </div>
+      </article>
+
+      <article class="team-card photo reveal">
+        <div class="tc-img"><span class="mono">II</span><span class="badge top lg">Bezirksoberliga</span><span class="ftag">Teamfoto folgt</span></div>
+        <div class="tc-pad">
+          <h3 style="color:var(--blue-900);text-transform:uppercase;font-size:1.5rem">Herren II</h3>
+          <p style="color:var(--muted);margin:8px 0 14px;font-size:.93rem">Zweite Garde auf hohem Niveau – ebenfalls in der Bezirksoberliga und jederzeit für eine Überraschung gegen die Topteams gut.</p>
+          <div class="tc-foot" style="border-top:1px solid var(--line);padding-top:12px"><span class="lvl">Saison 25/26</span>
+            <a href="https://www.mytischtennis.de/clicktt/ByTTV/25-26/ligen/Erwachsene-Bezirksoberliga-Bayerischer-TTV-Oberbayern-Mitte-/gruppe/492023/mannschaft/2946690/Erwachsene%20II%20(4er)/spielerbilanzen/gesamt/" target="_blank" rel="noopener">Bilanzen &rarr;</a></div>
+        </div>
+      </article>
+
+      <article class="team-card photo reveal">
+        <div class="tc-img"><span class="mono">III</span><span class="badge lg">Bezirksliga</span><span class="ftag">Teamfoto folgt</span></div>
+        <div class="tc-pad">
+          <h3 style="color:var(--blue-900);text-transform:uppercase;font-size:1.5rem">Herren III</h3>
+          <p style="color:var(--muted);margin:8px 0 14px;font-size:.93rem">Bezirksliga Gruppe 3 Mitte – solide Mannschaft mit guter Mischung aus Routine und Aufstiegsambitionen.</p>
+          <div class="tc-foot" style="border-top:1px solid var(--line);padding-top:12px"><span class="lvl">Bezirksliga · Gr. 3 Mitte</span>
+            <a href="https://www.mytischtennis.de/clicktt/ByTTV/25-26/ligen/Erwachsene-Bezirksliga-Gruppe-3-Mitte-Bayerischer-TTV-Oberbayern-Mitte-/gruppe/492259/mannschaft/2948815/Erwachsene%20III%20(4er)/spielerbilanzen/gesamt/" target="_blank" rel="noopener">Bilanzen &rarr;</a></div>
+        </div>
+      </article>
+
+      <article class="team-card photo reveal">
+        <div class="tc-img"><span class="mono">IV</span><span class="badge lg">Bezirksliga</span><span class="ftag">Teamfoto folgt</span></div>
+        <div class="tc-pad">
+          <h3 style="color:var(--blue-900);text-transform:uppercase;font-size:1.5rem">Herren IV</h3>
+          <p style="color:var(--muted);margin:8px 0 14px;font-size:.93rem">Bezirksliga Gruppe 2 Ost – kämpferische Truppe, die jedes Match annimmt und sich kontinuierlich weiterentwickelt.</p>
+          <div class="tc-foot" style="border-top:1px solid var(--line);padding-top:12px"><span class="lvl">Bezirksliga · Gr. 2 Ost</span>
+            <a href="https://www.mytischtennis.de/clicktt/ByTTV/25-26/ligen/Erwachsene-Bezirksliga-Gruppe-2-Ost-Bayerischer-TTV-Oberbayern-Mitte-/gruppe/492310/mannschaft/2951392/Erwachsene%20IV%20(4er)/spielerbilanzen/gesamt/" target="_blank" rel="noopener">Bilanzen &rarr;</a></div>
+        </div>
+      </article>
+
+      <article class="team-card photo reveal">
+        <div class="tc-img"><span class="mono">V</span><span class="badge lg">Bezirksklasse A</span><span class="ftag">Teamfoto folgt</span></div>
+        <div class="tc-pad">
+          <h3 style="color:var(--blue-900);text-transform:uppercase;font-size:1.5rem">Herren V</h3>
+          <p style="color:var(--muted);margin:8px 0 14px;font-size:.93rem">Bezirksklasse A, Gruppe 3 München-Ost – Breitensport mit Wettkampfcharakter und viel Spaß am Spiel.</p>
+          <div class="tc-foot" style="border-top:1px solid var(--line);padding-top:12px"><span class="lvl">Bez.-Klasse A · Gr. 3</span>
+            <a href="https://www.mytischtennis.de/clicktt/ByTTV/25-26/ligen/Erwachsene-Bezirksklasse-A-Gruppe-3-Muenchen-Ost-Bayerischer-TTV-Oberbayern-Mitte-/gruppe/491946/mannschaft/2950930/Erwachsene%20V%20(4er)/spielerbilanzen/gesamt/" target="_blank" rel="noopener">Bilanzen &rarr;</a></div>
+        </div>
+      </article>
+
+      <article class="team-card photo reveal">
+        <div class="tc-img"><span class="mono">VI</span><span class="badge lg">Bezirksklasse B</span><span class="ftag">Teamfoto folgt</span></div>
+        <div class="tc-pad">
+          <h3 style="color:var(--blue-900);text-transform:uppercase;font-size:1.5rem">Herren VI</h3>
+          <p style="color:var(--muted);margin:8px 0 14px;font-size:.93rem">Bezirksklasse B, Gruppe 5 München-Ost – ideale Liga für ambitionierte Hobbyspieler und Wiedereinsteiger.</p>
+          <div class="tc-foot" style="border-top:1px solid var(--line);padding-top:12px"><span class="lvl">Bez.-Klasse B · Gr. 5</span>
+            <a href="https://www.mytischtennis.de/clicktt/ByTTV/25-26/ligen/Erwachsene-Bezirksklasse-B-Gruppe-5-Muenchen-Ost-Bayerischer-TTV-Oberbayern-Mitte-/gruppe/491958/mannschaft/2950827/Erwachsene%20VI%20(4er)/spielerbilanzen/gesamt/" target="_blank" rel="noopener">Bilanzen &rarr;</a></div>
+        </div>
+      </article>
+
+      <article class="team-card photo reveal">
+        <div class="tc-img"><span class="mono">VII</span><span class="badge lg">Bezirksklasse C</span><span class="ftag">Teamfoto folgt</span></div>
+        <div class="tc-pad">
+          <h3 style="color:var(--blue-900);text-transform:uppercase;font-size:1.5rem">Herren VII</h3>
+          <p style="color:var(--muted);margin:8px 0 14px;font-size:.93rem">Bezirksklasse C, Gruppe 6 München-Ost – Spielfreude steht im Vordergrund, Aufstiegschancen inklusive.</p>
+          <div class="tc-foot" style="border-top:1px solid var(--line);padding-top:12px"><span class="lvl">Bez.-Klasse C · Gr. 6</span>
+            <a href="https://www.mytischtennis.de/clicktt/ByTTV/25-26/ligen/Erwachsene-Bezirksklasse-B-Gruppe-6-Muenchen-Ost-Bayerischer-TTV-Oberbayern-Mitte-/gruppe/491964/mannschaft/2949316/Erwachsene%20VII%20(4er)/spielerbilanzen/gesamt/" target="_blank" rel="noopener">Bilanzen &rarr;</a></div>
+        </div>
+      </article>
+
+      <article class="team-card photo reveal">
+        <div class="tc-img"><span class="mono">VIII</span><span class="badge lg">Bezirksklasse C</span><span class="ftag">Teamfoto folgt</span></div>
+        <div class="tc-pad">
+          <h3 style="color:var(--blue-900);text-transform:uppercase;font-size:1.5rem">Herren VIII</h3>
+          <p style="color:var(--muted);margin:8px 0 14px;font-size:.93rem">Bezirksklasse C, Gruppe 5 München-Ost – gesellige Mannschaft, in der auch Neulinge schnell ankommen.</p>
+          <div class="tc-foot" style="border-top:1px solid var(--line);padding-top:12px"><span class="lvl">Bez.-Klasse C · Gr. 5</span>
+            <a href="https://www.mytischtennis.de/clicktt/ByTTV/25-26/ligen/Erwachsene-Bezirksklasse-C-Gruppe-5-Muenchen-Ost-Bayerischer-TTV-Oberbayern-Mitte-/gruppe/491956/mannschaft/2949474/Erwachsene%20VIII%20(4er)/spielerbilanzen/gesamt/" target="_blank" rel="noopener">Bilanzen &rarr;</a></div>
+        </div>
+      </article>
+
+      <article class="team-card photo reveal">
+        <div class="tc-img"><span class="mono">IX</span><span class="badge lg">Bezirksklasse C</span><span class="ftag">Teamfoto folgt</span></div>
+        <div class="tc-pad">
+          <h3 style="color:var(--blue-900);text-transform:uppercase;font-size:1.5rem">Herren IX</h3>
+          <p style="color:var(--muted);margin:8px 0 14px;font-size:.93rem">Bezirksklasse C, Gruppe 7 (Ebersberg/München) – jüngstes Team der Abteilung mit jeder Menge Entwicklungspotenzial.</p>
+          <div class="tc-foot" style="border-top:1px solid var(--line);padding-top:12px"><span class="lvl">Bez.-Klasse C · Gr. 7</span>
+            <a href="https://www.mytischtennis.de/clicktt/ByTTV/25-26/ligen/Erwachsene-Bezirksklasse-C-Gruppe-7-Ebersberg-Muenchen-Bayerischer-TTV-Oberbayern-Mitte-/gruppe/492007/mannschaft/2951436/Erwachsene%20IX%20(4er)/spielerbilanzen/gesamt/" target="_blank" rel="noopener">Bilanzen &rarr;</a></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- DAMEN & JUGEND -->
+<section class="bg-soft">
+  <div class="wrap">
+    <div class="section-head"><div><span class="section-num">Damen & Jugend</span><h2>Damen & Nachwuchs</h2></div></div>
+    <div class="roster full">
+
+      <article class="team-card photo d reveal">
+        <div class="tc-img"><span class="mono">D</span><span class="badge top lg">Bezirksoberliga</span><span class="ftag">Teamfoto folgt</span></div>
+        <div class="tc-pad">
+          <h3 style="color:var(--blue-900);text-transform:uppercase;font-size:1.5rem">Damen</h3>
+          <p style="color:var(--muted);margin:8px 0 14px;font-size:.93rem">Unsere Damenmannschaft spielt in der Bezirksoberliga und freut sich immer über Verstärkung – auch Quereinsteigerinnen sind herzlich willkommen.</p>
+          <div class="tc-foot" style="border-top:1px solid var(--line);padding-top:12px"><span class="lvl">Saison 25/26</span>
+            <a href="https://www.mytischtennis.de/clicktt/ByTTV/25-26/ligen/Damen-Bezirksoberliga-Bayerischer-TTV-Oberbayern-Mitte-/gruppe/492068/mannschaft/2951237/Damen%20(4er)/spielerbilanzen/gesamt/" target="_blank" rel="noopener">Bilanzen &rarr;</a></div>
+        </div>
+      </article>
+
+      <article class="team-card photo j reveal">
+        <div class="tc-img"><span class="mono">J1</span><span class="badge lg">Jugend 19</span><span class="ftag">Teamfoto folgt</span></div>
+        <div class="tc-pad">
+          <h3 style="color:var(--blue-900);text-transform:uppercase;font-size:1.5rem">Jugend 19</h3>
+          <p style="color:var(--muted);margin:8px 0 14px;font-size:.93rem">Unser erstes Jugendteam (Bezirksklasse C, Gruppe 5) – hier sammeln junge Talente ihre ersten Punktspiel-Erfahrungen.</p>
+          <div class="tc-foot" style="border-top:1px solid var(--line);padding-top:12px"><span class="lvl">Bez.-Klasse C · Gr. 5</span>
+            <a href="https://www.mytischtennis.de/clicktt/ByTTV/JVR-25-26/jugend-punktspiele-vr/Jugend-19-Bezirksklasse-C-Gruppe-5-Muenchen-Ost-Bayerischer-TTV-Oberbayern-Mitte-Vorrunde/gruppe/492743/mannschaft/2952323/Jugend%2019%20(3er)/spielerbilanzen/gesamt/" target="_blank" rel="noopener">Bilanzen &rarr;</a></div>
+        </div>
+      </article>
+
+      <article class="team-card photo j reveal">
+        <div class="tc-img"><span class="mono">J2</span><span class="badge lg">Jugend 19</span><span class="ftag">Teamfoto folgt</span></div>
+        <div class="tc-pad">
+          <h3 style="color:var(--blue-900);text-transform:uppercase;font-size:1.5rem">Jugend 19 II</h3>
+          <p style="color:var(--muted);margin:8px 0 14px;font-size:.93rem">Zweites Jugendteam (Bezirksklasse C, Gruppe 6) – Nachwuchs mit Spielfreude und Lust, sich Schritt für Schritt zu steigern.</p>
+          <div class="tc-foot" style="border-top:1px solid var(--line);padding-top:12px"><span class="lvl">Bez.-Klasse C · Gr. 6</span>
+            <a href="https://www.mytischtennis.de/clicktt/ByTTV/JVR-25-26/jugend-punktspiele-vr/Jugend-19-Bezirksklasse-C-Gruppe-6-Muenchen-Ost-Bayerischer-TTV-Oberbayern-Mitte-Vorrunde/gruppe/492844/mannschaft/2986549/Jugend%2019%20II%20(3er)/spielerbilanzen/gesamt/" target="_blank" rel="noopener">Bilanzen &rarr;</a></div>
+        </div>
+      </article>
+
+    </div>
+    <p style="color:var(--muted);margin-top:30px">Aktuelle Tabellen und Mannschaftsplatzierungen findest du jederzeit im
+      <a href="https://www.mytischtennis.de/club-module/club/teams/clubNr/311058/fedNickname/ByTTV" target="_blank" rel="noopener" style="color:var(--blue-600);font-weight:600">Vereinsprofil auf myTischtennis &rarr;</a></p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <div class="wrap">
+    <div><h2>In welches Team passt du?</h2><p>Komm zum Training, spiel ein paar Bälle – den Rest finden wir gemeinsam heraus.</p></div>
+    <a href="training.html" class="btn blue">Trainingszeiten ansehen</a>
+  </div>
+</section>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="assets/esv-logo.png" alt="ESV München-Ost">
+        <p>Abteilung Tischtennis des ESV München-Ost e.V. – Breitensport, Gemeinschaft und Wettkampf mitten im Münchner Osten.</p>
+      </div>
+      <div><h5>Verein</h5><ul>
+        <li><a href="index.html#ueber-uns">Über uns</a></li>
+        <li><a href="mannschaften.html">Mannschaften</a></li>
+        <li><a href="historie.html">Historie &amp; Turniere</a></li>
+        <li><a href="https://www.esv-muenchen-ost.de" target="_blank" rel="noopener">Hauptverein</a></li>
+      </ul></div>
+      <div><h5>Mitmachen</h5><ul>
+        <li><a href="training.html">Trainingszeiten</a></li>
+        <li><a href="training.html#hallen">Hallen &amp; Anfahrt</a></li>
+        <li><a href="kontakt.html">Schnuppertraining</a></li>
+        <li><a href="kontakt.html">Sponsor werden</a></li>
+      </ul></div>
+      <div><h5>Kontakt</h5><ul>
+        <li><a href="tel:+4917647385510">+49 176 47385510</a></li>
+        <li><a href="mailto:tischtennis@esv-muenchen-ost.de">tischtennis@esv-muenchen-ost.de</a></li>
+        <li>Hermann-Weinhauser-Str. 7<br>81673 München</li>
+        <li><a href="https://www.facebook.com/ESV-M%C3%BCnchen-Ost-134738143345659/" target="_blank" rel="noopener">Facebook</a></li>
+      </ul></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 ESV München-Ost e.V. · Abteilung Tischtennis</span>
+      <span><a href="kontakt.html#impressum">Impressum</a> · <a href="kontakt.html#datenschutz">Datenschutz</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
