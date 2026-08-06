@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://heydani.de/esv-muenchen-ost-tischtennis/sitemap.xml

@@ -1,157 +1,168 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Training &amp; Hallen — ESV München-Ost · Tischtennis</title>
-<meta name="description" content="Trainingszeiten der Tischtennis-Abteilung des ESV München-Ost: Erwachsenen- und Jugendtraining in der Vereinshalle (Hermann-Weinhauser-Str. 7) und am Bogenhauser Kirchplatz. Schnuppern ohne Anmeldung.">
+<meta name="description" content="Trainingszeiten der Tischtennis-Abteilung des ESV München-Ost: Erwachsene Mo &amp; Do, Kinder und Jugend Mo, Di, Do, Fr. Schnuppern jederzeit ohne Anmeldung.">
+<meta name="theme-color" content="#0C242C">
+<meta property="og:title" content="Training &amp; Hallen — ESV München-Ost · Tischtennis">
+<meta property="og:description" content="Trainingszeiten der Tischtennis-Abteilung des ESV München-Ost: Erwachsene Mo &amp; Do, Kinder und Jugend Mo, Di, Do, Fr. Schnuppern jederzeit ohne Anmeldung.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:image" content="assets/hero-halle.jpg">
 <link rel="icon" href="assets/esv-logo.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/bricolage-grotesque-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
+<link rel="canonical" href="https://heydani.de/esv-muenchen-ost-tischtennis/training.html">
 </head>
 <body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
 
 <header class="site-head">
-  <div class="wrap nav">
+  <div class="head-in">
     <a class="brand" href="index.html">
-      <img src="assets/esv-logo.png" alt="ESV München-Ost Wappen">
-      <span class="bt"><b>ESV München-Ost</b><span>Abteilung Tischtennis</span></span>
+      <img src="assets/esv-logo.png" alt="Wappen ESV München-Ost" width="112" height="131">
+      <span class="brand-txt"><b>ESV München-Ost</b><span>Abteilung Tischtennis</span></span>
     </a>
-    <nav class="nav-links" id="navLinks">
+    <nav class="nav" id="nav" aria-label="Hauptnavigation">
       <a href="index.html">Start</a>
       <a href="mannschaften.html">Mannschaften</a>
-      <a href="training.html" class="active">Training</a>
+      <a href="training.html" aria-current="page">Training</a>
       <a href="historie.html">Historie</a>
+      <a href="vereinsmeisterschaft.html">Vereinsmeisterschaft</a>
       <a href="kontakt.html">Kontakt</a>
     </nav>
-    <a href="kontakt.html" class="btn gold sm nav-cta">Anfahrt</a>
-    <button class="burger" id="burger" aria-label="Menü"><span></span><span></span><span></span></button>
+    <a class="btn btn-gold btn-sm head-cta" href="training.html">Schnuppertraining</a>
+    <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
-<section class="page-hero">
+<main id="main">
+<section class="page-head">
   <div class="wrap">
-    <div class="crumbs"><a href="index.html">Start</a> / Training</div>
+    <p class="crumb"><a href="index.html">Start</a> / Training</p>
     <h1>Training &amp; Hallen</h1>
-    <p>Einsteiger oder Bezirksoberliga – bei uns findet jeder den passenden Tisch. Das Erwachsenentraining am
-       Donnerstag findet sogar während der Schulferien statt, und fürs Schnuppertraining brauchst du dich nicht
-       anzumelden.</p>
+    <p>Einsteiger oder Bezirksoberliga – bei uns findet jeder den passenden Tisch. Das Erwachsenentraining am Donnerstag findet sogar während der Schulferien statt, und fürs Schnuppertraining brauchst du dich nicht anzumelden.</p>
   </div>
 </section>
-
 <section>
   <div class="wrap">
-    <div class="section-head"><span class="kicker">Trainingszeiten</span>
-      <h2 style="margin-top:8px">Wann wir spielen</h2></div>
-    <div class="train-grid">
-      <div class="train-card">
+    <p class="kicker">Trainingszeiten</p>
+    <h2>Wann wir spielen</h2>
+    <div class="grid g2" style="margin-top:26px">
+      <div class="card">
         <h3>Erwachsene</h3>
-        <div class="where">Vereinshalle · Hermann-Weinhauser-Str. 7</div>
-        <ul class="sched">
-          <li><span class="day">Montag</span><span class="who"><b>ab 20:00 Uhr</b> · Vereinshalle</span></li>
-          <li><span class="day">Donnerstag</span><span class="who"><b>ab 19:30 Uhr</b> · Vereinshalle — auch in den Ferien</span></li>
-          <li><span class="day">Di · Mi · Fr</span><span class="who"><b>18:30–21:30 Uhr</b> · Bogenhauser Kirchplatz (nach Vereinbarung)</span></li>
-        </ul>
+        <p class="dim" style="margin-bottom:14px">Vereinshalle · Hermann-Weinhauser-Str. 7</p>
+        <div class="hc-item"><b>Montag</b><span>ab 20:00 Uhr · Vereinshalle</span></div>
+        <div class="hc-item"><b>Donnerstag</b><span>ab 19:30 Uhr · Vereinshalle — auch in den Ferien</span></div>
+        <div class="hc-item"><b>Di · Mi · Fr</b><span>18:30–21:30 Uhr · Bogenhauser Kirchplatz (nach Vereinbarung)</span></div>
       </div>
-      <div class="train-card">
+      <div class="card">
         <h3>Kinder &amp; Jugend</h3>
-        <div class="where">Vereinshalle &amp; Schulturnhalle Bogenhauser Kirchplatz</div>
-        <ul class="sched">
-          <li><span class="day">Mo &amp; Do</span><span class="who"><b>18:00–19:30 Uhr</b> · Vereinshalle, Hermann-Weinhauser-Str. 7</span></li>
-          <li><span class="day">Dienstag</span><span class="who"><b>17:15–18:45 Uhr</b> · Bogenhauser Kirchplatz 3</span></li>
-          <li><span class="day">Freitag</span><span class="who"><b>17:00–18:30 Uhr</b> · Bogenhauser Kirchplatz 3</span></li>
-        </ul>
+        <p class="dim" style="margin-bottom:14px">Vereinshalle &amp; Schulturnhalle Bogenhauser Kirchplatz</p>
+        <div class="hc-item"><b>Mo &amp; Do</b><span>18:00–19:30 Uhr · Vereinshalle, Hermann-Weinhauser-Str. 7</span></div>
+        <div class="hc-item"><b>Dienstag</b><span>17:15–18:45 Uhr · Bogenhauser Kirchplatz 3</span></div>
+        <div class="hc-item"><b>Freitag</b><span>17:00–18:30 Uhr · Bogenhauser Kirchplatz 3</span></div>
       </div>
     </div>
-
-    <div class="note-card" style="margin-top:24px">
-      <p style="margin:0"><b>Schnuppern jederzeit möglich.</b> Kinder und Jugendliche aller Altersklassen sind während
-        der Schulzeit herzlich zum Schnuppertraining eingeladen – eine Anmeldung ist nicht erforderlich, unsere
-        Trainerinnen und Trainer sind vor Ort. Ein gezieltes Anfängertraining bieten wir derzeit für Kinder an.
-        Interessierte Hobbyspieler:innen melden sich gern bei der Geschäftsstelle unter
-        <b><a href="tel:+49894310654">089 4310654</a></b>.</p>
-    </div>
-
-    <p class="muted" style="margin-top:18px">Gute ESV-Tradition: Nach dem Training geht es meist noch in eine
-      nahegelegene Wirtschaft oder in unsere Gemeinschaftsräume – zum geselligen Ausklang.</p>
+    <p class="hint"><b style="color:var(--text)">Schnuppern jederzeit möglich.</b> Kinder und Jugendliche aller
+      Altersklassen sind während der Schulzeit herzlich zum Schnuppertraining eingeladen – eine Anmeldung ist nicht
+      erforderlich, unsere Trainerinnen und Trainer sind vor Ort. Ein gezieltes Anfängertraining bieten wir derzeit
+      für Kinder an. Interessierte Hobbyspieler:innen melden sich gern bei der Geschäftsstelle unter
+      <a class="textlink" href="tel:+49894310654">089 4310654</a>.</p>
+    <p class="hint">Gute ESV-Tradition: Nach dem Training geht es meist noch in eine nahegelegene Wirtschaft oder in
+      unsere Gemeinschaftsräume – zum geselligen Ausklang.</p>
   </div>
 </section>
 
-<section class="bg-soft" id="hallen">
+<section id="hallen" style="background:var(--ink-800);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="wrap">
-    <div class="section-head"><span class="kicker">Spielstätten</span>
-      <h2 style="margin-top:8px">Unsere zwei Hallen</h2></div>
-    <div class="halls">
-      <div class="hall">
-        <div class="hph">
-          <span class="tag">Spiellokal 1 · Heimspiele</span>
-          <iframe loading="lazy" title="Karte Vereinshalle" src="https://www.openstreetmap.org/export/embed.html?bbox=11.6205%2C48.1285%2C11.6346%2C48.1360&amp;layer=mapnik&amp;marker=48.13224%2C11.62755"></iframe>
-        </div>
-        <div class="hbody">
-          <h4>ESV Vereinshalle</h4>
-          <address>Hermann-Weinhauser-Straße 7<br>81673 München · „Baumkirchen Mitte"</address>
-          <p class="muted" style="font-size:.9rem;margin:10px 0 0">Moderne 3-fach-Sporthalle, bezogen 2020 – wenige Gehminuten von der alten Halle entfernt.</p>
-          <a class="map" href="https://www.google.com/maps/search/?api=1&query=48.13224,11.62755" target="_blank" rel="noopener">Route planen →</a>
-        </div>
+    <p class="kicker">Spielstätten</p>
+    <h2>Unsere zwei Hallen</h2>
+    <div class="grid g2" style="margin-top:26px">
+      <div class="card">
+        <p class="kicker">Spiellokal 1 · Heimspiele</p>
+        <h3>ESV Vereinshalle</h3>
+        <p style="color:var(--text);font-weight:600;margin:8px 0 0">Hermann-Weinhauser-Straße 7</p>
+        <p style="margin:0 0 12px">81673 München · „Baumkirchen Mitte“</p>
+        <p>Moderne 3-fach-Sporthalle, bezogen 2020 – wenige Gehminuten von der alten Halle entfernt.</p>
+        <a class="card-link" href="https://www.openstreetmap.org/search?query=Hermann-Weinhauser-Stra%C3%9Fe%207%2C%2081673%20M%C3%BCnchen" target="_blank" rel="noopener">Route planen →</a>
       </div>
-      <div class="hall">
-        <div class="hph">
-          <span class="tag">Spiellokal 2 · Jugend</span>
-          <iframe loading="lazy" title="Karte Bogenhauser Kirchplatz" src="https://www.openstreetmap.org/export/embed.html?bbox=11.5951%2C48.1448%2C11.6092%2C48.1523&amp;layer=mapnik&amp;marker=48.14857%2C11.60207"></iframe>
-        </div>
-        <div class="hbody">
-          <h4>Schulturnhalle Bogenhauser Kirchplatz</h4>
-          <address>Bogenhauser Kirchplatz 3<br>81675 München</address>
-          <p class="muted" style="font-size:.9rem;margin:10px 0 0">Zweite Spielstätte – vor allem für das Kinder- und Jugendtraining während der Schulzeit.</p>
-          <a class="map" href="https://www.google.com/maps/search/?api=1&query=48.14857,11.60207" target="_blank" rel="noopener">Route planen →</a>
-        </div>
+      <div class="card">
+        <p class="kicker">Spiellokal 2 · Jugend</p>
+        <h3>Schulturnhalle Bogenhauser Kirchplatz</h3>
+        <p style="color:var(--text);font-weight:600;margin:8px 0 0">Bogenhauser Kirchplatz 3</p>
+        <p style="margin:0 0 12px">81675 München</p>
+        <p>Zweite Spielstätte – vor allem für das Kinder- und Jugendtraining während der Schulzeit.</p>
+        <a class="card-link" href="https://www.openstreetmap.org/search?query=Bogenhauser%20Kirchplatz%203%2C%2081675%20M%C3%BCnchen" target="_blank" rel="noopener">Route planen →</a>
       </div>
     </div>
   </div>
 </section>
-
 <section class="cta-band">
-  <div class="wrap">
+  <div class="cta-in">
     <div><h2>Schläger schnappen &amp; vorbeikommen</h2><p>Donnerstag ab 19:30 Uhr in der Vereinshalle – ganz unkompliziert.</p></div>
-    <a href="kontakt.html" class="btn on-navy">Fragen? Schreib uns</a>
+    <a class="btn btn-gold" href="kontakt.html">Fragen? Schreib uns</a>
   </div>
 </section>
+</main>
 
 <footer class="site-foot">
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <img src="assets/esv-logo.png" alt="ESV München-Ost">
+        <img src="assets/esv-logo.png" alt="ESV München-Ost" width="112" height="131">
         <p>Abteilung Tischtennis des ESV München-Ost e.V. – Breitensport, Gemeinschaft und Wettkampf im Münchner Osten.</p>
       </div>
-      <div><h5>Verein</h5><ul>
-        <li><a href="index.html">Über uns</a></li>
-        <li><a href="mannschaften.html">Mannschaften</a></li>
-        <li><a href="historie.html">Historie &amp; Turniere</a></li>
-        <li><a href="https://www.esv-muenchen-ost.de" target="_blank" rel="noopener">Hauptverein</a></li>
-      </ul></div>
-      <div><h5>Mitmachen</h5><ul>
-        <li><a href="training.html">Trainingszeiten</a></li>
-        <li><a href="training.html#hallen">Hallen &amp; Anfahrt</a></li>
-        <li><a href="kontakt.html">Schnuppertraining</a></li>
-        <li><a href="kontakt.html">Sponsor werden</a></li>
-      </ul></div>
-      <div><h5>Kontakt</h5><ul>
-        <li><a href="tel:+4917647385510">+49 176 47385510</a></li>
-        <li><a href="mailto:tischtennis@esv-muenchen-ost.de">tischtennis@esv-muenchen-ost.de</a></li>
-        <li>Hermann-Weinhauser-Str. 7<br>81673 München</li>
-        <li><a href="https://www.facebook.com/ESV-M%C3%BCnchen-Ost-134738143345659/" target="_blank" rel="noopener">Facebook</a></li>
-      </ul></div>
+      <div class="foot-col">
+        <h5>Verein</h5>
+        <ul>
+          <li><a href="index.html">Über uns</a></li>
+          <li><a href="mannschaften.html">Mannschaften</a></li>
+          <li><a href="historie.html">Historie &amp; Turniere</a></li>
+          <li><a href="vereinsmeisterschaft.html">Vereinsmeisterschaft</a></li>
+          <li><a href="https://www.esv-muenchen-ost.de" target="_blank" rel="noopener">Hauptverein</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Mitmachen</h5>
+        <ul>
+          <li><a href="training.html">Trainingszeiten</a></li>
+          <li><a href="training.html#hallen">Hallen &amp; Anfahrt</a></li>
+          <li><a href="kontakt.html">Schnuppertraining</a></li>
+          <li><a href="https://www.sponsoo.de/p/tischtennis-in-muenchen-ost" target="_blank" rel="noopener">Sponsor werden</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Kontakt</h5>
+        <ul>
+          <li><a href="tel:+4917647385510">+49 176 47385510</a></li>
+          <li><a href="mailto:tischtennis@esv-muenchen-ost.de">tischtennis@esv-muenchen-ost.de</a></li>
+          <li>Hermann-Weinhauser-Str. 7, München</li>
+          <li><a href="https://www.facebook.com/ESV-M%C3%BCnchen-Ost-134738143345659/" target="_blank" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="foot-bottom">
+    <div class="foot-bar">
       <span>© 2026 ESV München-Ost e.V. · Abteilung Tischtennis</span>
-      <span><a href="kontakt.html#impressum">Impressum</a> · <a href="kontakt.html#datenschutz">Datenschutz</a></span>
+      <span><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span>
     </div>
   </div>
 </footer>
 
-<script src="app.js"></script>
+<script>
+(function(){
+  var b=document.getElementById('burger'), n=document.getElementById('nav');
+  if(b&&n) b.addEventListener('click',function(){
+    var open=n.classList.toggle('open');
+    b.setAttribute('aria-expanded',open?'true':'false');
+    b.setAttribute('aria-label',open?'Menü schließen':'Menü öffnen');
+  });
+})();
+</script>
 </body>
 </html>
