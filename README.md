@@ -28,8 +28,18 @@ Quelle: Turnierarchiv der Abteilung, zeilengenau übernommen.
 Zum Aktualisieren die Tabellen direkt im HTML ergänzen.
 
 ## Deployment
-GitHub Pages aus `main` (Root). Live unter
-https://heydani.de/esv-muenchen-ost-tischtennis/
+Cloudflare Pages, Projekt `esv-tischtennis`. Live unter
+https://esv-tischtennis.pages.dev
+
+Deploy vom Rechner aus:
+
+    npx wrangler pages deploy _dist --project-name=esv-tischtennis --branch=main
+
+`_dist` ist eine Kopie der Seite ohne `.git` (per `.gitignore` ausgenommen).
+Nach Änderungen: `_dist` neu befüllen, dann deployen.
+
+GitHub Pages ist für dieses Repo bewusst abgeschaltet — sonst läuft die Seite
+unter der Domain des `armando40business-code.github.io`-Repos (heydani.de) mit.
 
 ## Rechtliches
 - Impressum mit echten Registerdaten (AG München, VR 4843) und Vorstand.

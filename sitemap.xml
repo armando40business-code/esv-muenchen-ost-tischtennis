@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://heydani.de/esv-muenchen-ost-tischtennis/</loc><priority>1.0</priority></url>
-  <url><loc>https://heydani.de/esv-muenchen-ost-tischtennis/mannschaften.html</loc><priority>0.8</priority></url>
-  <url><loc>https://heydani.de/esv-muenchen-ost-tischtennis/training.html</loc><priority>0.8</priority></url>
-  <url><loc>https://heydani.de/esv-muenchen-ost-tischtennis/historie.html</loc><priority>0.5</priority></url>
-  <url><loc>https://heydani.de/esv-muenchen-ost-tischtennis/vereinsmeisterschaft.html</loc><priority>0.8</priority></url>
-  <url><loc>https://heydani.de/esv-muenchen-ost-tischtennis/kontakt.html</loc><priority>0.5</priority></url>
-  <url><loc>https://heydani.de/esv-muenchen-ost-tischtennis/impressum.html</loc><priority>0.5</priority></url>
-  <url><loc>https://heydani.de/esv-muenchen-ost-tischtennis/datenschutz.html</loc><priority>0.5</priority></url>
+  <url><loc>https://esv-tischtennis.pages.dev/</loc><priority>1.0</priority></url>
+  <url><loc>https://esv-tischtennis.pages.dev/mannschaften</loc><priority>0.8</priority></url>
+  <url><loc>https://esv-tischtennis.pages.dev/training</loc><priority>0.8</priority></url>
+  <url><loc>https://esv-tischtennis.pages.dev/historie</loc><priority>0.5</priority></url>
+  <url><loc>https://esv-tischtennis.pages.dev/vereinsmeisterschaft</loc><priority>0.8</priority></url>
+  <url><loc>https://esv-tischtennis.pages.dev/kontakt</loc><priority>0.5</priority></url>
+  <url><loc>https://esv-tischtennis.pages.dev/impressum</loc><priority>0.5</priority></url>
+  <url><loc>https://esv-tischtennis.pages.dev/datenschutz</loc><priority>0.5</priority></url>
 </urlset>
