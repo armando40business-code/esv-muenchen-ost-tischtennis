@@ -1,7 +1,7 @@
 # ESV München-Ost · Abteilung Tischtennis
 
 Statische Website der Tischtennis-Abteilung des ESV München-Ost e.V.
-Design "V3 Petrol": dunkles Petrol/Gold, Bricolage Grotesque + Inter.
+Design "V3 Petrol": dunkles Petrol/Gold, Inter (selbst gehostet).
 
 ## Aufbau
 - Reines HTML/CSS, kein Build-Schritt, kein Framework.
