@@ -14,7 +14,7 @@ Design "V3 Petrol": dunkles Petrol/Gold, Inter (selbst gehostet).
 | Datei | Inhalt |
 |---|---|
 | `index.html` | Startseite |
-| `mannschaften.html` | 12 Mannschaften, Links zu myTischtennis |
+| `mannschaften.html` | 12 Mannschaften, Links zu click-TT (BTTV) |
 | `training.html` | Trainingszeiten, beide Hallen |
 | `historie.html` | Abteilungsgeschichte, Turnier-Kurzüberblick |
 | `vereinsmeisterschaft.html` | Ehrentafel: alle Sieger seit 1979 + Facklerpokal seit 1980 |
