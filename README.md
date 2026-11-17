@@ -31,12 +31,21 @@ Zum Aktualisieren die Tabellen direkt im HTML ergänzen.
 Cloudflare Pages, Projekt `esv-tischtennis`. Live unter
 https://esv-tischtennis.pages.dev
 
-Deploy vom Rechner aus:
+**Automatisch:** Jede Änderung auf `main` wird von GitHub Actions
+(`.github/workflows/deploy.yml`) geprüft und veröffentlicht, meist in unter zwei
+Minuten. Schlägt die Prüfung fehl, bleibt der alte Stand online. Nötig sind zwei
+Repository-Secrets (Settings → Secrets and variables → Actions):
+`CLOUDFLARE_API_TOKEN` (Custom Token: Account → Cloudflare Pages → Edit) und
+`CLOUDFLARE_ACCOUNT_ID`.
 
+**Von Hand** (Rechner mit Wrangler-Login), mit derselben Auswahl und Prüfung:
+
+    bash scripts/build.sh
     npx wrangler pages deploy _dist --project-name=esv-tischtennis --branch=main
 
-`_dist` ist eine Kopie der Seite ohne `.git` (per `.gitignore` ausgenommen).
-Nach Änderungen: `_dist` neu befüllen, dann deployen.
+`scripts/build.sh` stellt `_dist` jedes Mal neu zusammen. Online gehen nur die
+HTML-Seiten, `styles.css`, `robots.txt`, `sitemap.xml`, `assets/` und die
+IndexNow-Schlüsseldatei. Wie man Inhalte ändert, steht in `ANLEITUNG.md`.
 
 GitHub Pages ist für dieses Repo bewusst abgeschaltet — sonst läuft die Seite
 unter der Domain des `armando40business-code.github.io`-Repos (heydani.de) mit.

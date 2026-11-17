@@ -1,0 +1,47 @@
+name: Website veröffentlichen
+
+# Läuft bei jeder gespeicherten Änderung auf "main": prüft die Seiten und
+# stellt sie auf Cloudflare Pages online (Projekt esv-tischtennis).
+# Schlägt die Prüfung fehl, bleibt der bisherige Stand online.
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "**.md"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: veroeffentlichen
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Prüfen und online stellen
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Projekt holen
+        uses: actions/checkout@v6
+
+      - name: Seiten zusammenstellen und prüfen
+        run: bash scripts/build.sh
+
+      - name: Auf Cloudflare Pages veröffentlichen
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
+            echo "::error::Zugangsdaten fehlen. Unter Settings > Secrets and variables > Actions muessen CLOUDFLARE_API_TOKEN und CLOUDFLARE_ACCOUNT_ID hinterlegt sein. Es wurde nichts veroeffentlicht."
+            exit 1
+          fi
+          npx --yes wrangler@4 pages deploy _dist \
+            --project-name=esv-tischtennis \
+            --branch=main \
+            --commit-hash="$GITHUB_SHA" \
+            --commit-message="GitHub ${GITHUB_SHA::7}" \
+            --commit-dirty=true

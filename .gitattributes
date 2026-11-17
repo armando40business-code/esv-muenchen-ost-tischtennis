@@ -1,0 +1,4 @@
+# Skripte und Workflows immer mit Unix-Zeilenenden, sonst laufen sie
+# auf den GitHub-Rechnern nicht.
+*.sh  text eol=lf
+*.yml text eol=lf
