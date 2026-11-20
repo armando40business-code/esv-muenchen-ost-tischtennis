@@ -26,6 +26,31 @@
       "erste_spalte_fett": false,
       "suchfeld": false,
       "hinweis": "<p></p>"
+    },
+    {
+      "_block": "tabelle",
+      "hintergrund": "normal",
+      "ueberschrift": "Tabelle aus Excel-Datei",
+      "text": "<p></p>",
+      "excel": "/medien/tabellen/probe-aufstellung-cms.xlsx",
+      "kopfzeile": true,
+      "erste_spalte_fett": false,
+      "suchfeld": false,
+      "hinweis": "<p></p>"
+    },
+    {
+      "_block": "bilder",
+      "hintergrund": "normal",
+      "ueberschrift": "Bild-Probe",
+      "text": "<p></p>",
+      "spalten": "3",
+      "bilder": [
+        {
+          "bild": "/medien/bilder/probe-grafik-cms.svg",
+          "beschreibung": "Probe-Grafik mit Kreis",
+          "unterschrift": "Probe-Bild"
+        }
+      ]
     }
   ]
 }
