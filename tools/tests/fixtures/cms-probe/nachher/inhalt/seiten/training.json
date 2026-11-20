@@ -1,0 +1,100 @@
+{
+  "browsertitel": "Training & Hallen — ESV München-Ost · Tischtennis",
+  "beschreibung": "Trainingszeiten der Tischtennis-Abteilung des ESV München-Ost: Erwachsene Mo & Do, Kinder und Jugend Mo, Di, Do, Fr. Schnuppern jederzeit ohne Anmeldung.",
+  "menue_titel": "Training",
+  "sitemap_prioritaet": "0.8",
+  "kopf": {
+    "ueberschrift": "Training & Hallen",
+    "text": "<p>Einsteiger oder Bezirksoberliga – bei uns findet jeder den passenden Tisch. Das Erwachsenentraining am Donnerstag findet sogar während der Schulferien statt, und fürs Schnuppertraining brauchst du dich nicht anzumelden.</p>"
+  },
+  "bausteine": [
+    {
+      "_block": "karten",
+      "hintergrund": "normal",
+      "kicker": "Trainingszeiten",
+      "ueberschrift": "Wann wir spielen",
+      "spalten": "2",
+      "raster": "standard",
+      "karten": [
+        {
+          "titel": "Erwachsene",
+          "unterzeile": "Vereinshalle · Hermann-Weinhauser-Str. 7",
+          "text": "<p></p>",
+          "zeilen": [
+            {
+              "fett": "Montag",
+              "text": "ab 20:00 Uhr · Vereinshalle"
+            },
+            {
+              "fett": "Donnerstag",
+              "text": "ab 19:30 Uhr · Vereinshalle — auch in den Ferien"
+            },
+            {
+              "fett": "Di · Mi · Fr",
+              "text": "18:30–21:30 Uhr · Bogenhauser Kirchplatz (nach Vereinbarung)"
+            }
+          ]
+        },
+        {
+          "titel": "Kinder & Jugend",
+          "unterzeile": "Vereinshalle & Schulturnhalle Bogenhauser Kirchplatz",
+          "text": "<p></p>",
+          "zeilen": [
+            {
+              "fett": "Mo & Do",
+              "text": "18:00–19:30 Uhr · Vereinshalle, Hermann-Weinhauser-Str. 7"
+            },
+            {
+              "fett": "Dienstag",
+              "text": "17:15–18:45 Uhr · Bogenhauser Kirchplatz 3"
+            },
+            {
+              "fett": "Freitag",
+              "text": "17:00–18:30 Uhr · Bogenhauser Kirchplatz 3"
+            }
+          ]
+        }
+      ],
+      "hinweise": [
+        "<p><strong>Schnuppern jederzeit möglich.</strong> Kinder und Jugendliche aller Altersklassen sind während der Schulzeit herzlich zum Schnuppertraining eingeladen – eine Anmeldung ist nicht erforderlich, unsere Trainerinnen und Trainer sind vor Ort. Ein gezieltes Anfängertraining bieten wir derzeit für Kinder an. Interessierte Hobbyspieler:innen melden sich gern bei der Geschäftsstelle unter <a href=\"tel:+49894310654\">089 4310654</a>.</p>",
+        "<p>Gute ESV-Tradition: Nach dem Training geht es meist noch in eine nahegelegene <strong>Wirtschaft </strong>oder in unsere Gemeinschaftsräume – zum geselligen Ausklang. Probewort</p>"
+      ]
+    },
+    {
+      "_block": "karten",
+      "hintergrund": "abgesetzt",
+      "anker": "hallen",
+      "kicker": "Spielstätten",
+      "ueberschrift": "Unsere zwei Hallen",
+      "spalten": "2",
+      "raster": "standard",
+      "karten": [
+        {
+          "kicker": "Spiellokal 1 · Heimspiele",
+          "titel": "ESV Vereinshalle",
+          "fettzeile": "Hermann-Weinhauser-Straße 7",
+          "zeile2": "81673 München · „Baumkirchen Mitte“",
+          "text": "<p>Moderne 3-fach-Sporthalle, bezogen 2020 – wenige Gehminuten von der alten Halle entfernt.</p>",
+          "link_text": "Route planen →",
+          "link_ziel": "https://www.openstreetmap.org/search?query=Hermann-Weinhauser-Stra%C3%9Fe%207%2C%2081673%20M%C3%BCnchen"
+        },
+        {
+          "kicker": "Spiellokal 2 · Jugend",
+          "titel": "Schulturnhalle Bogenhauser Kirchplatz",
+          "fettzeile": "Bogenhauser Kirchplatz 3",
+          "zeile2": "81675 München",
+          "text": "<p>Zweite Spielstätte – vor allem für das Kinder- und Jugendtraining während der Schulzeit.</p>",
+          "link_text": "Route planen →",
+          "link_ziel": "https://www.openstreetmap.org/search?query=Bogenhauser%20Kirchplatz%203%2C%2081675%20M%C3%BCnchen"
+        }
+      ]
+    },
+    {
+      "_block": "aufruf",
+      "ueberschrift": "Schläger schnappen & vorbeikommen",
+      "text": "<p>Donnerstag ab 19:30 Uhr in der Vereinshalle – ganz unkompliziert.</p>",
+      "button_text": "Fragen? Schreib uns",
+      "button_ziel": "kontakt.html"
+    }
+  ]
+}

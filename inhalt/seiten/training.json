@@ -5,8 +5,7 @@
   "sitemap_prioritaet": "0.8",
   "kopf": {
     "ueberschrift": "Training & Hallen",
-    "text": "<p>Einsteiger oder Bezirksoberliga – bei uns findet jeder den passenden Tisch. Das Erwachsenentraining am Donnerstag findet sogar während der Schulferien statt, und fürs Schnuppertraining brauchst du dich nicht anzumelden.</p>",
-    "bild": ""
+    "text": "<p>Einsteiger oder Bezirksoberliga – bei uns findet jeder den passenden Tisch. Das Erwachsenentraining am Donnerstag findet sogar während der Schulferien statt, und fürs Schnuppertraining brauchst du dich nicht anzumelden.</p>"
   },
   "bausteine": [
     {
@@ -20,19 +19,39 @@
         {
           "titel": "Erwachsene",
           "unterzeile": "Vereinshalle · Hermann-Weinhauser-Str. 7",
+          "text": "<p></p>",
           "zeilen": [
-            { "fett": "Montag", "text": "ab 20:00 Uhr · Vereinshalle" },
-            { "fett": "Donnerstag", "text": "ab 19:30 Uhr · Vereinshalle — auch in den Ferien" },
-            { "fett": "Di · Mi · Fr", "text": "18:30–21:30 Uhr · Bogenhauser Kirchplatz (nach Vereinbarung)" }
+            {
+              "fett": "Montag",
+              "text": "ab 20:00 Uhr · Vereinshalle"
+            },
+            {
+              "fett": "Donnerstag",
+              "text": "ab 19:30 Uhr · Vereinshalle — auch in den Ferien"
+            },
+            {
+              "fett": "Di · Mi · Fr",
+              "text": "18:30–21:30 Uhr · Bogenhauser Kirchplatz (nach Vereinbarung)"
+            }
           ]
         },
         {
           "titel": "Kinder & Jugend",
           "unterzeile": "Vereinshalle & Schulturnhalle Bogenhauser Kirchplatz",
+          "text": "<p></p>",
           "zeilen": [
-            { "fett": "Mo & Do", "text": "18:00–19:30 Uhr · Vereinshalle, Hermann-Weinhauser-Str. 7" },
-            { "fett": "Dienstag", "text": "17:15–18:45 Uhr · Bogenhauser Kirchplatz 3" },
-            { "fett": "Freitag", "text": "17:00–18:30 Uhr · Bogenhauser Kirchplatz 3" }
+            {
+              "fett": "Mo & Do",
+              "text": "18:00–19:30 Uhr · Vereinshalle, Hermann-Weinhauser-Str. 7"
+            },
+            {
+              "fett": "Dienstag",
+              "text": "17:15–18:45 Uhr · Bogenhauser Kirchplatz 3"
+            },
+            {
+              "fett": "Freitag",
+              "text": "17:00–18:30 Uhr · Bogenhauser Kirchplatz 3"
+            }
           ]
         }
       ],

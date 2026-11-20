@@ -8,22 +8,47 @@
     "ueberschrift": "Tischtennis mitten in München-Ost.",
     "text": "<p>Bei uns kommen Gemütlichkeit und Breitensport zusammen. Vom Bezirksoberliga- bis zum engagierten Bezirksklassespieler – wer einen Schläger halten kann, ist herzlich willkommen.</p>",
     "buttons": [
-      { "text": "Zum Schnuppertraining →", "ziel": "training.html", "stil": "gold" },
-      { "text": "Unsere Mannschaften", "ziel": "mannschaften.html", "stil": "rahmen" }
+      {
+        "text": "Zum Schnuppertraining →",
+        "ziel": "training.html",
+        "stil": "gold"
+      },
+      {
+        "text": "Unsere Mannschaften",
+        "ziel": "mannschaften.html",
+        "stil": "rahmen"
+      }
     ],
     "fakten": [
-      { "vor": "Gegründet vor", "fett": "über 50 Jahren", "nach": "" },
-      { "vor": "Berg am Laim · Baumkirchen Mitte", "fett": "", "nach": "" },
-      { "vor": "", "fett": "12", "nach": "Mannschaften" }
+      {
+        "vor": "Gegründet vor",
+        "fett": "über 50 Jahren"
+      },
+      {
+        "vor": "Berg am Laim · Baumkirchen Mitte"
+      },
+      {
+        "fett": "12",
+        "nach": "Mannschaften"
+      }
     ],
     "bild": "/medien/bilder/hero-halle.jpg",
     "bild_beschreibung": "Spieler beim Tischtennis in der Vereinshalle",
     "karte": {
       "titel": "Training diese Woche",
       "zeilen": [
-        { "fett": "Erwachsene", "text": "Mo ab 20:00 & Do ab 19:30 Uhr · Vereinshalle" },
-        { "fett": "Kinder & Jugend", "text": "Mo & Do 18:00–19:30 · Di & Fr nachmittags" },
-        { "fett": "Schnuppern", "text": "Jederzeit möglich – ganz ohne Anmeldung" }
+        {
+          "fett": "Erwachsene",
+          "text": "Mo ab 20:00 & Do ab 19:30 Uhr · Vereinshalle"
+        },
+        {
+          "fett": "Kinder & Jugend",
+          "text": "Mo & Do 18:00–19:30 · Di & Fr nachmittags"
+        },
+        {
+          "fett": "Schnuppern",
+          "text": "Jederzeit möglich – ganz ohne Anmeldung"
+        }
       ],
       "fuss_text": "Auch in den Ferien (Do)",
       "fuss_link_text": "Alle Zeiten →",
@@ -34,11 +59,26 @@
     {
       "_block": "zahlenband",
       "zahlen": [
-        { "zahl": "50+", "text": "Jahre im Verein" },
-        { "zahl": "9", "text": "Herrenmannschaften" },
-        { "zahl": "1", "text": "Damenmannschaft" },
-        { "zahl": "2", "text": "Jugendmannschaften" },
-        { "zahl": "2", "text": "Spielstätten" }
+        {
+          "zahl": "50+",
+          "text": "Jahre im Verein"
+        },
+        {
+          "zahl": "9",
+          "text": "Herrenmannschaften"
+        },
+        {
+          "zahl": "1",
+          "text": "Damenmannschaft"
+        },
+        {
+          "zahl": "2",
+          "text": "Jugendmannschaften"
+        },
+        {
+          "zahl": "2",
+          "text": "Spielstätten"
+        }
       ]
     },
     {
@@ -52,13 +92,31 @@
         "<p><strong>Kinder &amp; Jugend.</strong> Eigenes Nachwuchstraining in zwei Hallen – Schnuppern jederzeit, ganz ohne Anmeldung.</p>",
         "<p><strong>Vereinsleben.</strong> <a href=\"vereinsmeisterschaft.html\">Vereinsmeisterschaft</a>, Facklerpokal und der gesellige Ausklang gehören fest dazu.</p>"
       ],
+      "button_stil": "gold",
       "kasten": {
         "infos": [
-          { "begriff": "Heimat", "wert": "<p>Vereinshalle Hermann-Weinhauser-Str. 7</p>", "zusatz": "<p>3-fach-Sporthalle, Baumkirchen Mitte</p>" },
-          { "begriff": "Spielklassen", "wert": "<p>Bezirksklasse C – Bezirksoberliga</p>", "zusatz": "" },
-          { "begriff": "Erwachsenentraining", "wert": "<p>Do ab 19:30 Uhr</p>", "zusatz": "<p>auch während der Schulferien</p>" },
-          { "begriff": "Geschäftsstelle", "wert": "<p>089 4310654</p>", "zusatz": "<p>für Hobbyspieler:innen &amp; Anfragen</p>" }
-        ]
+          {
+            "begriff": "Heimat",
+            "wert": "<p>Vereinshalle Hermann-Weinhauser-Str. 7</p>",
+            "zusatz": "<p>3-fach-Sporthalle, Baumkirchen Mitte</p>"
+          },
+          {
+            "begriff": "Spielklassen",
+            "wert": "<p>Bezirksklasse C – Bezirksoberliga</p>",
+            "zusatz": "<p></p>"
+          },
+          {
+            "begriff": "Erwachsenentraining",
+            "wert": "<p>Do ab 19:30 Uhr</p>",
+            "zusatz": "<p>auch während der Schulferien</p>"
+          },
+          {
+            "begriff": "Geschäftsstelle",
+            "wert": "<p>089 4310654</p>",
+            "zusatz": "<p>für Hobbyspieler:innen &amp; Anfragen</p>"
+          }
+        ],
+        "hinweis": "<p></p>"
       }
     },
     {
@@ -71,13 +129,46 @@
       "spalten": "3",
       "raster": "standard",
       "karten": [
-        { "titel": "Herren I", "text": "<p>Bezirksoberliga · Spitzenteam</p>", "link_text": "Details →", "link_ziel": "mannschaften.html" },
-        { "titel": "Herren II", "text": "<p>Bezirksoberliga</p>", "link_text": "Details →", "link_ziel": "mannschaften.html" },
-        { "titel": "Herren III–IX", "text": "<p>Bezirksliga bis Bezirksklasse C</p>", "link_text": "Details →", "link_ziel": "mannschaften.html" },
-        { "titel": "Damen", "text": "<p>Bezirksoberliga</p>", "link_text": "Details →", "link_ziel": "mannschaften.html" },
-        { "titel": "Jugend I & II", "text": "<p>Bezirksklasse C</p>", "link_text": "Details →", "link_ziel": "mannschaften.html" },
-        { "titel": "Vereinsmeisterschaft", "text": "<p>Alle Sieger seit 1979 – Einzel, Doppel und Facklerpokal.</p>", "link_text": "Ehrentafel →", "link_ziel": "vereinsmeisterschaft.html" },
-        { "titel": "Foto aus der Vereinshalle", "text": "<p>Foto folgt – Aufnahmen aus Halle und Training werden ergänzt.</p>" }
+        {
+          "titel": "Herren I",
+          "text": "<p>Bezirksoberliga · Spitzenteam</p>",
+          "link_text": "Details →",
+          "link_ziel": "mannschaften.html"
+        },
+        {
+          "titel": "Herren II",
+          "text": "<p>Bezirksoberliga</p>",
+          "link_text": "Details →",
+          "link_ziel": "mannschaften.html"
+        },
+        {
+          "titel": "Herren III–IX",
+          "text": "<p>Bezirksliga bis Bezirksklasse C</p>",
+          "link_text": "Details →",
+          "link_ziel": "mannschaften.html"
+        },
+        {
+          "titel": "Damen",
+          "text": "<p>Bezirksoberliga</p>",
+          "link_text": "Details →",
+          "link_ziel": "mannschaften.html"
+        },
+        {
+          "titel": "Jugend I & II",
+          "text": "<p>Bezirksklasse C</p>",
+          "link_text": "Details →",
+          "link_ziel": "mannschaften.html"
+        },
+        {
+          "titel": "Vereinsmeisterschaft",
+          "text": "<p>Alle Sieger seit 1979 – Einzel, Doppel und Facklerpokal.</p>",
+          "link_text": "Ehrentafel →",
+          "link_ziel": "vereinsmeisterschaft.html"
+        },
+        {
+          "titel": "Foto aus der Vereinshalle",
+          "text": "<p>Foto folgt – Aufnahmen aus Halle und Training werden ergänzt.</p>"
+        }
       ]
     },
     {

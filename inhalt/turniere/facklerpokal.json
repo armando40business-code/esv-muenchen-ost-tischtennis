@@ -1,7 +1,6 @@
 {
   "titel": "Facklerpokal",
   "zusatz": "Doppelturnier",
-  "excel": "",
   "spaltentitel": {
     "jahr": "Jahr",
     "sieger": "Siegerdoppel",
@@ -139,9 +138,7 @@
       "zweiter": "Wallowsky / Dargel"
     },
     {
-      "jahr": "1999",
-      "sieger": "",
-      "zweiter": ""
+      "jahr": "1999"
     },
     {
       "jahr": "1998",
@@ -230,13 +227,10 @@
     },
     {
       "jahr": "1981",
-      "sieger": "Fabis / Ullmann",
-      "zweiter": ""
+      "sieger": "Fabis / Ullmann"
     },
     {
-      "jahr": "1980",
-      "sieger": "",
-      "zweiter": ""
+      "jahr": "1980"
     }
   ]
 }
