@@ -48,6 +48,10 @@ node build.mjs             # baut _site/ (Exit 0 auch bei Warnungen; ≠ 0 nur, 
 node build.mjs --pruefen   # zusätzlich: unbekannte Felder, falsche Werte, fehlende Dateien, tote interne Links
 ```
 
+Warnungen (z. B. ein gelöschtes Bild, das noch auf einer Seite steht: die Stelle wird weggelassen) stehen zusätzlich
+je Zeile in `bau-warnungen.txt` neben `_site/` (nicht im Git). Die Automatik zeigt sie in der Zusammenfassung des Laufs
+und als Warnung-Anmerkung.
+
 `_site/` enthält je Seite `<name>.html`, `styles.css`, `assets/`, `medien/`, den Inhalt von `statisch/`,
 `sitemap.xml` und `robots.txt`. Zum Ansehen: `_site/index.html` im Browser öffnen oder `npx serve _site`.
 
@@ -58,9 +62,10 @@ Die Werkzeuge unter `tools/` laufen nur lokal. Einmalig für alles mit Bildschir
 
 | Befehl | Was er prüft | `npm install` nötig |
 |---|---|---|
-| `node --test "tools/tests/**/*.test.mjs"` | Leser für Excel/CSV (Tests, Testdateien in `tools/tests/fixtures/`) | nein |
-| `node tools/pagescms/pruefe-config.mjs` | `.pages.yml` gegen das offizielle Konfigurations-Schema von Pages CMS (Version 2.1.8) plus eigene Regeln (Verweise, Medien-Ordner, deutsche Beschriftungen, keine Standardtexte, Bausteinliste) | ja (`zod`, `yaml`) |
-| `node tools/pagescms/pruefe-inhalt.mjs` | jede Datei unter `inhalt/` gegen die Formulare (kein JSON-Schlüssel ohne Formularfeld, Auswahlwerte, Bildpfade), Formulare gegen `lib/schema.mjs` und `docs/INHALTSMODELL.md`, Trockenlauf "Öffnen und unverändert speichern" | ja (`zod`, `yaml`) |
+| `node --test "tools/tests/**/*.test.mjs"` | Leser für Excel/CSV, Fließtext (leere CMS-Felder, Fett mit Leerzeichen), Speicher-Nachbildung gegen echte Speicherungen aus Pages CMS (Testdateien in `tools/tests/fixtures/`; der CMS-Teil wird ohne `npm install` übersprungen) | nein (CMS-Teil: ja) |
+| `node tools/pagescms/pruefe-config.mjs` | `.pages.yml` gegen das offizielle Konfigurations-Schema von Pages CMS (Version 2.1.8) plus eigene Regeln (Verweise, Medien-Ordner, deutsche Beschriftungen, keine Standardtexte, Bausteinliste, kein Hilfetext an Listen, Zeilentitel nie leer, Namen in der Seitenleiste höchstens 20 Zeichen) | ja (`zod`, `yaml`) |
+| `node tools/pagescms/pruefe-inhalt.mjs` | jede Datei unter `inhalt/` gegen die Formulare (kein JSON-Schlüssel ohne Formularfeld, Auswahlwerte, Bildpfade), Formulare gegen `lib/schema.mjs` und `docs/INHALTSMODELL.md`, Trockenlauf "Öffnen und unverändert speichern" wie in der echten Oberfläche (nichts geht verloren, jede Datei steht schon in der Form da, die Pages CMS schreibt) | ja (`zod`, `yaml`) |
+| `node tools/pagescms/normalisiere-inhalt.mjs` | schreibt alle Inhaltsdateien in genau die Form, die Pages CMS beim Speichern schreibt (nach Änderungen von Hand; `--pruefen` meldet nur) | ja (`yaml`) |
 | `node tools/vergleich.mjs` | alter Stand (Commit `05db18e`) gegen neu: sichtbarer Text, Links, Bildquellen, Titel/Meta, JSON-LD | nein |
 | `node tools/bildvergleich.mjs` | Bildschirmfotos alt gegen neu bei 1280 und 390 px (installiertes Chrome/Edge), Ergebnis in `tools/_vergleich/` | ja |
 | `node tools/robustheit.mjs` | Bau mit absichtlich kaputtem Inhalt (leere Bausteine, fehlende Bilder, kaputte Excel-Datei, gefährliches HTML) in einer Wegwerf-Kopie | nein |
@@ -72,6 +77,10 @@ Die Werkzeuge unter `tools/` laufen nur lokal. Einmalig für alles mit Bildschir
 **Nach jeder Änderung an `.pages.yml`, `inhalt/` oder `lib/schema.mjs`** beide CMS-Prüfungen laufen lassen. Beide
 müssen "0 Fehler" bzw. "0 Abweichungen" melden. Das Wichtigste daran: Pages CMS schreibt beim Speichern nur Felder
 zurück, die in `.pages.yml` stehen. Ein JSON-Schlüssel ohne Formularfeld ginge beim nächsten Speichern verloren.
+Außerdem formatiert Pages CMS jede gespeicherte Datei neu (2 Leerzeichen, jedes Objekt mehrzeilig, kein Zeilenumbruch
+am Ende, leere Texte entfallen, leere Fließtexte werden `"<p></p>"`). Wer `inhalt/` von Hand ändert, lässt danach
+`node tools/pagescms/normalisiere-inhalt.mjs` laufen – sonst meldet `pruefe-inhalt` Schritt E eine Abweichung und die
+nächste Speicherung im CMS zeigt lauter Formatierungs-Änderungen.
 Die CMS-Prüfungen laufen bewusst nicht in der Automatik: Eine Eingabe im CMS soll die Veröffentlichung nie blockieren.
 
 ## Veröffentlichen
@@ -83,6 +92,8 @@ Automatisch: `.github/workflows/veroeffentlichen.yml`.
   (GitHub → Actions → "Veröffentlichen" → "Run workflow", Zweig `main`):
   `wrangler pages deploy _site --project-name=esv-tischtennis --branch=main` (Wrangler fest auf 4.164.0 gepinnt).
 - Schlägt Bau oder Test fehl, wird nichts veröffentlicht; die alte Fassung bleibt online.
+- Warnungen des Baus (z. B. fehlendes Bild – die Seite geht trotzdem online) stehen in der Zusammenfassung des Laufs
+  und als gelbe Warnung-Anmerkung (Quelle: `bau-warnungen.txt`).
 - Fehlen die Secrets, scheitert der Lauf mit einer deutschen Meldung ("Zugangsdaten fehlen …").
 - Mehrere schnelle Speicherungen: ein laufendes Veröffentlichen wird fertig, von den wartenden bleibt nur der neueste Stand.
 
@@ -112,7 +123,10 @@ müssen zusammenpassen; `node tools/pagescms/pruefe-inhalt.mjs` meldet, wenn ein
    deutschen Beschriftungen, aber dem Wert aus dem Inhaltsmodell. Standardwerte nur bei Auswahl/Ja-Nein und nur,
    wenn sie dem Standard des Bauskripts entsprechen (Pages CMS setzt Standardwerte in jedes leere Feld ein).
    Keine Bausteine in Bausteinen. Jedes Feld braucht `label` und `description` (Deutsch, "du", sagt, was bei
-   leerem Feld passiert).
+   leerem Feld passiert, kurz) – **außer Listen** (`list:`): Deren Hilfetext zeigt Pages CMS unter jedem einzelnen
+   Eintrag; das Wichtigste kommt dort als kurzer Halbsatz ins `label`. Einklappbare Listen bekommen eine `summary`
+   mit festem Wort (z. B. `"Karte {index}: {titel}"`), weil Pages CMS leere Platzhalter einfach weglässt; keine
+   Fließtextfelder in der `summary` (zeigten HTML).
 4. **Dokumentation:** In `docs/INHALTSMODELL.md` einen Abschnitt ``### 13. `meine_art` `` mit Tabelle der Felder
    ergänzen (erste Spalte = Feldname in Backticks); die Baustein-Liste in `docs/ANLEITUNG-PFLEGE.md` anpassen.
 
