@@ -1,0 +1,242 @@
+{
+  "titel": "Facklerpokal",
+  "zusatz": "Doppelturnier",
+  "excel": "",
+  "spaltentitel": {
+    "jahr": "Jahr",
+    "sieger": "Siegerdoppel",
+    "zweiter": "2. Platz"
+  },
+  "jahrgaenge": [
+    {
+      "jahr": "2025",
+      "sieger": "Gattinger / Ferner",
+      "zweiter": "Einsiedler / Fälschle"
+    },
+    {
+      "jahr": "2024",
+      "sieger": "Rutsche / Götz",
+      "zweiter": "Huber / Häußler"
+    },
+    {
+      "jahr": "2023",
+      "sieger": "Rutsche / Erb K.",
+      "zweiter": "Maier / Fälschle"
+    },
+    {
+      "jahr": "2022",
+      "sieger": "Vogt / Fälschle",
+      "zweiter": "Braunisch / Maier"
+    },
+    {
+      "jahr": "2021",
+      "sieger": "Braunisch / Erb K.",
+      "zweiter": "Götz / Gräf"
+    },
+    {
+      "jahr": "2020",
+      "sieger": "Kirchberger / Seidel",
+      "zweiter": "Erb / Fabis"
+    },
+    {
+      "jahr": "2019",
+      "sieger": "Braunisch / Majewski",
+      "zweiter": "Rutsche / Ludewig Fab."
+    },
+    {
+      "jahr": "2018",
+      "sieger": "Weimer / Zacherl",
+      "zweiter": "Braunisch / Seidel"
+    },
+    {
+      "jahr": "2017",
+      "sieger": "Erb / Zöfeld",
+      "zweiter": "Götz / Ludewig"
+    },
+    {
+      "jahr": "2016",
+      "sieger": "Erb / Ludewig Fab.",
+      "zweiter": "Rutsche / Maier"
+    },
+    {
+      "jahr": "2015",
+      "sieger": "Erb / Braunisch",
+      "zweiter": "Braidt / Tole"
+    },
+    {
+      "jahr": "2014",
+      "sieger": "Erb / Maier",
+      "zweiter": "Fläschner / Poddubni"
+    },
+    {
+      "jahr": "2013",
+      "sieger": "Erb / Zöfeld",
+      "zweiter": "Götz / Maier"
+    },
+    {
+      "jahr": "2012",
+      "sieger": "Radspieler / Seidel",
+      "zweiter": "Fälschle / Ludewig Fab."
+    },
+    {
+      "jahr": "2011",
+      "sieger": "Gross / Homp",
+      "zweiter": "Weissenbach / Schmidbauer"
+    },
+    {
+      "jahr": "2010",
+      "sieger": "Rösch / Fabis",
+      "zweiter": "Erb / Zacherl"
+    },
+    {
+      "jahr": "2009",
+      "sieger": "Rösch / Fabis",
+      "zweiter": "Einsiedler / Ludewig S."
+    },
+    {
+      "jahr": "2008",
+      "sieger": "Gross / Weissenbach",
+      "zweiter": "Erb / Fälschle"
+    },
+    {
+      "jahr": "2007",
+      "sieger": "Weimer / Götz",
+      "zweiter": "Homp / Fiesler"
+    },
+    {
+      "jahr": "2006",
+      "sieger": "Homp / Wanninger",
+      "zweiter": "Kalmbach / Wagner"
+    },
+    {
+      "jahr": "2005",
+      "sieger": "Seidel / Götz",
+      "zweiter": "Ludewig S. / Poweleit"
+    },
+    {
+      "jahr": "2004",
+      "sieger": "Homp / Wanninger",
+      "zweiter": "Seidel / Fabis"
+    },
+    {
+      "jahr": "2003",
+      "sieger": "Smolka / Bergmeier",
+      "zweiter": "Poddubni / Fabis"
+    },
+    {
+      "jahr": "2002",
+      "sieger": "Seidel / König",
+      "zweiter": "Zacherl / Rickert"
+    },
+    {
+      "jahr": "2001",
+      "sieger": "Fälschle / Seidel",
+      "zweiter": "Botzler / Zacherl"
+    },
+    {
+      "jahr": "2000",
+      "sieger": "Fälschle / Fichtner",
+      "zweiter": "Wallowsky / Dargel"
+    },
+    {
+      "jahr": "1999",
+      "sieger": "",
+      "zweiter": ""
+    },
+    {
+      "jahr": "1998",
+      "sieger": "Matuschek / Fabis",
+      "zweiter": "Botzler / Zaruba"
+    },
+    {
+      "jahr": "1997",
+      "sieger": "Fälschle / Poweleit",
+      "zweiter": "Rothe A. / Wanninger"
+    },
+    {
+      "jahr": "1996",
+      "sieger": "Einsiedler / Fichtner",
+      "zweiter": "Poweleit / Seidel F.\nWanninger / Pietsch"
+    },
+    {
+      "jahr": "1995",
+      "sieger": "Rothe / Fabis",
+      "zweiter": "Poweleit / König"
+    },
+    {
+      "jahr": "1994",
+      "sieger": "Beekmann / Zaruba",
+      "zweiter": "Fälschle / Fabis"
+    },
+    {
+      "jahr": "1993",
+      "sieger": "Kinzelmann / Brunsch",
+      "zweiter": "Rothe A. / Greitemeyer"
+    },
+    {
+      "jahr": "1992",
+      "sieger": "Einsiedler / Rothe H.",
+      "zweiter": "Wallowsky / Pietsch"
+    },
+    {
+      "jahr": "1991",
+      "sieger": "Rothe A. / Zacherl\nEinsiedler / Beekmann",
+      "zweiter": "Rothe A. / Brunsch"
+    },
+    {
+      "jahr": "1990",
+      "sieger": "Rothe A. / Pietsch",
+      "zweiter": "Robl / Lange"
+    },
+    {
+      "jahr": "1989",
+      "sieger": "Rothe A. / Pietsch",
+      "zweiter": "Fabis / Zacherl"
+    },
+    {
+      "jahr": "1988",
+      "sieger": "Robl / Gätzner",
+      "zweiter": "Rauleder / Rothe H.\nRobl / Menigat"
+    },
+    {
+      "jahr": "1987",
+      "sieger": "Rauleder / Möbius",
+      "zweiter": "Zacherl / Pietsch"
+    },
+    {
+      "jahr": "1986",
+      "sieger": "Bouda / Dargel",
+      "zweiter": "Müller / Dargel"
+    },
+    {
+      "jahr": "1985",
+      "sieger": "Rothe A. / Poweleit",
+      "zweiter": "Pietsch / Rothe H."
+    },
+    {
+      "jahr": "1984",
+      "sieger": "Mittl / Dargel",
+      "zweiter": "Zacherl / Gall"
+    },
+    {
+      "jahr": "1983",
+      "sieger": "Mittl / Gätzner",
+      "zweiter": "Fichtner / Tolksdorf"
+    },
+    {
+      "jahr": "1982",
+      "sieger": "Fabis / Billmeier",
+      "zweiter": "Cara / Estermaier"
+    },
+    {
+      "jahr": "1981",
+      "sieger": "Fabis / Ullmann",
+      "zweiter": ""
+    },
+    {
+      "jahr": "1980",
+      "sieger": "",
+      "zweiter": ""
+    }
+  ]
+}

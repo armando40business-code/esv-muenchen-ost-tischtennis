@@ -1,0 +1,14 @@
+* text=auto eol=lf
+
+# Binaerdateien
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.gif binary
+*.woff2 binary
+*.xlsx binary
+*.ico binary
+
+# CSV-Fixtures der Tests muessen byte-genau bleiben
+tools/tests/fixtures/** binary

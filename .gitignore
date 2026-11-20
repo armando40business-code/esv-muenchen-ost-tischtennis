@@ -1,3 +1,6 @@
 _to_delete/
 _dist/
 _site/
+tools/node_modules/
+tools/_vergleich/
+tools/_vorschau/

@@ -1,0 +1,61 @@
+{
+  "browsertitel": "Historie & Turniere — ESV München-Ost · Tischtennis",
+  "beschreibung": "Über 50 Jahre Tischtennis beim ESV München-Ost: die Geschichte der Abteilung, der Umzug 2020 und die Traditionsturniere Vereinsmeisterschaft und Facklerpokal.",
+  "menue_titel": "Historie",
+  "sitemap_prioritaet": "0.5",
+  "kopf": {
+    "ueberschrift": "Historie & Turniere",
+    "text": "<p>Seit über 50 Jahren wird beim ESV München-Ost Tischtennis gespielt. Aus einer kleinen Runde wurde eine der größten Abteilungen Oberbayerns – mit eigenen Traditionsturnieren, die bis heute Jahr für Jahr ausgetragen werden.</p>",
+    "bild": ""
+  },
+  "bausteine": [
+    {
+      "_block": "zeitleiste",
+      "hintergrund": "normal",
+      "kicker": "Unsere Geschichte",
+      "ueberschrift": "Über 50 Jahre am Tisch",
+      "eintraege": [
+        { "jahr": "50+", "titel": "Jahre Tischtennis-Tradition", "text": "<p>Die Abteilung blickt auf über fünf Jahrzehnte zurück und zählt heute zu den größten und aktivsten Tischtennis-Abteilungen in ganz Oberbayern.</p>" },
+        { "jahr": "bis 2020", "titel": "Heimat Baumkirchner Straße", "text": "<p>Über viele Jahre trugen die Mannschaften ihre Heimspiele und Turniere in der Vereinshalle an der Baumkirchnerstraße 57 aus – inklusive des Facklerpokals.</p>" },
+        { "jahr": "2020", "titel": "Umzug in die neue 3-fach-Sporthalle", "text": "<p>Am 22. Februar 2020 zog die Abteilung in die moderne ESV-Vereinshalle in „Baumkirchen Mitte“, Hermann-Weinhauser-Straße 7 – nur wenige Gehminuten von der alten Halle entfernt.</p>" },
+        { "jahr": "heute", "titel": "Zwölf Mannschaften, eine Gemeinschaft", "text": "<p>Neun Herren-, eine Damen- und zwei Jugendmannschaften treten von der Bezirksklasse C bis zur Bezirksoberliga an – getragen von Breitensport, Nachwuchsarbeit und echtem Vereinsleben.</p>" }
+      ]
+    },
+    {
+      "_block": "karten",
+      "hintergrund": "abgesetzt",
+      "kicker": "Traditionsturniere",
+      "ueberschrift": "Vereinsmeisterschaft & Facklerpokal",
+      "spalten": "2",
+      "raster": "turniere",
+      "karten": [
+        {
+          "titel": "Vereinsmeisterschaft",
+          "text": "<p>Einmal im Jahr spielt die Abteilung ihre Vereinsmeister aus – in Einzel und Doppel, seit einigen Jahren auch als Vorgabeturnier, bei dem jede Spielstärke eine Chance auf den Titel hat.</p>",
+          "rangliste_titel": "Sieger Einzel 2026",
+          "rangliste": ["Claus Erb", "Wolfgang Braunisch", "Bastian Reichert / Jan Grande"],
+          "link_text": "Alle Sieger seit 1979 →",
+          "link_ziel": "vereinsmeisterschaft.html"
+        },
+        {
+          "titel": "Facklerpokal",
+          "text": "<p>Das gesellige Doppelturnier der Abteilung – offen für alle. Auch Nicht-ESV-Spieler:innen sind ausdrücklich eingeladen mitzuspielen. Ein fester Höhepunkt im Vereinskalender.</p>",
+          "rangliste_titel": "Siegerdoppel 2025",
+          "rangliste": ["Bernd Gattinger / Jürgen Ferner", "Heinz Einsiedler / Hermann Fälschle"],
+          "link_text": "Komplette Siegerliste →",
+          "link_ziel": "vereinsmeisterschaft.html"
+        }
+      ],
+      "hinweise": [
+        "<p>Termine zu Turnieren, Punktspielen und Vereinsleben findest du über unseren <a href=\"kontakt.html\">Terminkalender und Kontakt →</a></p>"
+      ]
+    },
+    {
+      "_block": "aufruf",
+      "ueberschrift": "Werde Teil der Geschichte",
+      "text": "<p>Das nächste Kapitel schreiben wir gemeinsam – am besten ab dem nächsten Training.</p>",
+      "button_text": "Mannschaften entdecken",
+      "button_ziel": "mannschaften.html"
+    }
+  ]
+}

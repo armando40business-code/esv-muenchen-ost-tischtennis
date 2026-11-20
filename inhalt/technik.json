@@ -1,0 +1,87 @@
+{
+  "basis_url": "https://esv-tischtennis.pages.dev",
+  "theme_color": "#0C242C",
+  "strukturierte_daten": {
+    "@context": "https://schema.org",
+    "@type": "SportsClub",
+    "name": "ESV München-Ost e.V. – Abteilung Tischtennis",
+    "alternateName": "Tischtennis in München-Ost",
+    "sport": "Tischtennis",
+    "url": "https://esv-tischtennis.pages.dev/",
+    "logo": "https://esv-tischtennis.pages.dev/medien/bilder/esv-logo.png",
+    "image": "https://esv-tischtennis.pages.dev/medien/bilder/hero-halle.jpg",
+    "description": "Tischtennis-Abteilung des ESV München-Ost e.V. mit zwölf Mannschaften von der Bezirksklasse C bis zur Bezirksoberliga, eigenem Kinder- und Jugendtraining und über 50 Jahren Vereinsgeschichte.",
+    "telephone": "+49 176 47385510",
+    "email": "tischtennis@esv-muenchen-ost.de",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Hermann-Weinhauser-Straße 7",
+      "postalCode": "81673",
+      "addressLocality": "München",
+      "addressRegion": "Bayern",
+      "addressCountry": "DE"
+    },
+    "areaServed": "München-Ost, Berg am Laim, Bogenhausen",
+    "parentOrganization": {
+      "@type": "SportsOrganization",
+      "name": "Eisenbahn-Sportverein (ESV) München-Ost e.V.",
+      "url": "https://www.esv-muenchen-ost.de"
+    },
+    "location": [
+      {
+        "@type": "Place",
+        "name": "ESV Vereinshalle",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Hermann-Weinhauser-Straße 7",
+          "postalCode": "81673",
+          "addressLocality": "München",
+          "addressCountry": "DE"
+        }
+      },
+      {
+        "@type": "Place",
+        "name": "Schulturnhalle Bogenhauser Kirchplatz",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Bogenhauser Kirchplatz 3",
+          "postalCode": "81675",
+          "addressLocality": "München",
+          "addressCountry": "DE"
+        }
+      }
+    ],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Monday",
+        "opens": "20:00",
+        "closes": "22:00",
+        "description": "Erwachsenentraining, Vereinshalle"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Thursday",
+        "opens": "19:30",
+        "closes": "22:00",
+        "description": "Erwachsenentraining, auch in den Ferien"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Thursday"
+        ],
+        "opens": "18:00",
+        "closes": "19:30",
+        "description": "Kinder- und Jugendtraining"
+      }
+    ],
+    "sameAs": [
+      "https://www.facebook.com/ESV-M%C3%BCnchen-Ost-134738143345659/",
+      "https://bttv.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/clubInfoDisplay?club=20725",
+      "https://www.esv-muenchen-ost.de"
+    ]
+  },
+  "impressum_zusatz_html": "<h3>Website</h3><p>Konzeption &amp; technische Umsetzung: <a href=\"https://wagner-service-solutions.de/\" target=\"_blank\" rel=\"noopener\">Wagner Service &amp; Solutions, München</a>.</p>"
+}

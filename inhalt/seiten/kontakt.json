@@ -1,0 +1,70 @@
+{
+  "browsertitel": "Kontakt — ESV München-Ost · Tischtennis",
+  "beschreibung": "Kontakt zur Tischtennis-Abteilung des ESV München-Ost: Abteilungsleitung, Geschäftsstelle, Vereinshalle und Anfahrt.",
+  "menue_titel": "Kontakt",
+  "sitemap_prioritaet": "0.5",
+  "kopf": {
+    "ueberschrift": "Kontakt",
+    "text": "<p>Fragen zum Training, zur Mitgliedschaft oder zum Schnuppern? Schreib uns oder ruf an – wir helfen gern weiter und freuen uns, dich bald an einem unserer Tische zu begrüßen.</p>",
+    "bild": ""
+  },
+  "bausteine": [
+    {
+      "_block": "kontakt",
+      "hintergrund": "normal",
+      "kicker": "So erreichst du uns",
+      "ueberschrift": "Abteilung Tischtennis",
+      "infos": [
+        {
+          "begriff": "Abteilungsleitung",
+          "wert": "<p>Jan-Philipp Grande</p>",
+          "zusatz": "<p><a href=\"tel:+4917647385510\">+49 176 47385510</a><br><a href=\"mailto:tischtennis@esv-muenchen-ost.de\">tischtennis@esv-muenchen-ost.de</a></p>"
+        },
+        {
+          "begriff": "Geschäftsstelle",
+          "wert": "<p><a href=\"tel:+49894310654\">089 4310654</a></p>",
+          "zusatz": "<p>Für Hobbyspieler:innen &amp; allgemeine Anfragen</p>"
+        },
+        {
+          "begriff": "Vereinshalle",
+          "wert": "<p>Hermann-Weinhauser-Straße 7, 81673 München</p>",
+          "zusatz": "<p><a href=\"https://www.openstreetmap.org/search?query=Hermann-Weinhauser-Stra%C3%9Fe%207%2C%2081673%20M%C3%BCnchen\">Route planen →</a></p>"
+        },
+        {
+          "begriff": "Mehr vom ESV",
+          "wert": "<p>Hauptverein <a href=\"https://www.esv-muenchen-ost.de\">esv-muenchen-ost.de</a></p>",
+          "zusatz": "<p><a href=\"https://www.facebook.com/ESV-M%C3%BCnchen-Ost-134738143345659/\">Facebook: ESV München-Ost</a></p>"
+        }
+      ],
+      "formular_titel": "Schreib uns",
+      "formular_text": "<p>Wir melden uns so schnell wie möglich zurück.</p>",
+      "formular_empfaenger": "tischtennis@esv-muenchen-ost.de",
+      "formular_button": "Nachricht senden",
+      "formular_hinweis": "<p>Das Formular öffnet dein E-Mail-Programm und richtet die Nachricht an die Abteilungsleitung. Es werden keine Daten auf dieser Website gespeichert.</p>"
+    },
+    {
+      "_block": "zwei_spalten",
+      "hintergrund": "abgesetzt",
+      "spalten": [
+        {
+          "kicker": "Termine",
+          "ueberschrift": "Was als Nächstes ansteht",
+          "einleitung": "<p>Punktspiele, Turniere und Vereinstermine pflegen wir im Vereinskalender. Die aktuellen Spielpläne aller Mannschaften führt der Bayerische Tischtennis-Verband in click-TT.</p>",
+          "button_text": "Spielpläne ansehen",
+          "button_ziel": "https://bttv.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/clubMeetings?club=20725",
+          "button_stil": "rahmen"
+        },
+        {
+          "anker": "sponsoring",
+          "kicker": "Unterstützen",
+          "ueberschrift": "Sponsor der Abteilung werden",
+          "einleitung": "<p>Unterstütze Breitensport und Nachwuchsarbeit im Münchner Osten – wir freuen uns über jede Partnerschaft.</p>",
+          "text": "<p>Ansprechpartner ist die Abteilungsleitung:<br>Jan-Philipp Grande<br><a href=\"tel:+4917647385510\">+49 176 47385510</a><br><a href=\"mailto:tischtennis@esv-muenchen-ost.de?subject=Sponsoring%20Tischtennis\">tischtennis@esv-muenchen-ost.de</a></p>",
+          "button_text": "Sponsoring anfragen",
+          "button_ziel": "mailto:tischtennis@esv-muenchen-ost.de?subject=Sponsoring%20Tischtennis",
+          "button_stil": "rahmen"
+        }
+      ]
+    }
+  ]
+}

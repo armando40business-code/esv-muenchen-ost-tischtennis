@@ -1,0 +1,64 @@
+{
+  "verein": {
+    "name": "ESV München-Ost",
+    "abteilung": "Abteilung Tischtennis",
+    "logo": "/medien/bilder/esv-logo.png",
+    "logo_alt": "Wappen ESV München-Ost"
+  },
+  "kopf_button": {
+    "text": "Schnuppertraining",
+    "ziel": "training.html"
+  },
+  "menue": [
+    { "titel": "Start", "ziel": "index.html" },
+    { "titel": "Mannschaften", "ziel": "mannschaften.html" },
+    { "titel": "Training", "ziel": "training.html" },
+    { "titel": "Historie", "ziel": "historie.html" },
+    { "titel": "Vereinsmeisterschaft", "ziel": "vereinsmeisterschaft.html" },
+    { "titel": "Kontakt", "ziel": "kontakt.html" }
+  ],
+  "fusszeile": {
+    "text": "Abteilung Tischtennis des ESV München-Ost e.V. – Breitensport, Gemeinschaft und Wettkampf im Münchner Osten.",
+    "logo_alt": "ESV München-Ost",
+    "spalten": [
+      {
+        "titel": "Verein",
+        "links": [
+          { "text": "Über uns", "ziel": "index.html" },
+          { "text": "Mannschaften", "ziel": "mannschaften.html" },
+          { "text": "Historie & Turniere", "ziel": "historie.html" },
+          { "text": "Vereinsmeisterschaft", "ziel": "vereinsmeisterschaft.html" },
+          { "text": "Hauptverein", "ziel": "https://www.esv-muenchen-ost.de" }
+        ]
+      },
+      {
+        "titel": "Mitmachen",
+        "links": [
+          { "text": "Trainingszeiten", "ziel": "training.html" },
+          { "text": "Hallen & Anfahrt", "ziel": "training.html#hallen" },
+          { "text": "Schnuppertraining", "ziel": "kontakt.html" },
+          { "text": "Sponsor werden", "ziel": "kontakt.html#sponsoring" }
+        ]
+      },
+      {
+        "titel": "Kontakt",
+        "links": [
+          { "text": "+49 176 47385510", "ziel": "tel:+4917647385510" },
+          { "text": "tischtennis@esv-muenchen-ost.de", "ziel": "mailto:tischtennis@esv-muenchen-ost.de" },
+          { "text": "Hermann-Weinhauser-Str. 7, München", "ziel": "" },
+          { "text": "Facebook", "ziel": "https://www.facebook.com/ESV-M%C3%BCnchen-Ost-134738143345659/" }
+        ]
+      }
+    ],
+    "copyright": "© {jahr} ESV München-Ost e.V. · Abteilung Tischtennis",
+    "rechtliche_links": [
+      { "text": "Impressum", "ziel": "impressum.html" },
+      { "text": "Datenschutz", "ziel": "datenschutz.html" }
+    ]
+  },
+  "vorschaubild": "/medien/bilder/hero-halle.jpg",
+  "design": {
+    "farbschema": "petrol",
+    "akzentfarbe": ""
+  }
+}

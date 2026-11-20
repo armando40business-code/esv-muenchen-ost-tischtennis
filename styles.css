@@ -235,11 +235,25 @@ table.data td.none{color:#5d716f;font-style:italic}
 .foot-bar a{color:var(--foot-2);text-decoration:none}
 .foot-bar a:hover{color:var(--gold)}
 
+/* Zahlenband mit != 5 Zahlen: Raster füllt die Breite (Trennlinien per Beschnitt, auch bei Zeilenumbruch) */
+.stats-n{overflow:hidden}
+.stats-n .stat{margin:-1px 0 0 -1px;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.stats-n .stat:first-child{border-left:1px solid var(--line)}
+.stats-2{grid-template-columns:repeat(2,1fr)}
+.stats-3{grid-template-columns:repeat(3,1fr)}
+.stats-4{grid-template-columns:repeat(4,1fr)}
+.stats-6{grid-template-columns:repeat(6,1fr)}
+.stats-auto{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+
 /* ---------- Responsive ---------- */
 @media (max-width:980px){
   .stats{grid-template-columns:repeat(3,1fr)}
   .stat:nth-child(4){border-left:0}
   .g3{grid-template-columns:repeat(2,1fr)}
+  .stats-n.stats-4,.stats-n.stats-6{grid-template-columns:repeat(2,1fr)}
+  .stats-n.stats-4 .stat:nth-child(4),.stats-n .stat:nth-child(4){border-left:1px solid var(--line)}
+  .stats-n.stats-3{grid-template-columns:repeat(3,1fr)}
+  .stats-n.stats-auto{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
 }
 @media (max-width:880px){
   .burger{display:block}
@@ -256,6 +270,9 @@ table.data td.none{color:#5d716f;font-style:italic}
   section{padding:52px 0}
   .stats{grid-template-columns:repeat(2,1fr)}
   .stat{border-left:0;border-top:1px solid var(--line)}
+  .stats-n .stat,.stats-n .stat:first-child,.stats-n .stat:nth-child(4){margin:0;border-left:0;border-top:1px solid var(--line)}
+  .stats-n.stats-3{grid-template-columns:1fr}
+  .stats-n.stats-auto{grid-template-columns:repeat(2,1fr)}
   .g2,.g3{grid-template-columns:1fr}
   .honours{grid-template-columns:1fr 1fr}
   .tl-year{flex:0 0 100%}
@@ -270,3 +287,42 @@ table.data td.none{color:#5d716f;font-style:italic}
   table.data thead th{background:#eee;color:#000}
   table.data td.year{color:#000}
 }
+
+/* ---------- Bausteine (Selbstpflege) — ersetzen die früheren style-Attribute, Optik unverändert ---------- */
+.abgesetzt{background:var(--ink-800);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.karten-kopf{display:flex;flex-wrap:wrap;gap:16px;align-items:baseline;justify-content:space-between}
+.grid-abstand{margin-top:26px}
+.kicker-zwischen{margin-top:44px}
+.card p.karte-unterzeile{margin-bottom:14px}
+.card p.karte-fett{color:var(--text);font-weight:600;margin:8px 0 0}
+.card p.karte-rangtitel{margin:14px 0 0}
+.card p.karte-zeile2{margin:0 0 12px}
+.hint b{color:var(--text)}
+.aside-liste{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:10px;color:var(--muted-2)}
+.aside-hinweis{margin-top:18px}
+.aside-abstand{margin-top:22px}
+.form-knopf{margin-top:18px}
+.ehrentafel-text{margin-top:10px;max-width:62ch}
+.ehren-titel{margin:34px 0 0;font-size:1.05rem;color:var(--gold-l)}
+h3.ehren-titel:first-of-type{margin-top:28px}
+.toolbar-abstand{margin-top:24px}
+.prose h2+p{margin-top:16px}
+.prose h3{margin-top:36px}
+.prose b{color:var(--text)}
+.prose .hint{margin-top:34px}
+
+/* ---------- Neue Bausteine (Kopfbild, Kartenbild, Bilder, Tabelle) ---------- */
+.page-head.page-head-bild{background-image:linear-gradient(160deg,rgba(18,59,71,.9),rgba(12,36,44,.94)),var(--kopfbild);
+  background-size:cover;background-position:center}
+.karte-bild{width:100%;border-radius:8px;margin:0 0 16px}
+.g1{grid-template-columns:1fr}
+.bilder-raster .bild{margin:0;background:var(--ink-700);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.bilder-raster img{width:100%}
+.bilder-raster figcaption{padding:12px 16px;color:var(--muted-2);font-size:.88rem}
+.tabelle-abstand{margin-top:24px}
+.prose :not(.kicker)+h2{margin-top:40px}
+.block-text{margin-top:14px}
+.bilder-raster .bild{display:flex;flex-direction:column}
+.bilder-raster picture{display:block}
+.bilder-raster .bild img{width:auto;max-width:100%;height:auto;margin:0 auto}
+.bilder-raster figcaption{margin-top:auto}
