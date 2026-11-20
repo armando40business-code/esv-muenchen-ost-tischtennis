@@ -42,6 +42,30 @@ jobs:
       - name: Seite bauen
         run: node build.mjs
 
+      # Fehlt z. B. ein Bild, das noch auf einer Seite steht, lässt der Bau die Stelle weg und endet trotzdem mit
+      # Code 0 (die Seite soll online gehen). Damit das nicht untergeht: Warnungen aus bau-warnungen.txt (eine je
+      # Zeile, von build.mjs neben _site geschrieben) als Zusammenfassung des Laufs und als ::warning-Anmerkung.
+      - name: Warnungen des Baus anzeigen
+        if: always()
+        run: |
+          if [ ! -f bau-warnungen.txt ]; then
+            echo "bau-warnungen.txt fehlt (Bau abgebrochen?)."
+            exit 0
+          fi
+          anzahl=$(grep -c . bau-warnungen.txt || true)
+          if [ "$anzahl" = "0" ]; then
+            echo "### Bau ohne Warnungen" >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          {
+            echo "### Bau-Warnungen: $anzahl"
+            echo ""
+            echo "Die Seite wurde trotzdem gebaut – an diesen Stellen fehlt etwas oder es wurde übersprungen:"
+            echo ""
+            sed -e '/^$/d' -e 's/</\&lt;/g' -e 's/^/- /' bau-warnungen.txt
+          } >> "$GITHUB_STEP_SUMMARY"
+          sed -e '/^$/d' -e 's/%/%25/g' -e 's/^/::warning title=Bau-Warnung::/' bau-warnungen.txt
+
       - name: Prüfen, dass die Seite wirklich gebaut wurde
         run: |
           test -s _site/index.html || { echo "::error title=Bau unvollständig::_site/index.html fehlt oder ist leer. Es wird nichts veröffentlicht."; exit 1; }
