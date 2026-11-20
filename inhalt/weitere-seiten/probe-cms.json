@@ -1,0 +1,31 @@
+{
+  "browsertitel": "Probe CMS — ESV München-Ost · Tischtennis",
+  "beschreibung": "Test-Seite aus Pages CMS mit Freitext, Excel-Tabelle und Bild.",
+  "menue_titel": "Probe CMS",
+  "im_menue": true,
+  "sitemap_prioritaet": "0.5",
+  "kopf": {
+    "ueberschrift": "Probe CMS",
+    "text": "<p></p>"
+  },
+  "bausteine": [
+    {
+      "_block": "freitext",
+      "hintergrund": "normal",
+      "ueberschrift": "Freitext-Probe",
+      "text": "<p>Dies ist eine Probe-Seite aus Pages CMS. München – „Anführungszeichen“ &amp; Co.</p>",
+      "hinweis": "<p></p>"
+    },
+    {
+      "_block": "tabelle",
+      "hintergrund": "normal",
+      "ueberschrift": "Eingefügte Tabelle",
+      "text": "<p></p>",
+      "eingefuegt": "Spieler\tBilanz\nProbe A\t5:1\nProbe B\t3:3",
+      "kopfzeile": true,
+      "erste_spalte_fett": false,
+      "suchfeld": false,
+      "hinweis": "<p></p>"
+    }
+  ]
+}
