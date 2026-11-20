@@ -1,0 +1,865 @@
+# Pages CMS – Formulare für die Vereinswebsite (Tischtennis ESV München-Ost)
+#
+# Diese Datei beschreibt, welche Formulare Heinz in app.pagescms.org sieht und in welche
+# Dateien (inhalt/…) sie schreiben. Pflege: README.md, Abschnitt "Neue Baustein-Art ergänzen".
+# Prüfen nach jeder Änderung:  node tools/pagescms/pruefe-config.mjs  und  node tools/pagescms/pruefe-inhalt.mjs
+#
+# WICHTIG (kein Datenverlust): Pages CMS schreibt beim Speichern NUR die Felder zurück, die hier
+# stehen. Jedes Feld, das in inhalt/*.json vorkommt, muss darum hier als Feld (oder als
+# "hidden: true") definiert sein – sonst ginge es beim nächsten Speichern verloren. Das prüft
+# tools/pagescms/pruefe-inhalt.mjs. "settings.content.merge" bleibt bewusst aus (siehe unten).
+#
+# Wertlisten, Feldnamen und Reihenfolge entsprechen docs/INHALTSMODELL.md und lib/schema.mjs.
+
+# ---------------------------------------------------------------------------------------------
+# Medien: zwei getrennte Ordner. "rename: safe" macht aus "Mein Bild (1).JPG" automatisch
+# "mein-bild-1.jpg" (Kleinbuchstaben, keine Leerzeichen/Umlaute/Sonderzeichen).
+# ---------------------------------------------------------------------------------------------
+media:
+  - name: bilder
+    label: Bilder
+    input: medien/bilder
+    output: /medien/bilder
+    rename: safe
+    extensions: [jpg, jpeg, png, webp, gif, svg]
+  - name: tabellen
+    label: Tabellen (Excel)
+    input: medien/tabellen
+    output: /medien/tabellen
+    rename: safe
+    extensions: [xlsx, csv]
+
+# ---------------------------------------------------------------------------------------------
+# Seitenleiste
+# ---------------------------------------------------------------------------------------------
+content:
+  - name: seiten
+    label: Seiten
+    type: group
+    items:
+      - name: seite-startseite
+        label: Startseite
+        description: "Die erste Seite der Website."
+        type: file
+        path: inhalt/seiten/index.json
+        format: json
+        operations: { create: false, rename: false, delete: false }
+        fields:
+          - { name: browsertitel, component: browsertitel }
+          - { name: beschreibung, component: beschreibung }
+          - { name: menue_titel, component: menue_titel, description: "Der Text des „Start“-Links in der Zeile über den Überschriften der anderen Seiten. Am besten so lassen." }
+          - { name: sitemap_prioritaet, component: sitemap_prioritaet }
+          - { name: kopf, component: kopf_gross, label: "Kopfbereich (ganz oben)" }
+          - { name: bausteine, component: bausteine, label: "Abschnitte der Seite" }
+
+      - name: seite-mannschaften
+        label: Mannschaften
+        description: "Die Seite mit allen Mannschaften."
+        type: file
+        path: inhalt/seiten/mannschaften.json
+        format: json
+        operations: { create: false, rename: false, delete: false }
+        fields:
+          - { name: browsertitel, component: browsertitel }
+          - { name: beschreibung, component: beschreibung }
+          - { name: menue_titel, component: menue_titel }
+          - { name: sitemap_prioritaet, component: sitemap_prioritaet }
+          - { name: kopf, component: kopf_einfach, label: "Kopfbereich (ganz oben)" }
+          - { name: bausteine, component: bausteine, label: "Abschnitte der Seite" }
+
+      - name: seite-training
+        label: Training
+        description: "Trainingszeiten und Hallen."
+        type: file
+        path: inhalt/seiten/training.json
+        format: json
+        operations: { create: false, rename: false, delete: false }
+        fields:
+          - { name: browsertitel, component: browsertitel }
+          - { name: beschreibung, component: beschreibung }
+          - { name: menue_titel, component: menue_titel }
+          - { name: sitemap_prioritaet, component: sitemap_prioritaet }
+          - { name: kopf, component: kopf_einfach, label: "Kopfbereich (ganz oben)" }
+          - { name: bausteine, component: bausteine, label: "Abschnitte der Seite" }
+
+      - name: seite-historie
+        label: Historie
+        description: "Die Geschichte der Abteilung."
+        type: file
+        path: inhalt/seiten/historie.json
+        format: json
+        operations: { create: false, rename: false, delete: false }
+        fields:
+          - { name: browsertitel, component: browsertitel }
+          - { name: beschreibung, component: beschreibung }
+          - { name: menue_titel, component: menue_titel }
+          - { name: sitemap_prioritaet, component: sitemap_prioritaet }
+          - { name: kopf, component: kopf_einfach, label: "Kopfbereich (ganz oben)" }
+          - { name: bausteine, component: bausteine, label: "Abschnitte der Seite" }
+
+      - name: seite-vereinsmeisterschaft
+        label: Vereinsmeisterschaft
+        description: "Die Seite mit der Ehrentafel. Die Jahrgänge pflegst du unter „Turniere“."
+        type: file
+        path: inhalt/seiten/vereinsmeisterschaft.json
+        format: json
+        operations: { create: false, rename: false, delete: false }
+        fields:
+          - { name: browsertitel, component: browsertitel }
+          - { name: beschreibung, component: beschreibung }
+          - { name: menue_titel, component: menue_titel }
+          - { name: sitemap_prioritaet, component: sitemap_prioritaet }
+          - { name: kopf, component: kopf_einfach, label: "Kopfbereich (ganz oben)" }
+          - { name: bausteine, component: bausteine, label: "Abschnitte der Seite" }
+
+      - name: seite-kontakt
+        label: Kontakt
+        description: "Kontaktangaben, Formular und Sponsoring."
+        type: file
+        path: inhalt/seiten/kontakt.json
+        format: json
+        operations: { create: false, rename: false, delete: false }
+        fields:
+          - { name: browsertitel, component: browsertitel }
+          - { name: beschreibung, component: beschreibung }
+          - { name: menue_titel, component: menue_titel }
+          - { name: sitemap_prioritaet, component: sitemap_prioritaet }
+          - { name: kopf, component: kopf_einfach, label: "Kopfbereich (ganz oben)" }
+          - { name: bausteine, component: bausteine, label: "Abschnitte der Seite" }
+
+      - name: seite-impressum
+        label: Impressum
+        description: "Rechtlich vorgeschrieben – Änderungen nur nach Rücksprache mit dem Vorstand."
+        type: file
+        path: inhalt/seiten/impressum.json
+        format: json
+        operations: { create: false, rename: false, delete: false }
+        fields:
+          - { name: browsertitel, component: browsertitel }
+          - { name: beschreibung, component: beschreibung }
+          - { name: menue_titel, component: menue_titel }
+          - { name: sitemap_prioritaet, component: sitemap_prioritaet }
+          - { name: kopf, component: kopf_einfach, label: "Kopfbereich (ganz oben)" }
+          - { name: bausteine, component: bausteine, label: "Abschnitte der Seite" }
+
+      - name: seite-datenschutz
+        label: Datenschutz
+        description: "Rechtlich vorgeschrieben – Änderungen nur nach Rücksprache mit dem Vorstand."
+        type: file
+        path: inhalt/seiten/datenschutz.json
+        format: json
+        operations: { create: false, rename: false, delete: false }
+        fields:
+          - { name: browsertitel, component: browsertitel }
+          - { name: beschreibung, component: beschreibung }
+          - { name: menue_titel, component: menue_titel }
+          - { name: sitemap_prioritaet, component: sitemap_prioritaet }
+          - { name: kopf, component: kopf_einfach, label: "Kopfbereich (ganz oben)" }
+          - { name: bausteine, component: bausteine, label: "Abschnitte der Seite" }
+
+      - name: weitere-seiten
+        label: Weitere Seiten
+        description: "Eigene neue Seiten (zum Beispiel „Jugend-News“). Hier kannst du Seiten anlegen und wieder löschen."
+        type: collection
+        path: inhalt/weitere-seiten
+        format: json
+        subfolders: false
+        exclude: [.gitkeep]
+        filename: "{primary}.json"
+        view:
+          primary: menue_titel
+          fields: [menue_titel, browsertitel]
+          sort: [menue_titel]
+        fields:
+          - { name: browsertitel, component: browsertitel }
+          - { name: beschreibung, component: beschreibung }
+          - name: menue_titel
+            component: menue_titel
+            description: "Der Name der Seite. Daraus entsteht automatisch die Adresse der Seite (aus „Jugend News“ wird jugend-news.html). Er steht auch in der Zeile über der Überschrift und – wenn du das unten einschaltest – im Menü. Wähle keinen der festen Namen (Mannschaften, Training, Historie, Vereinsmeisterschaft, Kontakt, Impressum, Datenschutz)."
+          - { name: im_menue, label: "Im Menü oben anzeigen", type: boolean, default: false, description: "Eingeschaltet: Die Seite erscheint als Menüpunkt ganz oben. Ausgeschaltet: Man erreicht sie nur über einen Link, den du irgendwo einbaust." }
+          - { name: sitemap_prioritaet, component: sitemap_prioritaet }
+          - { name: kopf, component: kopf_einfach, label: "Kopfbereich (ganz oben)" }
+          - { name: bausteine, component: bausteine, label: "Abschnitte der Seite" }
+
+  - name: turniere
+    label: Turniere
+    type: group
+    items:
+      - name: turnier-vereinsmeisterschaft
+        label: Jahrgänge Vereinsmeisterschaft
+        description: "Alle Sieger der Vereinsmeisterschaft, Jahr für Jahr."
+        type: file
+        path: inhalt/turniere/vereinsmeisterschaft.json
+        format: json
+        operations: { create: false, rename: false, delete: false }
+        fields:
+          - { name: titel, label: "Name des Turniers", type: string, description: "Steht auf dem Reiter und über der Tabelle. Leer = der Reiter heißt nur „Tabelle“." }
+          - { name: zusatz, label: "Zusatz unter dem Namen", type: string, description: "Zum Beispiel „Einzel und Doppel“. Steht in der Zeile unter der Tabelle. Leer = kein Zusatz." }
+          - { name: excel, component: tabelle_datei, label: "Excel-Datei statt Liste (nur im Ausnahmefall)", description: "Normalerweise bleibt das leer und du pflegst die Liste unten. Wenn du hier eine Excel-Datei wählst, gilt nur noch die Datei und die Liste unten wird nicht mehr angezeigt. Spalten der Reihe nach: Jahr, 1. Platz, 2. Platz, 3. Platz, Doppel. Als .xlsx speichern; die erste Zeile wird zur Kopfzeile." }
+          - name: spaltentitel
+            label: "Überschriften der Spalten"
+            type: object
+            description: "Die Kopfzeile der Tabelle. Leer = Standardtext (Jahr, Einzel 1. Platz, 2. Platz, 3. Platz, Doppel-Sieger)."
+            fields:
+              - { name: jahr, label: "Spalte 1", type: string }
+              - { name: platz1, label: "Spalte 2", type: string }
+              - { name: platz2, label: "Spalte 3", type: string }
+              - { name: platz3, label: "Spalte 4", type: string }
+              - { name: doppel, label: "Spalte 5", type: string }
+          - name: jahrgaenge
+            label: "Jahrgänge"
+            type: object
+            description: "Die Reihenfolge ist egal: Die Website sortiert selbst, der neueste Jahrgang erscheint oben. Ein neuer Jahrgang: unten auf „Add an item“ klicken und ausfüllen. Ein leeres Feld erscheint auf der Seite als „—“. Eine zweite Paarung (z. B. bei Doppel) schreibst du in eine neue Zeile im selben Feld."
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{jahr} · {platz1}"
+            fields:
+              - { name: jahr, label: "Jahr", type: string, required: true, description: "Zum Beispiel 2027." }
+              - { name: platz1, label: "Einzel 1. Platz (Sieger)", type: text, description: "Name des Siegers. Leer = „—“." }
+              - { name: platz2, label: "2. Platz", type: text, description: "Leer = „—“." }
+              - { name: platz3, label: "3. Platz", type: text, description: "Bei zwei Dritten: Namen mit „ / “ trennen oder in zwei Zeilen schreiben. Leer = „—“." }
+              - { name: doppel, label: "Doppel-Sieger", type: text, description: "Zum Beispiel „Weimar / Radspieler“. Mehrere Paarungen: jede in eine neue Zeile. Leer = „—“." }
+
+      - name: turnier-facklerpokal
+        label: Jahrgänge Facklerpokal
+        description: "Alle Sieger des Facklerpokals, Jahr für Jahr."
+        type: file
+        path: inhalt/turniere/facklerpokal.json
+        format: json
+        operations: { create: false, rename: false, delete: false }
+        fields:
+          - { name: titel, label: "Name des Turniers", type: string, description: "Steht auf dem Reiter und über der Tabelle. Leer = der Reiter heißt nur „Tabelle“." }
+          - { name: zusatz, label: "Zusatz unter dem Namen", type: string, description: "Zum Beispiel „Doppelturnier“. Steht in der Zeile unter der Tabelle. Leer = kein Zusatz." }
+          - { name: excel, component: tabelle_datei, label: "Excel-Datei statt Liste (nur im Ausnahmefall)", description: "Normalerweise bleibt das leer und du pflegst die Liste unten. Wenn du hier eine Excel-Datei wählst, gilt nur noch die Datei und die Liste unten wird nicht mehr angezeigt. Spalten der Reihe nach: Jahr, Siegerdoppel, 2. Platz. Als .xlsx speichern; die erste Zeile wird zur Kopfzeile." }
+          - name: spaltentitel
+            label: "Überschriften der Spalten"
+            type: object
+            description: "Die Kopfzeile der Tabelle. Leer = Standardtext (Jahr, Siegerdoppel, 2. Platz)."
+            fields:
+              - { name: jahr, label: "Spalte 1", type: string }
+              - { name: sieger, label: "Spalte 2", type: string }
+              - { name: zweiter, label: "Spalte 3", type: string }
+          - name: jahrgaenge
+            label: "Jahrgänge"
+            type: object
+            description: "Die Reihenfolge ist egal: Die Website sortiert selbst, der neueste Jahrgang erscheint oben. Ein neuer Jahrgang: unten auf „Add an item“ klicken und ausfüllen. Ein leeres Feld erscheint auf der Seite als „—“. Eine zweite Paarung kommt in eine neue Zeile im selben Feld."
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{jahr} · {sieger}"
+            fields:
+              - { name: jahr, label: "Jahr", type: string, required: true, description: "Zum Beispiel 2027." }
+              - { name: sieger, label: "Siegerdoppel", type: text, description: "Zum Beispiel „Rutsche / Götz“. Mehrere Paarungen: jede in eine neue Zeile. Leer = „—“." }
+              - { name: zweiter, label: "2. Platz", type: text, description: "Zum Beispiel „Huber / Häußler“. Leer = „—“." }
+
+  - name: einstellungen
+    label: Einstellungen
+    description: "Vereinsname, Menü, Fußzeile und Farben – gelten für die ganze Website."
+    type: file
+    path: inhalt/einstellungen.json
+    format: json
+    operations: { create: false, rename: false, delete: false }
+    fields:
+      - name: verein
+        label: "Verein (Seitenkopf)"
+        type: object
+        fields:
+          - { name: name, label: "Name des Vereins", type: string, description: "Steht fett ganz oben links auf jeder Seite. Leer = kein Name." }
+          - { name: abteilung, label: "Name der Abteilung", type: string, description: "Steht klein unter dem Vereinsnamen. Leer = keine Zeile." }
+          - { name: logo, component: bild, label: "Vereinswappen", description: "Wird oben links, in der Fußzeile und als kleines Symbol im Browser-Tab gezeigt. Leer = kein Wappen." }
+          - { name: logo_alt, label: "Beschreibung des Wappens", type: string, description: "Kurze Beschreibung für Menschen, die das Bild nicht sehen können, zum Beispiel „Wappen ESV München-Ost“. Leer = keine Beschreibung." }
+      - name: kopf_button
+        label: "Goldener Knopf oben rechts"
+        type: object
+        fields:
+          - { name: text, label: "Beschriftung", type: string, description: "Zum Beispiel „Schnuppern“. Leer = der Knopf wird nicht angezeigt." }
+          - { name: ziel, component: link_ziel, label: "Ziel", description: "Wohin der Knopf führt. Eine Seite der Website: training.html. Eine volle Adresse: https://… Leer = kein Knopf." }
+      - name: menue
+        label: "Menü oben"
+        type: object
+        description: "Die Menüpunkte in der Reihenfolge, wie sie oben erscheinen. Mit dem Griff links verschiebst du einen Punkt."
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{index}. {titel}"
+        fields:
+          - { name: titel, label: "Name im Menü", type: string, required: true }
+          - { name: ziel, component: link_ziel, label: "Ziel", description: "Eine Seite der Website: training.html. Die Startseite ist index.html. Ein Abschnitt: kontakt.html#sponsoring. Eine fremde Seite: die volle Adresse mit https://" }
+      - name: fusszeile
+        label: "Fußzeile (ganz unten)"
+        type: object
+        fields:
+          - { name: text, label: "Satz unter dem Wappen", type: text, description: "Ein kurzer Satz über den Verein. Leer = kein Satz." }
+          - { name: logo_alt, label: "Beschreibung des Wappens", type: string, description: "Kurze Beschreibung des Wappens für Menschen, die das Bild nicht sehen können. Leer = keine Beschreibung." }
+          - name: spalten
+            label: "Linkspalten"
+            type: object
+            description: "Die Spalten mit Links in der Fußzeile."
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{index}. {titel}"
+            fields:
+              - { name: titel, label: "Überschrift der Spalte", type: string }
+              - name: links
+                label: "Einträge der Spalte"
+                type: object
+                list:
+                  collapsible:
+                    collapsed: true
+                    summary: "{text}"
+                fields:
+                  - { name: text, label: "Angezeigter Text", type: string }
+                  - { name: ziel, component: link_ziel, label: "Ziel", description: "Eine Seite der Website: training.html. Eine fremde Seite: die volle Adresse mit https://. Leer = nur Text ohne Link." }
+          - { name: copyright, label: "Zeile ganz unten links", type: string, description: "Zum Beispiel „© {jahr} ESV München-Ost“. Der Platzhalter {jahr} wird automatisch zur aktuellen Jahreszahl. Leer = keine Zeile." }
+          - name: rechtliche_links
+            label: "Rechtliche Links (unten rechts)"
+            type: object
+            description: "Zum Beispiel Impressum und Datenschutz."
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{text}"
+            fields:
+              - { name: text, label: "Angezeigter Text", type: string }
+              - { name: ziel, component: link_ziel, label: "Ziel", description: "Zum Beispiel impressum.html." }
+      - { name: vorschaubild, component: bild, label: "Vorschaubild für WhatsApp & Co.", description: "Dieses Bild erscheint, wenn jemand einen Link zur Website verschickt. Leer = kein Vorschaubild." }
+      - name: design
+        label: "Farben"
+        type: object
+        fields:
+          - name: farbschema
+            label: "Farbschema"
+            type: select
+            default: petrol
+            description: "Die Grundfarben der ganzen Seite. „Petrol“ ist wie bisher."
+            options:
+              values:
+                - { value: petrol, label: "Petrol (wie bisher)" }
+                - { value: nachtblau, label: "Nachtblau" }
+                - { value: tannengruen, label: "Tannengrün" }
+                - { value: anthrazit, label: "Anthrazit" }
+          - name: akzentfarbe
+            label: "Akzentfarbe (Knöpfe, Links, Linien)"
+            type: string
+            pattern:
+              regex: "^(#[0-9a-fA-F]{6})?$"
+              message: "Bitte so eintragen: ein Gartenzaun und sechs Zeichen, zum Beispiel #C9A227."
+            description: "Zum Beispiel #C9A227. Leer = das bisherige Gold."
+
+# ---------------------------------------------------------------------------------------------
+# Wiederverwendbare Bausteine der Formulare. Jede Definition steht nur hier und wird oben mit
+# "component: <name>" benutzt. Beschriftung (label) und Hilfetext (description) darf die Stelle,
+# an der die Komponente benutzt wird, überschreiben.
+# ---------------------------------------------------------------------------------------------
+components:
+
+  # ---- einfache Felder --------------------------------------------------------------------
+  browsertitel:
+    label: "Titel im Browser-Tab und bei Google"
+    type: string
+    required: true
+    description: "Der Titel, der im Browser-Tab und in den Google-Ergebnissen steht. Möglichst unter 60 Zeichen."
+  beschreibung:
+    label: "Kurzbeschreibung für Google"
+    type: text
+    required: true
+    description: "Ein bis zwei Sätze (etwa 150 Zeichen), die in den Google-Ergebnissen unter dem Titel stehen."
+  menue_titel:
+    label: "Kurzname der Seite"
+    type: string
+    required: true
+    description: "Steht in der Zeile „Start / …“ über der Überschrift."
+  # Technisches Feld: bleibt dem Laien verborgen, wird aber beim Speichern unverändert zurückgeschrieben.
+  sitemap_prioritaet:
+    label: "Wichtigkeit für Google (technisch)"
+    type: select
+    hidden: true
+    default: "0.5"
+    options:
+      values:
+        - { value: "1.0", label: "1,0 (am wichtigsten)" }
+        - { value: "0.9", label: "0,9" }
+        - { value: "0.8", label: "0,8" }
+        - { value: "0.7", label: "0,7" }
+        - { value: "0.6", label: "0,6" }
+        - { value: "0.5", label: "0,5 (normal)" }
+        - { value: "0.4", label: "0,4" }
+        - { value: "0.3", label: "0,3" }
+        - { value: "0.2", label: "0,2" }
+        - { value: "0.1", label: "0,1 (am unwichtigsten)" }
+  kicker:
+    label: "Kleine Zeile über der Überschrift"
+    type: string
+    description: "Eine kurze goldene Zeile über der Überschrift. Leer = keine solche Zeile."
+  ueberschrift:
+    label: "Überschrift"
+    type: string
+    description: "Leer = keine Überschrift."
+  anker:
+    label: "Sprungmarke (nur für Fortgeschrittene)"
+    type: string
+    pattern:
+      regex: "^[A-Za-z0-9_-]*$"
+      message: "Nur Buchstaben ohne Umlaute, Ziffern, Unterstrich und Bindestrich."
+    description: "Ein Kurzname, damit man direkt zu diesem Abschnitt springen kann. Heißt er zum Beispiel hallen, führt der Link training.html#hallen genau hierher. Nur Buchstaben ohne Umlaute, Ziffern und Bindestrich. Leer = man kann nicht direkt hierher springen."
+  link_ziel:
+    label: "Ziel des Links"
+    type: string
+    description: "Wohin der Link führt. Eine Seite der Website: training.html. Ein Abschnitt auf einer Seite: kontakt.html#sponsoring. Eine fremde Seite: die volle Adresse mit https://. Leer = kein Link."
+  hintergrund:
+    label: "Hintergrund"
+    type: select
+    default: normal
+    description: "„Abgesetzt“ ist eine etwas dunklere Fläche mit feinen Linien oben und unten – so hebst du einen Abschnitt hervor."
+    options:
+      values:
+        - { value: normal, label: "Normal" }
+        - { value: abgesetzt, label: "Abgesetzt (dunklere Fläche)" }
+  knopf_stil:
+    label: "Aussehen des Knopfs"
+    type: select
+    default: gold
+    description: "„Gold“ ist ein gefüllter goldener Knopf, „Nur Rahmen“ ein schlichter Knopf mit Rand."
+    options:
+      values:
+        - { value: gold, label: "Gold (gefüllt)" }
+        - { value: rahmen, label: "Nur Rahmen" }
+
+  # ---- Fließtext, Bilder, Dateien -----------------------------------------------------------
+  # Fließtext wird als HTML gespeichert (format: html – ohne diese Zeile wäre es Markdown).
+  # Der Umschalter auf den Quelltext ist aus (switcher: false), damit niemand Code sieht.
+  # Bild-Einfügen im Fließtext ist aus (media: false): Das Bauskript entfernt <img> aus
+  # Fließtext, ein eingefügtes Bild würde also nicht erscheinen. Bilder kommen über den
+  # Baustein "Bilder". Zum Einschalten: media: bilder (und Bauskript erweitern).
+  fliesstext:
+    label: "Text"
+    type: rich-text
+    description: "Du kannst Text fett oder kursiv machen, Listen anlegen und Links einfügen. Leer = nichts wird angezeigt."
+    options:
+      format: html
+      switcher: false
+      media: false
+  bild:
+    label: "Bild"
+    type: image
+    description: "Ein Bild hochladen oder aus den vorhandenen wählen. Neue Bilder bekommen am besten einen neuen Dateinamen. Leer = kein Bild."
+    options:
+      media: bilder
+  tabelle_datei:
+    label: "Excel-Datei"
+    type: file
+    description: "Eine Excel-Datei hochladen oder aus den vorhandenen wählen. Als .xlsx speichern; die erste Zeile wird zur Kopfzeile. Leer = keine Datei."
+    options:
+      media: tabellen
+      extensions: [xlsx, csv]
+
+  # ---- Info-Paare (Begriff / Wert / Zusatz) -------------------------------------------------
+  infos:
+    label: "Angaben"
+    type: object
+    description: "Eine Liste aus Angaben, zum Beispiel „Heimat – Vereinshalle …“. Jede Angabe hat eine kleine goldene Bezeichnung, einen fetten Wert und eine kleine Zeile darunter."
+    list:
+      collapsible:
+        collapsed: true
+        summary: "{index}. {begriff}"
+    fields:
+      - { name: begriff, label: "Bezeichnung", type: string, description: "Die kleine goldene Zeile, zum Beispiel „Heimat“. Leer = keine Bezeichnung." }
+      - { name: wert, component: fliesstext, label: "Wert (fett)", description: "Die eigentliche Angabe, zum Beispiel eine Adresse oder Telefonnummer. Hier genügt eine Zeile. Leer = nichts." }
+      - { name: zusatz, component: fliesstext, label: "Zusatz (kleine Zeile darunter)", description: "Eine kleine ergänzende Zeile. Hier genügt eine Zeile. Leer = keine Zusatzzeile." }
+
+  # ---- Kopfbereiche ---------------------------------------------------------------------------
+  kopf_einfach:
+    label: "Kopfbereich (ganz oben)"
+    type: object
+    description: "Der farbige Bereich ganz oben auf der Seite."
+    fields:
+      - { name: ueberschrift, component: ueberschrift, label: "Große Überschrift", description: "Die Überschrift der Seite. Leer = keine Überschrift." }
+      - { name: text, component: fliesstext, label: "Einleitung", description: "Ein kurzer Einleitungstext unter der Überschrift. Leer = kein Text." }
+      - { name: bild, component: bild, label: "Hintergrundbild", description: "Ein Bild hinter der Überschrift (wird abgedunkelt). Neue Bilder bekommen am besten einen neuen Dateinamen. Leer = der normale Farbverlauf." }
+
+  kopf_gross:
+    label: "Kopfbereich (ganz oben)"
+    type: object
+    description: "Der große Bereich ganz oben auf der Startseite."
+    fields:
+      - { name: kicker, component: kicker, description: "Die kleine Zeile über der großen Überschrift. Leer = keine solche Zeile." }
+      - { name: ueberschrift, component: ueberschrift, label: "Große Überschrift", description: "Die große Überschrift der Startseite." }
+      - { name: text, component: fliesstext, label: "Einleitung", description: "Der Text unter der Überschrift. Leer = kein Text." }
+      - name: buttons
+        label: "Knöpfe"
+        type: object
+        description: "Die Knöpfe unter dem Text. Leer = keine Knöpfe."
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{index}. {text}"
+        fields:
+          - { name: text, label: "Beschriftung", type: string, description: "Zum Beispiel „Zum Schnuppertraining →“." }
+          - { name: ziel, component: link_ziel, label: "Ziel" }
+          - { name: stil, component: knopf_stil, label: "Aussehen" }
+      - name: fakten
+        label: "Kurze Fakten-Zeile unter den Knöpfen"
+        type: object
+        description: "Jeder Eintrag ist ein Satzteil: Text davor, ein fett hervorgehobener Teil und Text danach. Es muss nicht alles ausgefüllt sein. Leer = keine Fakten-Zeile."
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{index}. {vor} {fett} {nach}"
+        fields:
+          - { name: vor, label: "Text davor", type: string, description: "Leer = nichts davor." }
+          - { name: fett, label: "Fett hervorgehoben", type: string, description: "Leer = nichts Fettes." }
+          - { name: nach, label: "Text danach", type: string, description: "Leer = nichts danach." }
+      - { name: bild, component: bild, label: "Hintergrundbild", description: "Das große Bild hinter der Überschrift (wird abgedunkelt). Neue Bilder bekommen am besten einen neuen Dateinamen. Leer = kein Bild." }
+      - { name: bild_beschreibung, label: "Beschreibung des Hintergrundbilds", type: string, description: "Ein kurzer Satz für Menschen, die das Bild nicht sehen können, zum Beispiel „Spieler beim Tischtennis in der Vereinshalle“. Leer = keine Beschreibung." }
+      - name: karte
+        label: "Info-Karte rechts"
+        type: object
+        description: "Die kleine Karte rechts neben dem Text, zum Beispiel „Training diese Woche“. Leer = keine Karte."
+        fields:
+          - { name: titel, label: "Überschrift der Karte", type: string, description: "Leer = keine Überschrift." }
+          - name: zeilen
+            label: "Zeilen der Karte"
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{index}. {fett}"
+            fields:
+              - { name: fett, label: "Fette Zeile", type: string, description: "Zum Beispiel „Erwachsene“. Leer = keine fette Zeile." }
+              - { name: text, label: "Zeile darunter", type: string, description: "Zum Beispiel „Mo ab 20:00 & Do ab 19:30 Uhr · Vereinshalle“. Leer = nichts darunter." }
+          - { name: fuss_text, label: "Kleiner Text unten links", type: string, description: "Leer = kein Text." }
+          - { name: fuss_link_text, label: "Link unten rechts: Text", type: string, description: "Leer = kein Link." }
+          - { name: fuss_link_ziel, component: link_ziel, label: "Link unten rechts: Ziel" }
+
+  # ---- Die Abschnitte einer Seite ------------------------------------------------------------
+  # Ein Abschnitt = ein Baustein. Heinz wählt beim Hinzufügen eine Art (Knopf mit dem deutschen
+  # Namen). Schlüssel im JSON: "_block". Keine Bausteine in Bausteinen.
+  bausteine:
+    label: "Abschnitte der Seite"
+    type: block
+    blockKey: _block
+    description: "Die Seite besteht aus Abschnitten, von oben nach unten. Mit „Add an item“ fügst du einen neuen Abschnitt hinzu und wählst dann seine Art. Mit dem Griff links verschiebst du einen Abschnitt, mit dem Papierkorb löschst du ihn. Rechts oben im Abschnitt steht seine Art."
+    list:
+      collapsible:
+        collapsed: true
+        summary: "{index}. {ueberschrift}"
+    blocks:
+
+      # 1 -------------------------------------------------------------------------------------
+      - name: text_mit_kasten
+        label: "Text mit Info-Kasten"
+        fields:
+          - { name: hintergrund, component: hintergrund }
+          - { name: anker, component: anker }
+          - { name: kicker, component: kicker }
+          - { name: ueberschrift, component: ueberschrift }
+          - { name: text, component: fliesstext, label: "Text", description: "Der Haupttext links. Leer = kein Text." }
+          - { name: punkte, component: fliesstext, label: "Aufzählungspunkte", list: true, description: "Eine Liste mit goldenen Punkten unter dem Text. Jeder Eintrag ist ein Punkt, hier genügt eine Zeile. Leer = keine Punkte." }
+          - { name: button_text, label: "Knopf: Beschriftung", type: string, description: "Der Knopf unter dem Text. Leer = kein Knopf." }
+          - { name: button_ziel, component: link_ziel, label: "Knopf: Ziel" }
+          - { name: button_stil, component: knopf_stil, label: "Knopf: Aussehen" }
+          - name: kasten
+            label: "Info-Kasten rechts"
+            type: object
+            description: "Der Kasten rechts neben dem Text. Leer = der Text nimmt die ganze Breite ein."
+            fields:
+              - { name: kicker, label: "Kleine Zeile oben im Kasten", type: string, description: "Leer = keine Zeile." }
+              - { name: infos, component: infos, label: "Angaben im Kasten" }
+              - { name: liste, label: "Einfache Liste", type: string, list: true, description: "Eine schlichte Liste, zum Beispiel Partner und Förderer. Leer = keine Liste." }
+              - { name: hinweis, component: fliesstext, label: "Kleiner Hinweis unten", description: "Ein kleiner Satz unten im Kasten, hier genügt eine Zeile. Leer = kein Hinweis." }
+
+      # 2 -------------------------------------------------------------------------------------
+      - name: karten
+        label: "Karten"
+        fields:
+          - { name: hintergrund, component: hintergrund }
+          - { name: anker, component: anker }
+          - { name: kicker, component: kicker }
+          - { name: ueberschrift, component: ueberschrift }
+          - { name: link_rechts_text, label: "Link rechts neben der Überschrift: Text", type: string, description: "Zum Beispiel „Alle Mannschaften →“. Leer = kein Link." }
+          - { name: link_rechts_ziel, component: link_ziel, label: "Link rechts neben der Überschrift: Ziel" }
+          - name: spalten
+            label: "Karten pro Reihe"
+            type: select
+            default: "3"
+            description: "Auf dem Handy steht immer eine Karte pro Reihe."
+            options:
+              values:
+                - { value: "2", label: "2 Karten nebeneinander" }
+                - { value: "3", label: "3 Karten nebeneinander" }
+          - name: raster
+            label: "Anordnung"
+            type: select
+            default: standard
+            description: "„Zwei breite Karten“ ist die Anordnung wie bei den Turnieren auf der Historie-Seite."
+            options:
+              values:
+                - { value: standard, label: "Normal" }
+                - { value: turniere, label: "Zwei breite Karten (wie bei den Turnieren)" }
+          - name: karten
+            label: "Karten"
+            type: object
+            description: "Die einzelnen Karten. Jede Karte braucht nur das, was du anzeigen willst – alles andere kannst du leer lassen."
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{index}. {titel}"
+            fields:
+              - { name: zwischentitel_davor, label: "Neue Reihe mit Zwischenüberschrift", type: string, description: "Wenn hier etwas steht, beginnt vor dieser Karte eine neue Reihe mit dieser Zwischenüberschrift, zum Beispiel „Damen & Jugend“. Leer = die Karte reiht sich normal ein." }
+              - { name: kicker, label: "Kleine Zeile oben", type: string, description: "Leer = keine Zeile." }
+              - { name: titel, label: "Titel der Karte", type: string, description: "Leer = kein Titel." }
+              - { name: unterzeile, label: "Graue Zeile unter dem Titel", type: string, description: "Leer = keine Zeile." }
+              - { name: fettzeile, label: "Hervorgehobene Zeile", type: string, description: "Zum Beispiel eine Straße. Leer = keine Zeile." }
+              - { name: zeile2, label: "Zeile darunter", type: string, description: "Zum Beispiel PLZ und Ort. Leer = keine Zeile." }
+              - { name: text, component: fliesstext, label: "Text der Karte", description: "Leer = kein Text." }
+              - name: zeilen
+                label: "Zeilen mit Trennlinie"
+                type: object
+                description: "Zum Beispiel Trainingszeiten. Leer = keine Zeilen."
+                list:
+                  collapsible:
+                    collapsed: true
+                    summary: "{index}. {fett}"
+                fields:
+                  - { name: fett, label: "Fette Bezeichnung", type: string, description: "Zum Beispiel „Montag“. Leer = keine fette Bezeichnung." }
+                  - { name: text, label: "Text darunter", type: string, description: "Zum Beispiel „20:00–22:00 Uhr“. Leer = nichts darunter." }
+              - { name: rangliste_titel, label: "Überschrift der Rangliste", type: string, description: "Zum Beispiel „Sieger Einzel 2026“. Leer = keine Rangliste." }
+              - { name: rangliste, label: "Rangliste (Platz 1, 2, 3 …)", type: string, list: true, description: "Ein Name pro Eintrag, der erste ist Platz 1. Die Nummern setzt die Seite selbst. Leer = keine Rangliste." }
+              - { name: bild, component: bild, label: "Bild oben in der Karte", description: "Leer = kein Bild." }
+              - { name: bild_alt, label: "Beschreibung des Bildes", type: string, description: "Ein kurzer Satz für Menschen, die das Bild nicht sehen können. Leer = keine Beschreibung." }
+              - { name: link_text, label: "Link unten in der Karte: Text", type: string, description: "Zum Beispiel „Details →“. Leer = kein Link." }
+              - { name: link_ziel, component: link_ziel, label: "Link unten in der Karte: Ziel" }
+          - { name: hinweise, component: fliesstext, label: "Kleine Hinweise unter den Karten", list: true, description: "Jeder Eintrag ist ein kleiner Hinweis, hier genügt eine Zeile. Leer = keine Hinweise." }
+
+      # 3 -------------------------------------------------------------------------------------
+      - name: zahlenband
+        label: "Zahlenband"
+        fields:
+          - { name: anker, component: anker }
+          - name: zahlen
+            label: "Zahlen"
+            type: object
+            description: "Ein Band mit großen Zahlen, zum Beispiel „50+ – Jahre im Verein“. Leer = das Band erscheint nicht."
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{zahl} {text}"
+            fields:
+              - { name: zahl, label: "Große Zahl", type: string, description: "Zum Beispiel „50+“. Leer = keine Zahl." }
+              - { name: text, label: "Beschriftung", type: string, description: "Zum Beispiel „Jahre im Verein“. Leer = keine Beschriftung." }
+
+      # 4 -------------------------------------------------------------------------------------
+      - name: aufruf
+        label: "Aufruf-Band (Seitenende)"
+        fields:
+          - { name: anker, component: anker }
+          - { name: ueberschrift, component: ueberschrift, label: "Überschrift", description: "Zum Beispiel „Lust auf eine Runde Tischtennis?“. Leer = keine Überschrift." }
+          - { name: text, component: fliesstext, label: "Kurzer Text", description: "Ein bis zwei Sätze. Leer = kein Text." }
+          - { name: button_text, label: "Knopf rechts: Beschriftung", type: string, description: "Der goldene Knopf rechts. Leer = kein Knopf." }
+          - { name: button_ziel, component: link_ziel, label: "Knopf rechts: Ziel" }
+
+      # 5 -------------------------------------------------------------------------------------
+      - name: zeitleiste
+        label: "Zeitleiste"
+        fields:
+          - { name: hintergrund, component: hintergrund }
+          - { name: anker, component: anker }
+          - { name: kicker, component: kicker }
+          - { name: ueberschrift, component: ueberschrift }
+          - name: eintraege
+            label: "Einträge"
+            type: object
+            description: "Die Stationen der Zeitleiste, von oben nach unten. Leer = keine Einträge."
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{jahr} · {titel}"
+            fields:
+              - { name: jahr, label: "Jahr oder Zeitraum", type: string, description: "Zum Beispiel „2020“ oder „bis 2020“. Leer = nichts links." }
+              - { name: titel, label: "Fette Zeile", type: string, description: "Leer = keine fette Zeile." }
+              - { name: text, component: fliesstext, label: "Text", description: "Leer = kein Text." }
+
+      # 6 -------------------------------------------------------------------------------------
+      - name: ehrentafel
+        label: "Ehrentafel"
+        fields:
+          - { name: hintergrund, component: hintergrund }
+          - { name: anker, component: anker }
+          - { name: kicker, component: kicker }
+          - { name: ueberschrift, component: ueberschrift }
+          - { name: text, component: fliesstext, label: "Einleitung", description: "Ein kurzer grauer Text über den Kacheln. Leer = kein Text." }
+          - name: gruppen
+            label: "Gruppen"
+            type: object
+            description: "Gruppen von Kacheln, zum Beispiel „Rekordsieger Einzel“. Leer = keine Gruppen."
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{index}. {titel}"
+            fields:
+              - { name: titel, label: "Überschrift der Gruppe", type: string, description: "Leer = keine Überschrift." }
+              - name: eintraege
+                label: "Kacheln"
+                type: object
+                list:
+                  collapsible:
+                    collapsed: true
+                    summary: "{name}: {zahl}"
+                fields:
+                  - { name: zahl, label: "Große Zahl", type: string, description: "Zum Beispiel „7“. Leer = keine Zahl." }
+                  - { name: name, label: "Name", type: string, description: "Leer = kein Name." }
+                  - { name: zusatz, label: "Kleine Zeile unter dem Namen", type: string, description: "Zum Beispiel „Einzeltitel“. Leer = keine Zeile." }
+
+      # 7 -------------------------------------------------------------------------------------
+      - name: turnierarchiv
+        label: "Turnier-Archiv (Reiter mit Suche)"
+        description: "Zeigt die Tabellen der Vereinsmeisterschaft und des Facklerpokals mit Suchfeld."
+        fields:
+          - { name: hintergrund, component: hintergrund }
+          - { name: anker, component: anker }
+          - { name: kicker, component: kicker }
+          - { name: ueberschrift, component: ueberschrift }
+          - { name: suchfeld_text, label: "Text im Suchfeld", type: string, description: "Der graue Hinweis im Suchfeld. Leer = „Name oder Jahr suchen …“." }
+          - { name: kein_treffer_text, label: "Text, wenn nichts gefunden wird", type: string, description: "Leer = „Kein Treffer – probier einen anderen Namen oder ein anderes Jahr.“" }
+          - { name: hinweis, component: fliesstext, label: "Hinweis unter den Tabellen", description: "Ein kleiner Satz unter den Tabellen, hier genügt eine Zeile. Leer = kein Hinweis." }
+          - name: weitere_reiter
+            label: "Weitere Reiter"
+            type: object
+            description: "Vereinsmeisterschaft und Facklerpokal erscheinen immer; ihre Jahrgänge pflegst du unter „Turniere“. Hier kannst du zusätzliche Reiter mit eigenen Tabellen anlegen. Leer = keine weiteren Reiter."
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{index}. {titel}"
+            fields:
+              - { name: titel, label: "Name des Reiters", type: string, description: "Leer = „Tabelle 1“, „Tabelle 2“ usw." }
+              - { name: excel, component: tabelle_datei, label: "Excel-Datei", description: "Als .xlsx speichern; die erste Zeile wird zur Kopfzeile. Leer = stattdessen gilt das Feld darunter." }
+              - { name: eingefuegt, label: "Aus Excel eingefügt", type: text, description: "In Excel die Zellen markieren, kopieren und hier einfügen. Die erste Zeile wird zur Kopfzeile. Wenn oben eine Excel-Datei gewählt ist, gilt die Datei. Leer = der Reiter bleibt leer." }
+
+      # 8 -------------------------------------------------------------------------------------
+      - name: kontakt
+        label: "Kontakt mit Formular"
+        fields:
+          - { name: hintergrund, component: hintergrund }
+          - { name: anker, component: anker }
+          - { name: kicker, component: kicker }
+          - { name: ueberschrift, component: ueberschrift }
+          - { name: infos, component: infos, label: "Kontaktangaben (links)" }
+          - { name: formular_titel, label: "Formular: Überschrift", type: string, description: "Zum Beispiel „Schreib uns“. Leer = keine Überschrift." }
+          - { name: formular_text, component: fliesstext, label: "Formular: Satz darunter", description: "Ein kurzer Satz unter der Überschrift, hier genügt eine Zeile. Leer = kein Satz." }
+          - name: formular_empfaenger
+            label: "Formular: E-Mail-Adresse des Empfängers"
+            type: string
+            pattern:
+              regex: "^([^@\\s]+@[^@\\s]+\\.[^@\\s]+)?$"
+              message: "Bitte eine E-Mail-Adresse eintragen, zum Beispiel name@beispiel.de."
+            description: "Hierhin geht die Nachricht (das E-Mail-Programm des Besuchers öffnet sich). Leer = die Seite zeigt gar kein Formular."
+          - { name: formular_button, label: "Formular: Beschriftung des Knopfs", type: string, description: "Leer = „Nachricht senden“." }
+          - { name: formular_hinweis, component: fliesstext, label: "Formular: kleiner Hinweis darunter", description: "Zum Beispiel ein Datenschutz-Hinweis, hier genügt eine Zeile. Leer = kein Hinweis." }
+
+      # 9 -------------------------------------------------------------------------------------
+      - name: zwei_spalten
+        label: "Zwei Spalten"
+        fields:
+          - { name: hintergrund, component: hintergrund }
+          - { name: anker, component: anker }
+          - name: spalten
+            label: "Spalten"
+            type: object
+            description: "Die Spalten stehen nebeneinander, am Handy untereinander. Leer = der Abschnitt erscheint nicht."
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{index}. {ueberschrift}"
+            fields:
+              - { name: anker, component: anker }
+              - { name: kicker, component: kicker }
+              - { name: ueberschrift, component: ueberschrift }
+              - { name: einleitung, component: fliesstext, label: "Einleitung (grau)", description: "Ein grauer Einleitungstext unter der Überschrift. Leer = kein Einleitungstext." }
+              - { name: text, component: fliesstext, label: "Text", description: "Leer = kein Text." }
+              - { name: button_text, label: "Knopf: Beschriftung", type: string, description: "Leer = kein Knopf." }
+              - { name: button_ziel, component: link_ziel, label: "Knopf: Ziel" }
+              - { name: button_stil, component: knopf_stil, label: "Knopf: Aussehen" }
+
+      # 10 ------------------------------------------------------------------------------------
+      - name: freitext
+        label: "Freier Text"
+        description: "Ein langer Text mit Überschriften, Listen und Links – zum Beispiel für Neuigkeiten."
+        fields:
+          - { name: hintergrund, component: hintergrund }
+          - { name: anker, component: anker }
+          - { name: kicker, component: kicker }
+          - { name: ueberschrift, component: ueberschrift }
+          - { name: text, component: fliesstext, label: "Text", description: "Der Text mit Überschriften, Absätzen, Listen und Links. Leer = kein Text." }
+          - { name: hinweis, component: fliesstext, label: "Kleiner Hinweis am Ende", description: "Zum Beispiel „Stand: November 2026“, hier genügt eine Zeile. Leer = kein Hinweis." }
+
+      # 11 ------------------------------------------------------------------------------------
+      - name: tabelle
+        label: "Tabelle (Excel)"
+        description: "Eine Tabelle aus einer Excel-Datei oder aus eingefügten Zellen."
+        fields:
+          - { name: hintergrund, component: hintergrund }
+          - { name: anker, component: anker }
+          - { name: kicker, component: kicker }
+          - { name: ueberschrift, component: ueberschrift }
+          - { name: text, component: fliesstext, label: "Text über der Tabelle", description: "Leer = kein Text." }
+          - { name: excel, component: tabelle_datei, label: "Excel-Datei", description: "Als .xlsx speichern; die erste Zeile wird zur Kopfzeile. Hat Vorrang vor dem Feld „Aus Excel eingefügt“. Leer = stattdessen gilt das Feld darunter." }
+          - { name: eingefuegt, label: "Aus Excel eingefügt", type: text, description: "In Excel die Zellen markieren, kopieren und hier einfügen. Die erste Zeile wird zur Kopfzeile. Wenn oben eine Excel-Datei gewählt ist, gilt die Datei. Leer = keine Tabelle." }
+          - { name: kopfzeile, label: "Erste Zeile ist die Kopfzeile", type: boolean, default: true, description: "Eingeschaltet: Die erste Zeile wird als Überschrift der Spalten dargestellt." }
+          - { name: erste_spalte_fett, label: "Erste Spalte hervorheben", type: boolean, default: false, description: "Eingeschaltet: Die erste Spalte wird fett gezeigt." }
+          - { name: suchfeld, label: "Suchfeld über der Tabelle", type: boolean, default: false, description: "Eingeschaltet: Besucher können die Tabelle durchsuchen. Sinnvoll bei langen Tabellen." }
+          - { name: hinweis, component: fliesstext, label: "Kleiner Hinweis unter der Tabelle", description: "Hier genügt eine Zeile. Leer = kein Hinweis." }
+
+      # 12 ------------------------------------------------------------------------------------
+      - name: bilder
+        label: "Bilder"
+        description: "Ein oder mehrere Bilder nebeneinander."
+        fields:
+          - { name: hintergrund, component: hintergrund }
+          - { name: anker, component: anker }
+          - { name: kicker, component: kicker }
+          - { name: ueberschrift, component: ueberschrift }
+          - { name: text, component: fliesstext, label: "Text über den Bildern", description: "Leer = kein Text." }
+          - name: spalten
+            label: "Bilder pro Reihe"
+            type: select
+            default: "3"
+            description: "Auf dem Handy steht immer ein Bild pro Reihe."
+            options:
+              values:
+                - { value: "1", label: "1 Bild pro Reihe" }
+                - { value: "2", label: "2 Bilder nebeneinander" }
+                - { value: "3", label: "3 Bilder nebeneinander" }
+          - name: bilder
+            label: "Bilder"
+            type: object
+            description: "Die einzelnen Bilder. Leer = es wird nichts angezeigt."
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{index}. {unterschrift}"
+            fields:
+              - { name: bild, component: bild, label: "Bild", description: "Ein Bild hochladen oder aus den vorhandenen wählen. Neue Bilder bekommen am besten einen neuen Dateinamen. Das Bild wird nie größer gezeigt, als es hochgeladen wurde." }
+              - { name: beschreibung, label: "Beschreibung des Bildes", type: string, description: "Ein kurzer Satz für Menschen, die das Bild nicht sehen können, und für Google. Leer = keine Beschreibung." }
+              - { name: unterschrift, label: "Sichtbare Bildunterschrift", type: string, description: "Steht unter dem Bild. Leer = keine Unterschrift." }
+
+# ---------------------------------------------------------------------------------------------
+# Einstellungen der Oberfläche
+#  - hide: die Seite "Konfiguration" (diese Datei) wird im CMS ausgeblendet – Heinz kann sie
+#    nicht versehentlich ändern. Bearbeitet wird diese Datei nur im Git-Repository.
+#  - content.merge: false (Standard, hier ausdrücklich). Mit "true" würden nicht erfasste Felder
+#    zwar erhalten, aber Listen/Objekte könnten sich nicht mehr leeren lassen und Felder innerhalb
+#    von Listeneinträgen gingen trotzdem verloren. Besser: alle Felder erfassen (Prüfskript).
+#  - commit.templates: deutsche Beschreibung der Speicherungen im Änderungsverlauf.
+# ---------------------------------------------------------------------------------------------
+settings:
+  hide: true
+  content:
+    merge: false
+  commit:
+    templates:
+      create: "Neu angelegt: {path} (über Pages CMS)"
+      update: "Geändert: {path} (über Pages CMS)"
+      delete: "Gelöscht: {path} (über Pages CMS)"
+      rename: "Umbenannt: {oldPath} nach {newPath} (über Pages CMS)"
