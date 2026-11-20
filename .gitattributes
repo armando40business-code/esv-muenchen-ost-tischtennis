@@ -12,3 +12,8 @@
 
 # CSV-Fixtures der Tests muessen byte-genau bleiben
 tools/tests/fixtures/** binary
+
+# Skripte und Workflows immer mit Unix-Zeilenenden, sonst laufen sie auf den
+# GitHub-Rechnern nicht (aus main uebernommen).
+*.sh  text eol=lf
+*.yml text eol=lf
