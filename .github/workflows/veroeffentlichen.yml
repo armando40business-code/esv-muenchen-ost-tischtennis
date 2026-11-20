@@ -1,0 +1,70 @@
+# Bauen, testen und veröffentlichen.
+#
+# - Bei JEDEM Push und bei Pull Requests: Seite bauen (node build.mjs) und die Leser-Tests laufen lassen.
+# - Nur bei einem Push auf "main" (also auch bei jeder Speicherung in Pages CMS) und bei manuellem Start
+#   des Workflows auf "main": zusätzlich nach Cloudflare Pages veröffentlichen.
+# - Schlägt der Bau oder ein Test fehl, kommt der Veröffentlichen-Schritt nie dran – die alte Fassung bleibt online.
+# - Einrichtung der Geheimnisse (Secrets): README.md, Abschnitt "Einrichtung".
+
+name: Veröffentlichen
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+# Minimale Rechte: Der Workflow darf den Code nur lesen. Veröffentlicht wird über den Cloudflare-Zugang (Secrets).
+permissions:
+  contents: read
+
+# Mehrere schnelle Speicherungen hintereinander: Es läuft immer nur ein Lauf je Zweig. Auf "main" wartet ein
+# laufendes Veröffentlichen, bis es fertig ist; von den wartenden Läufen bleibt nur der neueste übrig (GitHub
+# verwirft die älteren). So steht am Ende immer der letzte Stand online und kein Lauf wird mittendrin abgebrochen.
+# Auf anderen Zweigen und bei Pull Requests wird ein veralteter Lauf sofort abgebrochen.
+concurrency:
+  group: veroeffentlichen-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
+jobs:
+  bauen-und-veroeffentlichen:
+    name: Bauen, testen, veröffentlichen
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Code holen
+        uses: actions/checkout@v7
+
+      - name: Node.js einrichten
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+
+      - name: Seite bauen
+        run: node build.mjs
+
+      - name: Prüfen, dass die Seite wirklich gebaut wurde
+        run: |
+          test -s _site/index.html || { echo "::error title=Bau unvollständig::_site/index.html fehlt oder ist leer. Es wird nichts veröffentlicht."; exit 1; }
+          ls _site | head -50
+
+      - name: Leser-Tests (Excel/CSV)
+        run: node --test "tools/tests/**/*.test.mjs"
+
+      # Ab hier nur noch auf "main" (Push oder manueller Start).
+      - name: Zugangsdaten für Cloudflare prüfen
+        if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
+            echo "::error title=Zugangsdaten fehlen::Die Geheimnisse CLOUDFLARE_API_TOKEN und CLOUDFLARE_ACCOUNT_ID sind in diesem GitHub-Repository nicht hinterlegt. Bitte unter Settings > Secrets and variables > Actions eintragen (Anleitung: README.md, Abschnitt Einrichtung). Die alte Fassung der Seite bleibt online."
+            exit 1
+          fi
+
+      - name: Nach Cloudflare Pages veröffentlichen
+        if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: npx --yes wrangler@4.164.0 pages deploy _site --project-name=esv-tischtennis --branch=main
