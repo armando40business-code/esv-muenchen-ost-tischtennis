@@ -5,8 +5,7 @@
   "sitemap_prioritaet": "0.8",
   "kopf": {
     "ueberschrift": "Training & Hallen",
-    "text": "<p>Einsteiger oder Bezirksoberliga – bei uns findet jeder den passenden Tisch. Das Erwachsenentraining am Donnerstag findet sogar während der Schulferien statt, und fürs Schnuppertraining brauchst du dich nicht anzumelden.</p>",
-    "bild": ""
+    "text": "<p>Einsteiger oder Bezirksoberliga – bei uns findet jeder den passenden Tisch. Das Erwachsenentraining am Donnerstag findet sogar während der Schulferien statt, und fürs Schnuppertraining brauchst du dich nicht anzumelden.</p>"
   },
   "bausteine": [
     {
@@ -20,25 +19,45 @@
         {
           "titel": "Erwachsene",
           "unterzeile": "Vereinshalle · Hermann-Weinhauser-Str. 7",
+          "text": "<p></p>",
           "zeilen": [
-            { "fett": "Montag", "text": "ab 20:00 Uhr · Vereinshalle" },
-            { "fett": "Donnerstag", "text": "ab 19:30 Uhr · Vereinshalle — auch in den Ferien" },
-            { "fett": "Di · Mi · Fr", "text": "18:30–21:30 Uhr · Bogenhauser Kirchplatz (nach Vereinbarung)" }
+            {
+              "fett": "Montag",
+              "text": "ab 20:00 Uhr · Vereinshalle"
+            },
+            {
+              "fett": "Donnerstag",
+              "text": "ab 19:30 Uhr · Vereinshalle — auch in den Ferien"
+            },
+            {
+              "fett": "Di · Mi · Fr",
+              "text": "18:30–21:30 Uhr · Bogenhauser Kirchplatz (nach Vereinbarung)"
+            }
           ]
         },
         {
           "titel": "Kinder & Jugend",
           "unterzeile": "Vereinshalle & Schulturnhalle Bogenhauser Kirchplatz",
+          "text": "<p></p>",
           "zeilen": [
-            { "fett": "Mo & Do", "text": "18:00–19:30 Uhr · Vereinshalle, Hermann-Weinhauser-Str. 7" },
-            { "fett": "Dienstag", "text": "17:15–18:45 Uhr · Bogenhauser Kirchplatz 3" },
-            { "fett": "Freitag", "text": "17:00–18:30 Uhr · Bogenhauser Kirchplatz 3" }
+            {
+              "fett": "Mo & Do",
+              "text": "18:00–19:30 Uhr · Vereinshalle, Hermann-Weinhauser-Str. 7"
+            },
+            {
+              "fett": "Dienstag",
+              "text": "17:15–18:45 Uhr · Bogenhauser Kirchplatz 3"
+            },
+            {
+              "fett": "Freitag",
+              "text": "17:00–18:30 Uhr · Bogenhauser Kirchplatz 3"
+            }
           ]
         }
       ],
       "hinweise": [
         "<p><strong>Schnuppern jederzeit möglich.</strong> Kinder und Jugendliche aller Altersklassen sind während der Schulzeit herzlich zum Schnuppertraining eingeladen – eine Anmeldung ist nicht erforderlich, unsere Trainerinnen und Trainer sind vor Ort. Ein gezieltes Anfängertraining bieten wir derzeit für Kinder an. Interessierte Hobbyspieler:innen melden sich gern bei der Geschäftsstelle unter <a href=\"tel:+49894310654\">089 4310654</a>.</p>",
-        "<p>Gute ESV-Tradition: Nach dem Training geht es meist noch in eine nahegelegene Wirtschaft oder in unsere Gemeinschaftsräume – zum geselligen Ausklang.</p>"
+        "<p>Gute ESV-Tradition: Nach dem Training geht es meist noch in eine nahegelegene <strong>Wirtschaft </strong>oder in unsere Gemeinschaftsräume – zum geselligen Ausklang. Probewort</p>"
       ]
     },
     {
