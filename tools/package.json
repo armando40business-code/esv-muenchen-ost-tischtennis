@@ -1,0 +1,19 @@
+{
+  "name": "esv-pruefwerkzeuge",
+  "private": true,
+  "description": "Prüfwerkzeuge für den Website-Umbau (nur lokal, nicht Teil des Baus)",
+  "type": "module",
+  "scripts": {
+    "vergleich": "node vergleich.mjs",
+    "bildvergleich": "node bildvergleich.mjs",
+    "cms-config": "node pagescms/pruefe-config.mjs",
+    "cms-inhalt": "node pagescms/pruefe-inhalt.mjs"
+  },
+  "devDependencies": {
+    "pixelmatch": "^7.1.0",
+    "playwright-core": "^1.56.0",
+    "pngjs": "^7.0.0",
+    "yaml": "^2.9.1",
+    "zod": "^3.25.76"
+  }
+}

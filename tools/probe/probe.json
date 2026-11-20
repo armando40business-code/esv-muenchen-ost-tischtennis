@@ -1,0 +1,74 @@
+{
+  "browsertitel": "Probe-Seite — ESV München-Ost · Tischtennis",
+  "beschreibung": "Test-Seite für neue Bausteine: Tabelle aus Excel und eingefügtem Text, Bilder, Freitext.",
+  "menue_titel": "Probe",
+  "sitemap_prioritaet": "0.3",
+  "im_menue": true,
+  "kopf": {
+    "ueberschrift": "Probe-Seite",
+    "text": "<p>Diese Seite prüft die neuen Bausteine. Sie liegt nur als Test-Vorlage unter tools/probe/ und gehört nicht zum echten Inhalt.</p>",
+    "bild": "/medien/bilder/hero-halle.jpg"
+  },
+  "bausteine": [
+    {
+      "_block": "freitext",
+      "hintergrund": "normal",
+      "kicker": "Freitext",
+      "ueberschrift": "Neuigkeiten aus der Abteilung",
+      "text": "<h2>Saisonstart 2026/27</h2><p>Die neue Saison beginnt am <strong>12. September</strong>. Alle Termine stehen im <a href=\"https://bttv.click-tt.de/\">click-TT</a>, Fragen gern an <a href=\"mailto:tischtennis@esv-muenchen-ost.de\">tischtennis@esv-muenchen-ost.de</a>.</p><h3>Was neu ist</h3><ul><li><p>Zweite Jugendmannschaft gemeldet</p></li><li><p>Training auch <em>dienstags</em> in der Vereinshalle</p></li><li><p>Neue Trikots – siehe <a href=\"mannschaften.html\">Mannschaften</a></p></li></ul><p>Bis bald in der Halle!</p>",
+      "hinweis": "<p>Stand: November 2026.</p>"
+    },
+    {
+      "_block": "tabelle",
+      "hintergrund": "normal",
+      "kicker": "Tabelle aus Excel",
+      "ueberschrift": "Aufstellung Herren",
+      "text": "<p>Diese Tabelle kommt direkt aus einer hochgeladenen Excel-Datei.</p>",
+      "excel": "/medien/tabellen/mannschaftsaufstellung.xlsx",
+      "eingefuegt": "Wird ignoriert\tweil Excel Vorrang hat",
+      "kopfzeile": true,
+      "erste_spalte_fett": false,
+      "suchfeld": true,
+      "hinweis": "<p>Bilanz = gewonnene : verlorene Spiele.</p>"
+    },
+    {
+      "_block": "tabelle",
+      "hintergrund": "abgesetzt",
+      "kicker": "Tabelle aus eingefügtem Text",
+      "ueberschrift": "Hallenzeiten",
+      "eingefuegt": "Tag\tHalle\tUhrzeit\nMontag\tVereinshalle\t20:00–22:00\nDienstag\tBogenhauser Kirchplatz\t17:15–18:45\nDonnerstag\tVereinshalle\t19:30–22:00\nFreitag\tBogenhauser Kirchplatz\t17:00–18:30",
+      "kopfzeile": true,
+      "erste_spalte_fett": true,
+      "suchfeld": false
+    },
+    {
+      "_block": "bilder",
+      "hintergrund": "normal",
+      "kicker": "Bilder",
+      "ueberschrift": "Eindrücke",
+      "text": "<p>Drei Bilder im Raster, eins davon mit WebP-Fassung.</p>",
+      "spalten": "3",
+      "bilder": [
+        { "bild": "/medien/bilder/hero-halle.jpg", "beschreibung": "Tischtennis in der Halle", "unterschrift": "Training in der Vereinshalle" },
+        { "bild": "/medien/bilder/esv-logo.png", "beschreibung": "Wappen des ESV München-Ost", "unterschrift": "Unser Wappen" },
+        { "bild": "/medien/bilder/probe-grafik.svg", "beschreibung": "Grafik", "unterschrift": "Eine SVG-Grafik" }
+      ]
+    },
+    {
+      "_block": "turnierarchiv",
+      "hintergrund": "abgesetzt",
+      "kicker": "Archiv mit Zusatzreiter",
+      "ueberschrift": "Turniere",
+      "weitere_reiter": [
+        { "titel": "Jugendpokal", "excel": "", "eingefuegt": "Jahr;Sieger;Zweiter\n2026;Lena Huber;Max Maier\n2025;Tim Gross;" }
+      ]
+    },
+    {
+      "_block": "aufruf",
+      "ueberschrift": "Alles gesehen?",
+      "text": "<p>Dann zurück zur Startseite.</p>",
+      "button_text": "Zur Startseite",
+      "button_ziel": "index.html"
+    }
+  ]
+}
