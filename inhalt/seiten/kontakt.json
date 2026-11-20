@@ -5,8 +5,7 @@
   "sitemap_prioritaet": "0.5",
   "kopf": {
     "ueberschrift": "Kontakt",
-    "text": "<p>Fragen zum Training, zur Mitgliedschaft oder zum Schnuppern? Schreib uns oder ruf an – wir helfen gern weiter und freuen uns, dich bald an einem unserer Tische zu begrüßen.</p>",
-    "bild": ""
+    "text": "<p>Fragen zum Training, zur Mitgliedschaft oder zum Schnuppern? Schreib uns oder ruf an – wir helfen gern weiter und freuen uns, dich bald an einem unserer Tische zu begrüßen.</p>"
   },
   "bausteine": [
     {
@@ -50,6 +49,7 @@
           "kicker": "Termine",
           "ueberschrift": "Was als Nächstes ansteht",
           "einleitung": "<p>Punktspiele, Turniere und Vereinstermine pflegen wir im Vereinskalender. Die aktuellen Spielpläne aller Mannschaften führt der Bayerische Tischtennis-Verband in click-TT.</p>",
+          "text": "<p></p>",
           "button_text": "Spielpläne ansehen",
           "button_ziel": "https://bttv.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/clubMeetings?club=20725",
           "button_stil": "rahmen"

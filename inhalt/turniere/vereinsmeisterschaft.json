@@ -1,7 +1,6 @@
 {
   "titel": "Vereinsmeisterschaft",
   "zusatz": "Einzel und Doppel",
-  "excel": "",
   "spaltentitel": {
     "jahr": "Jahr",
     "platz1": "Einzel 1. Platz",
@@ -14,43 +13,30 @@
       "jahr": "2026",
       "platz1": "Erb C.",
       "platz2": "Braunisch",
-      "platz3": "Reichert / Grande",
-      "doppel": ""
+      "platz3": "Reichert / Grande"
     },
     {
-      "jahr": "2025",
-      "platz1": "",
-      "platz2": "",
-      "platz3": "",
-      "doppel": ""
+      "jahr": "2025"
     },
     {
       "jahr": "2024",
       "platz1": "Schwarze",
       "platz2": "Häußler",
-      "platz3": "Braunisch",
-      "doppel": ""
+      "platz3": "Braunisch"
     },
     {
       "jahr": "2023",
       "platz1": "Schwarze",
       "platz2": "Braunisch",
-      "platz3": "Gattinger / Martin",
-      "doppel": ""
+      "platz3": "Gattinger / Martin"
     },
     {
       "jahr": "2022",
       "platz1": "Schwarze",
-      "platz2": "Braunisch",
-      "platz3": "",
-      "doppel": ""
+      "platz2": "Braunisch"
     },
     {
-      "jahr": "2021",
-      "platz1": "",
-      "platz2": "",
-      "platz3": "",
-      "doppel": ""
+      "jahr": "2021"
     },
     {
       "jahr": "2020",
@@ -60,18 +46,10 @@
       "doppel": "Weimar / Radspieler"
     },
     {
-      "jahr": "2019",
-      "platz1": "",
-      "platz2": "",
-      "platz3": "",
-      "doppel": ""
+      "jahr": "2019"
     },
     {
-      "jahr": "2018",
-      "platz1": "",
-      "platz2": "",
-      "platz3": "",
-      "doppel": ""
+      "jahr": "2018"
     },
     {
       "jahr": "2017",
@@ -88,11 +66,7 @@
       "doppel": "Schönbeck / Götz"
     },
     {
-      "jahr": "2015",
-      "platz1": "",
-      "platz2": "",
-      "platz3": "",
-      "doppel": ""
+      "jahr": "2015"
     },
     {
       "jahr": "2014",
@@ -102,11 +76,7 @@
       "doppel": "Erb / Rutsche"
     },
     {
-      "jahr": "2013",
-      "platz1": "",
-      "platz2": "",
-      "platz3": "",
-      "doppel": ""
+      "jahr": "2013"
     },
     {
       "jahr": "2012",
@@ -343,15 +313,12 @@
       "jahr": "1980",
       "platz1": "Fabis",
       "platz2": "Zacherl",
-      "platz3": "Wicht",
-      "doppel": ""
+      "platz3": "Wicht"
     },
     {
       "jahr": "1979",
       "platz1": "Zacherl",
-      "platz2": "Pietsch",
-      "platz3": "",
-      "doppel": ""
+      "platz2": "Pietsch"
     }
   ]
 }

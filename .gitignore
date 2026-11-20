@@ -4,3 +4,5 @@ _site/
 tools/node_modules/
 tools/_vergleich/
 tools/_vorschau/
+
+bau-warnungen.txt

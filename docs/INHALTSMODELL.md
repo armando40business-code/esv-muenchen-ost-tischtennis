@@ -9,9 +9,10 @@ Liste steht in `lib/schema.mjs`; `node build.mjs --pruefen` meldet Felder, die d
 
 | Regel | Bedeutung |
 |---|---|
-| Format | JSON, UTF-8 ohne BOM, 2 Leerzeichen Einrückung, Zeilenende LF. |
+| Format | JSON, UTF-8 ohne BOM, Zeilenende LF – genau so, wie Pages CMS beim Speichern schreibt: 2 Leerzeichen Einrückung, jedes Objekt mehrzeilig, Schlüssel in der Reihenfolge der Formularfelder, **kein** Zeilenumbruch am Dateiende. Von Hand geänderte Dateien danach mit `node tools/pagescms/normalisiere-inhalt.mjs` in diese Form bringen, sonst zeigt die nächste Speicherung im CMS lauter Formatierungs-Änderungen. |
 | Feldnamen | nur `a-z`, `A-Z`, `0-9`, `_`, `-`; deutsch, klein, ASCII (`ueberschrift`, `link_ziel`). |
-| Leer = weglassen | Fehlt ein Feld oder ist es leer (`""`, `[]`, `null`), wird die Stelle weggelassen – nie ein Absturz. |
+| Leer = weglassen | Fehlt ein Feld oder ist es leer (`""`, `[]`, `null`), wird die Stelle weggelassen – nie ein Absturz. Leerer Fließtext aus dem CMS (`"<p></p>"`, `"<p><br></p>"`, nur Leerraum/`&nbsp;`) gilt ebenso als leer. |
+| Speichern im CMS | Pages CMS lässt Schlüssel mit leerem Text `""` weg, schreibt leere Fließtextfelder als `"<p></p>"` und setzt in Auswahl-/Ja-Nein-Felder ihren Standardwert. Das ändert die gebaute Seite nicht (nachgebildet in `tools/pagescms/speichern.mjs`, belegt durch Test `tools/tests/pagescms-speichern.test.mjs`). |
 | Bausteinlisten | `bausteine` ist ein Array von Objekten; jedes hat den Schlüssel `_block` (Art des Bausteins). Keine Bausteine in Bausteinen – nur Listen einfacher Objekte. |
 | Unbekanntes | Unbekannte `_block`-Arten werden mit Warnung übersprungen; unbekannte Felder werden ignoriert (`--pruefen` meldet sie). |
 
@@ -38,6 +39,8 @@ Liste steht in `lib/schema.mjs`; `node build.mjs --pruefen` meldet Felder, die d
 - `href` nur `http(s):`, `mailto:`, `tel:`, relative Pfade, `#anker`; sonst wird der Link entfernt (Text bleibt).
 - Links bekommen `class="textlink"`; fremde `http(s)`-Adressen zusätzlich `target="_blank" rel="noopener"`.
 - Leere Absätze werden entfernt, `<li><p>x</p></li>` wird zu `<li>x</li>`.
+- Leerraum am Rand von Fett, Kursiv und Link wird nach außen gezogen (`<strong>Wirtschaft </strong>oder` →
+  `<b>Wirtschaft</b> oder`; entsteht, wenn ein Doppelklick das Leerzeichen mitmarkiert).
 
 ## Dateien
 

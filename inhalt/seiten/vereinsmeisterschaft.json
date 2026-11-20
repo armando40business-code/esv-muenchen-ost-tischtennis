@@ -5,8 +5,7 @@
   "sitemap_prioritaet": "0.8",
   "kopf": {
     "ueberschrift": "Vereinsmeisterschaft & Facklerpokal",
-    "text": "<p>Über vier Jahrzehnte Turniergeschichte auf einen Blick: alle Vereinsmeister im Einzel und Doppel seit 1979 und sämtliche Siegerdoppel des Facklerpokals seit 1980. Tippe auf ein Turnier oder such nach einem Namen.</p>",
-    "bild": ""
+    "text": "<p>Über vier Jahrzehnte Turniergeschichte auf einen Blick: alle Vereinsmeister im Einzel und Doppel seit 1979 und sämtliche Siegerdoppel des Facklerpokals seit 1980. Tippe auf ein Turnier oder such nach einem Namen.</p>"
   },
   "bausteine": [
     {
@@ -19,32 +18,96 @@
         {
           "titel": "Einzeltitel Vereinsmeisterschaft",
           "eintraege": [
-            { "zahl": "7", "name": "Rothe", "zusatz": "Einzeltitel" },
-            { "zahl": "4", "name": "Erb", "zusatz": "Einzeltitel" },
-            { "zahl": "3", "name": "Schwarze", "zusatz": "Einzeltitel" },
-            { "zahl": "3", "name": "Einsiedler", "zusatz": "Einzeltitel" },
-            { "zahl": "3", "name": "Fabis", "zusatz": "Einzeltitel" },
-            { "zahl": "2", "name": "Weimer", "zusatz": "Einzeltitel" },
-            { "zahl": "2", "name": "Schönbeck", "zusatz": "Einzeltitel" },
-            { "zahl": "2", "name": "Küster", "zusatz": "Einzeltitel" }
+            {
+              "zahl": "7",
+              "name": "Rothe",
+              "zusatz": "Einzeltitel"
+            },
+            {
+              "zahl": "4",
+              "name": "Erb",
+              "zusatz": "Einzeltitel"
+            },
+            {
+              "zahl": "3",
+              "name": "Schwarze",
+              "zusatz": "Einzeltitel"
+            },
+            {
+              "zahl": "3",
+              "name": "Einsiedler",
+              "zusatz": "Einzeltitel"
+            },
+            {
+              "zahl": "3",
+              "name": "Fabis",
+              "zusatz": "Einzeltitel"
+            },
+            {
+              "zahl": "2",
+              "name": "Weimer",
+              "zusatz": "Einzeltitel"
+            },
+            {
+              "zahl": "2",
+              "name": "Schönbeck",
+              "zusatz": "Einzeltitel"
+            },
+            {
+              "zahl": "2",
+              "name": "Küster",
+              "zusatz": "Einzeltitel"
+            }
           ]
         },
         {
           "titel": "Doppeltitel Vereinsmeisterschaft",
           "eintraege": [
-            { "zahl": "11", "name": "Rothe", "zusatz": "Doppeltitel" },
-            { "zahl": "7", "name": "Fabis", "zusatz": "Doppeltitel" },
-            { "zahl": "6", "name": "Einsiedler", "zusatz": "Doppeltitel" }
+            {
+              "zahl": "11",
+              "name": "Rothe",
+              "zusatz": "Doppeltitel"
+            },
+            {
+              "zahl": "7",
+              "name": "Fabis",
+              "zusatz": "Doppeltitel"
+            },
+            {
+              "zahl": "6",
+              "name": "Einsiedler",
+              "zusatz": "Doppeltitel"
+            }
           ]
         },
         {
           "titel": "Facklerpokal-Siege",
           "eintraege": [
-            { "zahl": "6", "name": "Fabis", "zusatz": "Pokalsiege" },
-            { "zahl": "5", "name": "Seidel", "zusatz": "Pokalsiege" },
-            { "zahl": "5", "name": "Erb", "zusatz": "Pokalsiege" },
-            { "zahl": "4", "name": "Fälschle", "zusatz": "Pokalsiege" },
-            { "zahl": "4", "name": "Rothe A.", "zusatz": "Pokalsiege" }
+            {
+              "zahl": "6",
+              "name": "Fabis",
+              "zusatz": "Pokalsiege"
+            },
+            {
+              "zahl": "5",
+              "name": "Seidel",
+              "zusatz": "Pokalsiege"
+            },
+            {
+              "zahl": "5",
+              "name": "Erb",
+              "zusatz": "Pokalsiege"
+            },
+            {
+              "zahl": "4",
+              "name": "Fälschle",
+              "zusatz": "Pokalsiege"
+            },
+            {
+              "zahl": "4",
+              "name": "Rothe A.",
+              "zusatz": "Pokalsiege"
+            }
           ]
         }
       ]
@@ -56,8 +119,7 @@
       "ueberschrift": "Sieger Jahr für Jahr",
       "suchfeld_text": "Name oder Jahr suchen …",
       "kein_treffer_text": "Kein Treffer – probier einen anderen Namen oder ein anderes Jahr.",
-      "hinweis": "<p>„—“ bedeutet: in diesem Jahr wurde kein Turnier ausgetragen bzw. es liegen keine Angaben vor. In einzelnen Jahren sind zwei Paarungen eingetragen; sie werden hier untereinander dargestellt. Die Jahrgänge ab 2022 nach Angaben der Abteilungsleitung, ältere aus dem Turnierarchiv der Abteilung. „Erb C.\" steht für Claus Erb, „Erb K.\" für Klaus Erb.</p>",
-      "weitere_reiter": []
+      "hinweis": "<p>„—“ bedeutet: in diesem Jahr wurde kein Turnier ausgetragen bzw. es liegen keine Angaben vor. In einzelnen Jahren sind zwei Paarungen eingetragen; sie werden hier untereinander dargestellt. Die Jahrgänge ab 2022 nach Angaben der Abteilungsleitung, ältere aus dem Turnierarchiv der Abteilung. „Erb C.\" steht für Claus Erb, „Erb K.\" für Klaus Erb.</p>"
     },
     {
       "_block": "aufruf",

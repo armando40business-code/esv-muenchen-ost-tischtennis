@@ -5,8 +5,7 @@
   "sitemap_prioritaet": "0.8",
   "kopf": {
     "ueberschrift": "Unsere Mannschaften",
-    "text": "<p>Neun Herren-, eine Damen- und zwei Jugendmannschaften – von der Bezirksklasse C bis zur Bezirksoberliga ist jede Spielstärke vertreten. Tabellen, Spielpläne und Ergebnisse führt der Bayerische Tischtennis-Verband in click-TT.</p>",
-    "bild": ""
+    "text": "<p>Neun Herren-, eine Damen- und zwei Jugendmannschaften – von der Bezirksklasse C bis zur Bezirksoberliga ist jede Spielstärke vertreten. Tabellen, Spielpläne und Ergebnisse führt der Bayerische Tischtennis-Verband in click-TT.</p>"
   },
   "bausteine": [
     {
@@ -16,18 +15,79 @@
       "spalten": "3",
       "raster": "standard",
       "karten": [
-        { "titel": "Herren I", "text": "<p>Bezirksoberliga · Spitzenteam</p>", "link_text": "Tabelle & Spielplan →", "link_ziel": "https://bttv.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/groupPage?championship=B011+2026%2F27&group=524052" },
-        { "titel": "Herren II", "text": "<p>Bezirksoberliga</p>", "link_text": "Tabelle & Spielplan →", "link_ziel": "https://bttv.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/groupPage?championship=B011+2026%2F27&group=524052" },
-        { "titel": "Herren III", "text": "<p>Bezirksliga, Gruppe 3 Mitte</p>", "link_text": "Tabelle & Spielplan →", "link_ziel": "https://bttv.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/groupPage?championship=B011+2026%2F27&group=524172" },
-        { "titel": "Herren IV", "text": "<p>Bezirksliga, Gruppe 2 Ost</p>", "link_text": "Tabelle & Spielplan →", "link_ziel": "https://bttv.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/groupPage?championship=B011+2026%2F27&group=523760" },
-        { "titel": "Herren V", "text": "<p>Bezirksklasse A, Gruppe 3 München-Ost</p>", "link_text": "Tabelle & Spielplan →", "link_ziel": "https://bttv.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/groupPage?championship=B011+2026%2F27&group=523909" },
-        { "titel": "Herren VI", "text": "<p>Bezirksklasse B, Gruppe 5 München-Ost</p>", "link_text": "Tabelle & Spielplan →", "link_ziel": "https://bttv.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/groupPage?championship=B011+2026%2F27&group=524038" },
-        { "titel": "Herren VII", "text": "<p>Bezirksklasse B, Gruppe 6 München-Ost</p>", "link_text": "Tabelle & Spielplan →", "link_ziel": "https://bttv.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/groupPage?championship=B011+2026%2F27&group=524069" },
-        { "titel": "Herren VIII", "text": "<p>Bezirksklasse C, Gruppe 5 München-Ost</p>", "link_text": "Tabelle & Spielplan →", "link_ziel": "https://bttv.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/groupPage?championship=B011+2026%2F27&group=523854" },
-        { "titel": "Herren IX", "text": "<p>Bezirksklasse C, Gruppe 6 München-Ost</p>", "link_text": "Tabelle & Spielplan →", "link_ziel": "https://bttv.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/groupPage?championship=B011+2026%2F27&group=523895" },
-        { "zwischentitel_davor": "Damen & Jugend", "titel": "Damen", "text": "<p>Bezirksoberliga</p>", "link_text": "Tabelle & Spielplan →", "link_ziel": "https://bttv.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/groupPage?championship=B011+2026%2F27&group=523746" },
-        { "titel": "Jugend 19", "text": "<p>Bezirksklasse C, Gruppe 2 Süd-West</p>", "link_text": "Tabelle & Spielplan →", "link_ziel": "https://bttv.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/groupPage?championship=B011+Jugend+VR+2026%2F27&group=524454" },
-        { "titel": "Jugend 19 II", "text": "<p>Bezirksklasse C, Gruppe 3 Süd-Ost</p>", "link_text": "Tabelle & Spielplan →", "link_ziel": "https://bttv.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/groupPage?championship=B011+Jugend+VR+2026%2F27&group=524400" }
+        {
+          "titel": "Herren I",
+          "text": "<p>Bezirksoberliga · Spitzenteam</p>",
+          "link_text": "Tabelle & Spielplan →",
+          "link_ziel": "https://bttv.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/groupPage?championship=B011+2026%2F27&group=524052"
+        },
+        {
+          "titel": "Herren II",
+          "text": "<p>Bezirksoberliga</p>",
+          "link_text": "Tabelle & Spielplan →",
+          "link_ziel": "https://bttv.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/groupPage?championship=B011+2026%2F27&group=524052"
+        },
+        {
+          "titel": "Herren III",
+          "text": "<p>Bezirksliga, Gruppe 3 Mitte</p>",
+          "link_text": "Tabelle & Spielplan →",
+          "link_ziel": "https://bttv.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/groupPage?championship=B011+2026%2F27&group=524172"
+        },
+        {
+          "titel": "Herren IV",
+          "text": "<p>Bezirksliga, Gruppe 2 Ost</p>",
+          "link_text": "Tabelle & Spielplan →",
+          "link_ziel": "https://bttv.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/groupPage?championship=B011+2026%2F27&group=523760"
+        },
+        {
+          "titel": "Herren V",
+          "text": "<p>Bezirksklasse A, Gruppe 3 München-Ost</p>",
+          "link_text": "Tabelle & Spielplan →",
+          "link_ziel": "https://bttv.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/groupPage?championship=B011+2026%2F27&group=523909"
+        },
+        {
+          "titel": "Herren VI",
+          "text": "<p>Bezirksklasse B, Gruppe 5 München-Ost</p>",
+          "link_text": "Tabelle & Spielplan →",
+          "link_ziel": "https://bttv.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/groupPage?championship=B011+2026%2F27&group=524038"
+        },
+        {
+          "titel": "Herren VII",
+          "text": "<p>Bezirksklasse B, Gruppe 6 München-Ost</p>",
+          "link_text": "Tabelle & Spielplan →",
+          "link_ziel": "https://bttv.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/groupPage?championship=B011+2026%2F27&group=524069"
+        },
+        {
+          "titel": "Herren VIII",
+          "text": "<p>Bezirksklasse C, Gruppe 5 München-Ost</p>",
+          "link_text": "Tabelle & Spielplan →",
+          "link_ziel": "https://bttv.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/groupPage?championship=B011+2026%2F27&group=523854"
+        },
+        {
+          "titel": "Herren IX",
+          "text": "<p>Bezirksklasse C, Gruppe 6 München-Ost</p>",
+          "link_text": "Tabelle & Spielplan →",
+          "link_ziel": "https://bttv.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/groupPage?championship=B011+2026%2F27&group=523895"
+        },
+        {
+          "zwischentitel_davor": "Damen & Jugend",
+          "titel": "Damen",
+          "text": "<p>Bezirksoberliga</p>",
+          "link_text": "Tabelle & Spielplan →",
+          "link_ziel": "https://bttv.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/groupPage?championship=B011+2026%2F27&group=523746"
+        },
+        {
+          "titel": "Jugend 19",
+          "text": "<p>Bezirksklasse C, Gruppe 2 Süd-West</p>",
+          "link_text": "Tabelle & Spielplan →",
+          "link_ziel": "https://bttv.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/groupPage?championship=B011+Jugend+VR+2026%2F27&group=524454"
+        },
+        {
+          "titel": "Jugend 19 II",
+          "text": "<p>Bezirksklasse C, Gruppe 3 Süd-Ost</p>",
+          "link_text": "Tabelle & Spielplan →",
+          "link_ziel": "https://bttv.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/groupPage?championship=B011+Jugend+VR+2026%2F27&group=524400"
+        }
       ],
       "hinweise": [
         "<p>Alle Tabellen und Mannschaftsplatzierungen findest du auf der <a href=\"https://bttv.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/clubTeams?club=20725\">Vereinsseite beim Bayerischen Tischtennis-Verband →</a></p>"

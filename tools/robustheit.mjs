@@ -63,6 +63,33 @@ function main() {
     ],
   }, null, 2));
 
+  // Seite 2b: so, wie Pages CMS leere Felder speichert – leere Fließtexte als "<p></p>" (und Varianten),
+  // Auswahlfelder mit Standardwert. Darf weder HTML noch leere Hüllen erzeugen.
+  const LEER_FT = ['<p></p>', '<p><br></p>', ' <p> </p>\n', '<p>&nbsp;</p>', '<p></p><p><br/></p>'];
+  const lf = (i) => LEER_FT[i % LEER_FT.length];
+  writeFileSync(join(ws, 'cms-leer.json'), JSON.stringify({
+    browsertitel: 'CMS leer', beschreibung: 'Leere Felder wie aus Pages CMS', menue_titel: 'CMS leer',
+    kopf: { ueberschrift: 'Leere Felder aus Pages CMS', text: lf(0) },
+    bausteine: [
+      { _block: 'text_mit_kasten', hintergrund: 'normal', text: lf(1), punkte: [lf(2)], button_stil: 'gold', kasten: { hinweis: lf(3), infos: [{ wert: lf(4), zusatz: lf(0) }] } },
+      { _block: 'karten', hintergrund: 'normal', spalten: '3', raster: 'standard', karten: [{ text: lf(1) }], hinweise: [lf(2)] },
+      { _block: 'aufruf', text: lf(3) },
+      { _block: 'zeitleiste', hintergrund: 'normal', eintraege: [{ text: lf(4) }] },
+      { _block: 'ehrentafel', hintergrund: 'normal', text: lf(0) },
+      { _block: 'kontakt', hintergrund: 'normal', infos: [{ wert: lf(1), zusatz: lf(2) }], formular_text: lf(3), formular_hinweis: lf(4) },
+      { _block: 'zwei_spalten', hintergrund: 'normal', spalten: [{ einleitung: lf(0), text: lf(1), button_stil: 'gold' }] },
+      { _block: 'freitext', hintergrund: 'normal', text: lf(2), hinweis: lf(3) },
+      { _block: 'tabelle', hintergrund: 'normal', text: lf(4), hinweis: lf(0), kopfzeile: true, erste_spalte_fett: false, suchfeld: false },
+      { _block: 'bilder', hintergrund: 'normal', text: lf(1), spalten: '3' },
+    ],
+  }, null, 2));
+  // Seite 2c: Fettdruck/Kursiv/Link mit Leerzeichen am Rand (Doppelklick unter Windows)
+  writeFileSync(join(ws, 'cms-fett.json'), JSON.stringify({
+    browsertitel: 'CMS fett', beschreibung: 'Fett mit Leerzeichen', menue_titel: 'CMS fett',
+    kopf: { ueberschrift: 'Fett' },
+    bausteine: [{ _block: 'freitext', text: '<p>eine nahegelegene <strong>Wirtschaft </strong>oder <em> kursiv</em> und <a href="training.html">Link </a>danach</p>' }],
+  }, null, 2));
+
   // Seite 3: ungültiges JSON, ungültiger Dateiname
   writeFileSync(join(ws, 'kaputt-json.json'), '{ "browsertitel": "x", ');
   writeFileSync(join(ws, 'Falscher Name.json'), '{}');
@@ -71,7 +98,7 @@ function main() {
   const r1 = baue(dir, ['--pruefen']);
   pruefe(r1.code === 0, `Exit-Code 0 (ist ${r1.code})`);
   const site = join(dir, '_site');
-  for (const s of ['index', 'mannschaften', 'training', 'historie', 'vereinsmeisterschaft', 'kontakt', 'impressum', 'datenschutz', 'leer', 'kaputt-inhalt']) {
+  for (const s of ['index', 'mannschaften', 'training', 'historie', 'vereinsmeisterschaft', 'kontakt', 'impressum', 'datenschutz', 'leer', 'kaputt-inhalt', 'cms-leer', 'cms-fett']) {
     pruefe(existsSync(join(site, `${s}.html`)), `${s}.html gebaut`);
   }
   pruefe(!existsSync(join(site, 'kaputt-json.html')), 'kaputt-json.json übersprungen');
@@ -119,6 +146,23 @@ function main() {
   pruefe((leerMain.match(/<section/g) || []).length === 2 && leerMain.includes('id="panel-vm"') && !leerMain.includes('statband')
     && !leerMain.includes('class="card"') && !leerMain.includes('cta-band'),
   'leere Bausteine erzeugen keine Abschnitte (nur Seitenkopf + Turnierarchiv mit festen Reitern)');
+  // leere Fließtexte aus Pages CMS ("<p></p>", "<p><br></p>", Leerraum, &nbsp;)
+  const cl = readFileSync(join(site, 'cms-leer.html'), 'utf8');
+  const clMain = cl.slice(cl.indexOf('<main'), cl.indexOf('</main>'));
+  const clKopf = clMain.slice(0, clMain.indexOf('</section>'));
+  pruefe(!/<p>\s*<\/p>|<p><br>|&nbsp;<\/p>|<(dd|small|li|div)>\s*<\/\1>/.test(clMain), 'cms-leer: kein leeres <p>, <dd>, <small>, <li>, <div> aus "<p></p>"-Feldern');
+  pruefe((clKopf.match(/<p\b/g) || []).length === 1, 'cms-leer: Kopfbereich ohne Einleitungs-Absatz (nur die Brotkrumen-Zeile)');
+  pruefe((clMain.match(/<section/g) || []).length === 1 && !clMain.includes('aside') && !clMain.includes('<dl') && !clMain.includes('class="card"')
+    && !clMain.includes('cta-band') && !clMain.includes('<figure'), 'cms-leer: Abschnitte nur aus leeren Fließtexten erzeugen keine Hüllen (nur der Seitenkopf)');
+  const cf = readFileSync(join(site, 'cms-fett.html'), 'utf8');
+  pruefe(cf.includes('eine nahegelegene <b>Wirtschaft</b> oder <em>kursiv</em> und <a class="textlink" href="training.html">Link</a> danach'),
+    'Fett/Kursiv/Link: Leerzeichen am Rand wird nach außen gezogen');
+  // maschinenlesbare Warnungen für den Workflow
+  const bw = join(dir, 'bau-warnungen.txt');
+  const bwText = existsSync(bw) ? readFileSync(bw, 'utf8') : '';
+  pruefe(bwText.includes('fehlt.jpg') && bwText.includes('kaputt-json.json ist kein gültiges JSON') && !existsSync(join(site, 'bau-warnungen.txt')),
+    'bau-warnungen.txt neben _site (nicht darin) enthält die Warnungen');
+  pruefe(bwText.trim().split('\n').length === (r1.ausgabe.match(/^ {2}! /gm) || []).length, 'bau-warnungen.txt: eine Zeile je Warnung der Konsolenausgabe');
   const sm = readFileSync(join(site, 'sitemap.xml'), 'utf8');
   pruefe(sm.includes('/kaputt-inhalt</loc><priority>0.5</priority>'), 'ungültige Sitemap-Priorität → 0.5');
   pruefe(r1.ausgabe.includes('Inhaltsprüfung:') && r1.ausgabe.includes('sitemap_prioritaet: Wert "viel" ist nicht erlaubt'), '--pruefen meldet Inhaltsprobleme');

@@ -16,6 +16,8 @@
 //      `node build.mjs --pruefen` prüft).
 //   C. Formular <-> docs/INHALTSMODELL.md: jedes Formularfeld kommt im passenden Abschnitt vor und umgekehrt.
 //   D. Abdeckung: jede Inhaltsdatei ist im CMS erreichbar, inhalt/technik.json ausdrücklich nicht.
+//   E. Öffnen+Speichern wie in der echten Oberfläche (tools/pagescms/speichern.mjs): nichts geht verloren, und jede
+//      Datei steht schon in der Form da, die Pages CMS schreibt (sonst: node tools/pagescms/normalisiere-inhalt.mjs).
 //
 // Exit 0 = 0 Abweichungen.
 
@@ -358,51 +360,26 @@ infos.push(`C: ${abschnitte.length} Abschnitte von docs/INHALTSMODELL.md ausgewe
 }
 
 // ---------------------------------------------------------------------------------------------
-// E. Trockenlauf "Öffnen und ungeändert Speichern" (Nachbau von initializeState + sanitizeObject aus
-//    Pages CMS 2.1.8, lib/schema.ts): die Datei darf sich inhaltlich nicht ändern. Erlaubt ist nur,
-//    dass neutrale Standardwerte (z. B. hintergrund: normal) ergänzt werden.
-//    Nicht nachgebildet: Umformatierung von Fließtext durch den Editor (TipTap) – erst in der echten Oberfläche prüfbar.
+// E. Trockenlauf "Öffnen und ungeändert Speichern" mit der Nachbildung tools/pagescms/speichern.mjs
+//    (belegt durch echte Speicherungen auf dem Zweig cms-probe, Test tools/tests/pagescms-speichern.test.mjs):
+//    1. Inhaltlich geht nichts verloren und nichts ändert sich. Erlaubt ist nur, was Pages CMS immer tut und
+//       die gebaute Seite nicht ändert: leere Texte "" fallen weg, leere Fließtexte werden "<p></p>",
+//       Auswahl-/Ja-Nein-Felder bekommen ihren (neutralen) Standardwert.
+//    2. Die Datei steht schon genau so da, wie Pages CMS sie schreibt (2 Leerzeichen, jedes Objekt mehrzeilig,
+//       Schlüssel in Formular-Reihenfolge, kein Zeilenumbruch am Ende). Sonst zeigt die erste echte Speicherung
+//       lauter Formatierungs-Änderungen. Abhilfe: node tools/pagescms/normalisiere-inhalt.mjs
+//    Nicht nachgebildet: wie der Editor (TipTap) nicht-leeren Fließtext umformt – bei unserem Inhalt laut Test keine.
 // ---------------------------------------------------------------------------------------------
 {
-  const leerWert = (v) => v == null || v === '';
-  const istDatum = (v) => v instanceof Date;
-  // wörtlicher Nachbau von sanitizeObject
-  const sanitize = (object) => {
-    if (Array.isArray(object)) {
-      return object.map((val) => (val && typeof val === 'object' && !istDatum(val) ? sanitize(val) : val)).filter((val) => !leerWert(val));
-    }
-    if (object && typeof object === 'object' && !istDatum(object)) {
-      const kopie = { ...object };
-      for (const key of Object.keys(kopie)) {
-        const val = kopie[key];
-        if (val && typeof val === 'object' && !istDatum(val)) kopie[key] = sanitize(val);
-        if ((Array.isArray(kopie[key]) && kopie[key].every(leerWert))
-          || (typeof kopie[key] === 'object' && !Array.isArray(kopie[key]) && !istDatum(kopie[key]) && kopie[key] != null && !Object.keys(kopie[key]).length)
-          || leerWert(kopie[key])) delete kopie[key];
-      }
-      return kopie;
-    }
-    return object;
+  const { sanitize, speichere, alsDateitext } = await import('./speichern.mjs');
+  const LEERER_FLIESSTEXT = '<p></p>';
+  // nur "<p></p>" und neutrale Standardwerte dürfen neu entstehen (auch als ganzes neues Objekt daraus)
+  const erlaubtErgaenzt = (name, wert) => {
+    if (wert === LEERER_FLIESSTEXT) return true;
+    if (istObjekt(wert)) return Object.entries(wert).every(([k, v]) => erlaubtErgaenzt(k, v));
+    const std = NEUTRALE_STANDARDS[name];
+    return std !== undefined && String(std) === String(wert);
   };
-  const typStandard = (feld) => (feld.default !== undefined ? feld.default : feld.type === 'boolean' ? false : feld.type === 'object' ? zustandObjekt({}, feld.fields) : feld.type === 'block' ? null : '');
-  function zustandObjekt(daten, felder) {
-    const aus = {};
-    for (const f of felder ?? []) aus[f.name] = zustandFeld(daten?.[f.name], f);
-    return aus;
-  }
-  function zustandEinzeln(w, feld) {
-    if (feld.type === 'object') return zustandObjekt(w, feld.fields);
-    if (feld.type === 'block') {
-      const key = feld.blockKey ?? '_block';
-      const def = (feld.blocks ?? []).find((b) => b.name === w?.[key]);
-      return def && w ? { [key]: w[key], ...zustandObjekt(w, def.fields) } : w;
-    }
-    return w === undefined || w === null ? typStandard(feld) : w;
-  }
-  function zustandFeld(w, feld) {
-    if (feld.list) return w === undefined ? [] : Array.isArray(w) ? w.map((x) => zustandEinzeln(x, feld)) : [];
-    return zustandEinzeln(w, feld);
-  }
   const unterschiede = (alt, neu, pfad, aus) => {
     if (Array.isArray(alt) && Array.isArray(neu)) {
       if (alt.length !== neu.length) aus.push(`${pfad}: Liste hatte ${alt.length} Einträge, danach ${neu.length}.`);
@@ -417,30 +394,32 @@ infos.push(`C: ${abschnitte.length} Abschnitte von docs/INHALTSMODELL.md ausgewe
   };
   let dateienE = 0;
   let ergaenzt = 0;
-  const ergaenztListe = [];
+  let nichtInForm = 0;
   for (const e of eintraege) {
     const dateien = e.type === 'file' ? [e.path] : jsonDateien(e.path);
     for (const d of dateien) {
       if (!gibtEs(d)) continue;
       let daten;
-      try { daten = JSON.parse(lies(d)); } catch { continue; }
+      const text = lies(d);
+      try { daten = JSON.parse(text); } catch { continue; }
       dateienE += 1;
-      const vorher = sanitize(daten);
-      const nachher = sanitize(zustandObjekt(vorher, e.fields));
+      const vorher = sanitize(daten); // "" / leere Listen / leere Objekte entfallen – ändert die Seite nicht
+      const nachher = speichere(daten, e.fields);
       const diff = [];
       unterschiede(vorher, nachher, '', diff);
       for (const x of diff) {
         if (typeof x === 'string') { a('E', `${d} ${x}`); continue; }
-        // ergänztes Feld: nur erlaubt, wenn es ein neutraler Standardwert ist
         ergaenzt += 1;
-        ergaenztListe.push(`${d.split('/').pop()}${x.ergaenzt}=${JSON.stringify(x.wert)}`);
         const feldName = x.ergaenzt.split('.').pop();
-        const std = NEUTRALE_STANDARDS[feldName];
-        if (std === undefined || String(std) !== String(x.wert)) a('E', `${d} ${x.ergaenzt}: wird beim Speichern neu angelegt (${JSON.stringify(x.wert)?.slice(0, 40)}) – kein neutraler Standardwert.`);
+        if (!erlaubtErgaenzt(feldName, x.wert)) a('E', `${d} ${x.ergaenzt}: wird beim Speichern neu angelegt (${JSON.stringify(x.wert)?.slice(0, 40)}) – kein neutraler Standardwert.`);
+      }
+      if (text !== alsDateitext(nachher)) {
+        nichtInForm += 1;
+        a('E', `${d}: steht nicht in der Form, die Pages CMS schreibt – die erste Speicherung zeigte lauter Formatierungs-Änderungen. Abhilfe: node tools/pagescms/normalisiere-inhalt.mjs`);
       }
     }
   }
-  infos.push(`E: Trockenlauf Öffnen+Speichern an ${dateienE} Dateien: nichts geht verloren, nichts ändert sich (außer ${ergaenzt} ergänzte neutrale Standardwerte${ergaenzt ? `: ${ergaenztListe.join(', ')}` : ''}).`);
+  infos.push(`E: Trockenlauf Öffnen+Speichern an ${dateienE} Dateien: nichts geht verloren, nichts ändert sich inhaltlich; ${dateienE - nichtInForm} von ${dateienE} Dateien stehen schon genau so da, wie Pages CMS sie schreibt${ergaenzt ? ` (${ergaenzt} Werte würden ergänzt: "<p></p>" bzw. neutrale Standardwerte)` : ''}.`);
 }
 
 // ---------------------------------------------------------------------------------------------

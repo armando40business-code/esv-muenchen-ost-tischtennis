@@ -1,0 +1,357 @@
+{
+  "titel": "Vereinsmeisterschaft",
+  "zusatz": "Einzel und Doppel",
+  "excel": "",
+  "spaltentitel": {
+    "jahr": "Jahr",
+    "platz1": "Einzel 1. Platz",
+    "platz2": "2. Platz",
+    "platz3": "3. Platz",
+    "doppel": "Doppel-Sieger"
+  },
+  "jahrgaenge": [
+    {
+      "jahr": "2026",
+      "platz1": "Erb C.",
+      "platz2": "Braunisch",
+      "platz3": "Reichert / Grande",
+      "doppel": ""
+    },
+    {
+      "jahr": "2025",
+      "platz1": "",
+      "platz2": "",
+      "platz3": "",
+      "doppel": ""
+    },
+    {
+      "jahr": "2024",
+      "platz1": "Schwarze",
+      "platz2": "Häußler",
+      "platz3": "Braunisch",
+      "doppel": ""
+    },
+    {
+      "jahr": "2023",
+      "platz1": "Schwarze",
+      "platz2": "Braunisch",
+      "platz3": "Gattinger / Martin",
+      "doppel": ""
+    },
+    {
+      "jahr": "2022",
+      "platz1": "Schwarze",
+      "platz2": "Braunisch",
+      "platz3": "",
+      "doppel": ""
+    },
+    {
+      "jahr": "2021",
+      "platz1": "",
+      "platz2": "",
+      "platz3": "",
+      "doppel": ""
+    },
+    {
+      "jahr": "2020",
+      "platz1": "Braunisch",
+      "platz2": "Ludewig Fa.",
+      "platz3": "Homp R.",
+      "doppel": "Weimar / Radspieler"
+    },
+    {
+      "jahr": "2019",
+      "platz1": "",
+      "platz2": "",
+      "platz3": "",
+      "doppel": ""
+    },
+    {
+      "jahr": "2018",
+      "platz1": "",
+      "platz2": "",
+      "platz3": "",
+      "doppel": ""
+    },
+    {
+      "jahr": "2017",
+      "platz1": "Erb",
+      "platz2": "Adamenko",
+      "platz3": "Weimer / Luginger",
+      "doppel": "Adamenko / Luginger"
+    },
+    {
+      "jahr": "2016",
+      "platz1": "Erb",
+      "platz2": "Schönbeck",
+      "platz3": "Götz / Rutsche",
+      "doppel": "Schönbeck / Götz"
+    },
+    {
+      "jahr": "2015",
+      "platz1": "",
+      "platz2": "",
+      "platz3": "",
+      "doppel": ""
+    },
+    {
+      "jahr": "2014",
+      "platz1": "Erb",
+      "platz2": "Weimer",
+      "platz3": "Schönbeck / Fläschner",
+      "doppel": "Erb / Rutsche"
+    },
+    {
+      "jahr": "2013",
+      "platz1": "",
+      "platz2": "",
+      "platz3": "",
+      "doppel": ""
+    },
+    {
+      "jahr": "2012",
+      "platz1": "Fläschner",
+      "platz2": "Götz",
+      "platz3": "Gross / Wagenhäuser Rösch",
+      "doppel": "Fläschner / Gross"
+    },
+    {
+      "jahr": "2011",
+      "platz1": "Weimer",
+      "platz2": "Erb",
+      "platz3": "Fälschle",
+      "doppel": "Weimer / Rösch\nWeissenbach / Fabis"
+    },
+    {
+      "jahr": "2010",
+      "platz1": "Erb",
+      "platz2": "Weissenbach",
+      "platz3": "Götz",
+      "doppel": "Kalmbach / Götz"
+    },
+    {
+      "jahr": "2009",
+      "platz1": "Schönbeck",
+      "platz2": "Fabis",
+      "platz3": "Radspieler / Homp",
+      "doppel": "Schönbeck / Gerauer"
+    },
+    {
+      "jahr": "2008",
+      "platz1": "Küster",
+      "platz2": "Erb",
+      "platz3": "Weimer / Fälschle",
+      "doppel": "Erb / Radspieler"
+    },
+    {
+      "jahr": "2007",
+      "platz1": "Küster",
+      "platz2": "Erb",
+      "platz3": "Ludewig S.",
+      "doppel": "Fälschle / Wimmer"
+    },
+    {
+      "jahr": "2006",
+      "platz1": "Ludewig F.",
+      "platz2": "Rothe",
+      "platz3": "Wallowsky / Schönbeck",
+      "doppel": "Schönbeck / Rothe"
+    },
+    {
+      "jahr": "2005",
+      "platz1": "Weimer",
+      "platz2": "Kalmbach",
+      "platz3": "Poweleit",
+      "doppel": "Ludewig / Fabis"
+    },
+    {
+      "jahr": "2004",
+      "platz1": "Schönbeck",
+      "platz2": "Fabis",
+      "platz3": "Wallowsky",
+      "doppel": "Homp / Ludewig"
+    },
+    {
+      "jahr": "2003",
+      "platz1": "Homp",
+      "platz2": "Fälschle",
+      "platz3": "Homp",
+      "doppel": "Homp / Ludewig"
+    },
+    {
+      "jahr": "2002",
+      "platz1": "Botzler",
+      "platz2": "Rothe",
+      "platz3": "Schönbeck",
+      "doppel": "Rothe / Homp"
+    },
+    {
+      "jahr": "2001",
+      "platz1": "Homp",
+      "platz2": "Rothe",
+      "platz3": "Wallowsky",
+      "doppel": "Einsiedler / Rothe"
+    },
+    {
+      "jahr": "2000",
+      "platz1": "Einsiedler",
+      "platz2": "Fälschle",
+      "platz3": "Beekmann",
+      "doppel": "Einsiedler / Rothe\nEinsiedler / Fichtner"
+    },
+    {
+      "jahr": "1999",
+      "platz1": "Rothe",
+      "platz2": "Einsiedler",
+      "platz3": "Wallowsky",
+      "doppel": "Einsiedler / Rothe"
+    },
+    {
+      "jahr": "1999",
+      "platz1": "Einsiedler",
+      "platz2": "Fichtner",
+      "platz3": "Fabis",
+      "doppel": "Fabis / Matuschek"
+    },
+    {
+      "jahr": "1998",
+      "platz1": "Einsiedler",
+      "platz2": "Rothe",
+      "platz3": "Rothe",
+      "doppel": "Rothe / Beekmann"
+    },
+    {
+      "jahr": "1997",
+      "platz1": "Lechner",
+      "platz2": "Beekmann",
+      "platz3": "Wallowsky",
+      "doppel": "Fabis / Greitemeyer"
+    },
+    {
+      "jahr": "1996",
+      "platz1": "Rothe",
+      "platz2": "Fälschle",
+      "platz3": "Greitemeyer",
+      "doppel": "Bouda / Beekmann"
+    },
+    {
+      "jahr": "1995",
+      "platz1": "Wallowsky",
+      "platz2": "Fälschle",
+      "platz3": "Fabis",
+      "doppel": "Bouda / Beekmann"
+    },
+    {
+      "jahr": "1994",
+      "platz1": "Rothe",
+      "platz2": "Kinzelmann",
+      "platz3": "Beekmann",
+      "doppel": "Rauleder / Greitemeyer"
+    },
+    {
+      "jahr": "1993",
+      "platz1": "Bartmann",
+      "platz2": "Fälschle",
+      "platz3": "Beekmann",
+      "doppel": "Robl / Einsiedler"
+    },
+    {
+      "jahr": "1992",
+      "platz1": "Fälschle",
+      "platz2": "Rothe",
+      "platz3": "Gast",
+      "doppel": "Fälschle / Einsiedler"
+    },
+    {
+      "jahr": "1991",
+      "platz1": "Fälschle",
+      "platz2": "Rothe",
+      "platz3": "Fälschle",
+      "doppel": "Rothe / Fälschle"
+    },
+    {
+      "jahr": "1990",
+      "platz1": "Rothe",
+      "platz2": "Einsiedler",
+      "platz3": "Bouda",
+      "doppel": "Rothe / Rauleder"
+    },
+    {
+      "jahr": "1989",
+      "platz1": "Rothe",
+      "platz2": "Fälschle",
+      "platz3": "Robl",
+      "doppel": "Robl / Wallowsky"
+    },
+    {
+      "jahr": "1988",
+      "platz1": "Fabis",
+      "platz2": "Rothe",
+      "platz3": "Rauleder",
+      "doppel": "Rothe / Müller"
+    },
+    {
+      "jahr": "1987",
+      "platz1": "Robl",
+      "platz2": "Rothe",
+      "platz3": "Zacherl",
+      "doppel": "Rothe / Müller"
+    },
+    {
+      "jahr": "1986",
+      "platz1": "Mittl",
+      "platz2": "Rothe",
+      "platz3": "Rothe",
+      "doppel": "Rothe / Lange"
+    },
+    {
+      "jahr": "1985",
+      "platz1": "Mittl",
+      "platz2": "Fabis",
+      "platz3": "Wicht",
+      "doppel": "Mittl / Fabis"
+    },
+    {
+      "jahr": "1984",
+      "platz1": "Rothe",
+      "platz2": "Müller",
+      "platz3": "Poweleit",
+      "doppel": "Mittl / Fabis"
+    },
+    {
+      "jahr": "1983",
+      "platz1": "Rothe",
+      "platz2": "Wicht",
+      "platz3": "Dargel",
+      "doppel": "Zacherl / Cara"
+    },
+    {
+      "jahr": "1982",
+      "platz1": "Fabis",
+      "platz2": "Bouda",
+      "platz3": "Pietsch",
+      "doppel": "Gall / Estermaier"
+    },
+    {
+      "jahr": "1981",
+      "platz1": "Zacherl",
+      "platz2": "Cara",
+      "platz3": "Dürr",
+      "doppel": "Fabis / Wicht"
+    },
+    {
+      "jahr": "1980",
+      "platz1": "Fabis",
+      "platz2": "Zacherl",
+      "platz3": "Wicht",
+      "doppel": ""
+    },
+    {
+      "jahr": "1979",
+      "platz1": "Zacherl",
+      "platz2": "Pietsch",
+      "platz3": "",
+      "doppel": ""
+    }
+  ]
+}

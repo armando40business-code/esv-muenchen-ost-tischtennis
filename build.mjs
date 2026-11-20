@@ -2,6 +2,8 @@
 // Bauskript: liest inhalt/ und schreibt die fertige Website nach _site/.
 // Aufruf: node build.mjs            -> bauen
 //         node build.mjs --pruefen  -> bauen und zusätzlich Inhaltsprobleme auflisten
+// Warnungen (z. B. fehlendes Bild: Stelle weggelassen, Exit-Code bleibt 0) stehen zusätzlich je Zeile in
+// bau-warnungen.txt (neben _site); der Workflow zeigt sie in der Zusammenfassung des Laufs.
 // Keine npm-Abhängigkeiten (nur Node-Bordmittel, Node >= 20).
 
 import { readFileSync, writeFileSync, existsSync, mkdirSync, rmSync, cpSync, readdirSync, statSync } from 'node:fs';
@@ -18,6 +20,7 @@ import { inhaltPruefen } from './lib/pruefung.mjs';
 
 const WURZEL = dirname(fileURLToPath(import.meta.url));
 const AUSGABE = join(WURZEL, '_site');
+const WARNUNGEN_DATEI = join(WURZEL, 'bau-warnungen.txt'); // neben _site, nicht darin
 const PRUEFEN = process.argv.includes('--pruefen');
 export const FESTE_SEITEN = ['index', 'mannschaften', 'training', 'historie', 'vereinsmeisterschaft', 'kontakt', 'impressum', 'datenschutz'];
 
@@ -181,6 +184,7 @@ function sitemap(seiten, basisUrl, technik) {
 }
 
 async function main() {
+  rmSync(WARNUNGEN_DATEI, { force: true }); // kein alter Stand, falls der Bau abbricht
   const einst = obj(leseJson(join(WURZEL, 'inhalt', 'einstellungen.json'), true));
   const technik = obj(leseJson(join(WURZEL, 'inhalt', 'technik.json'), true));
   const basisUrl = txt(technik.basis_url).trim().replace(/\/+$/, '') || 'https://esv-tischtennis.pages.dev';
@@ -243,6 +247,9 @@ async function main() {
     console.log(`\nWarnungen (${warnungen.length}):`);
     for (const w of warnungen) console.log('  ! ' + w);
   }
+  // Maschinenlesbar für den Veröffentlichen-Workflow (Zusammenfassung + ::warning): eine Warnung je Zeile,
+  // außerhalb von _site, damit sie nie mit veröffentlicht wird. Leere Datei = keine Warnungen.
+  writeFileSync(WARNUNGEN_DATEI, warnungen.map((w) => w.replace(/\s*[\r\n]+\s*/g, ' ⏎ ')).join('\n') + (warnungen.length ? '\n' : ''), 'utf8');
   if (PRUEFEN) {
     const probleme = inhaltPruefen({ wurzel: WURZEL, einst, technik, seiten, turniere, gebaut, dateiPfad });
     console.log(`\nInhaltsprüfung: ${probleme.length ? probleme.length + ' Auffälligkeiten' : 'keine Auffälligkeiten'}`);

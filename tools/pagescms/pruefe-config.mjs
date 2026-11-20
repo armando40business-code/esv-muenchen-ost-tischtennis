@@ -150,16 +150,43 @@ if (json && istObjekt(json)) {
     if (feld.list && typeof feld.list === 'object' && feld.list.collapsible && !['object', 'block'].includes(feld.type)) {
       f(`${w}: collapsible gilt nur für Objekt-/Baustein-Listen.`);
     }
+    // Hilfetext an einer Liste zeigt Pages CMS unter JEDEM Eintrag (cms-probe: 50-mal bei den Jahrgängen).
+    if (feld.list && feld.description) f(`${w}: Liste mit Hilfetext (description) – erscheint unter jedem Eintrag. Das Wichtigste kurz ins Label, den Rest in docs/ANLEITUNG-PFLEGE.md.`);
     if ((feld.type === 'object' || feld.type === 'block') && feld.list && typeof feld.list === 'object') {
       const sum = feld.list.collapsible?.summary;
       if (feld.type === 'object' && feld.list.collapsible && !sum) hinweise.push(`${w}: einklappbar ohne summary (Zeile zeigt „Item #n“).`);
       if (sum) {
-        const bekannt = new Set(['index', ...(feld.type === 'object' ? (feld.fields ?? []).map((x) => x.name) : (feld.blocks ?? []).flatMap((b) => (b.fields ?? []).map((x) => x.name)))]);
-        for (const m of sum.matchAll(/\{(?:fields\.)?([A-Za-z0-9_-]+)\}/g)) if (!bekannt.has(m[1])) f(`${w}: summary nennt unbekanntes Feld {${m[1]}}.`);
+        // Pages CMS (lib/schema.ts interpolate): {feld}, {feld[0].unterfeld}, {index}; Fehlendes wird zu "" (kein Rückfall).
+        // Feldlisten, gegen die ein Platzhalter aufgelöst wird (bei Bausteinen: jede Art für sich)
+        const quellen = feld.type === 'object' ? [feld.fields ?? []] : (feld.blocks ?? []).map((b) => b.fields ?? []);
+        let pflicht = false;
+        for (const m of sum.matchAll(/(?<!\\)\{([^}]+)\}/g)) {
+          const teile = m[1].replace(/^fields\./, '').split('.').map((t) => t.replace(/\[\d+\]$/, ''));
+          if (teile[0] === 'index' && teile.length === 1) continue;
+          const ziele = [];
+          for (const q of quellen) {
+            let felder = q;
+            let ziel = null;
+            for (const t of teile) {
+              ziel = felder.find((x) => x.name === t) ?? null;
+              if (!ziel) break;
+              felder = ziel.fields ?? [];
+            }
+            if (ziel) ziele.push(ziel);
+          }
+          if (!ziele.length) { f(`${w}: summary nennt unbekanntes Feld {${m[1]}}.`); continue; }
+          if (ziele.some((z) => z.type === 'rich-text')) f(`${w}: summary nennt Fließtext {${m[1]}} – die Zeile zeigte HTML bzw. „<p></p>“.`);
+          if (feld.type === 'object' && teile.length === 1 && ziele[0].required) pflicht = true;
+        }
+        // Immer etwas Sprechendes: ein festes Wort außerhalb der Platzhalter oder ein Pflichtfeld
+        const fest = sum.replace(/(?<!\\)\{[^}]+\}/g, '');
+        if (!/\p{L}/u.test(fest) && !pflicht) f(`${w}: summary "${sum}" kann leer bzw. nur eine Nummer sein – ein festes Wort (z. B. „Eintrag {index}: …“) oder ein Pflichtfeld aufnehmen.`);
       }
     }
   };
   for (const e of norm.eintraege) {
+    // Seitenleiste: lange Namen schneidet Pages CMS ab (cms-probe: „Jahrgänge Verein…“). Bis 20 Zeichen passen.
+    if (typeof e.label === 'string' && e.label.length > 20) f(`Seitenleiste "${e.name}": Name "${e.label}" ist länger als 20 Zeichen und wird abgeschnitten.`);
     const n = new Set();
     for (const feld of e.fields ?? []) {
       if (n.has(feld.name)) f(`${e.name}: Feldname "${feld.name}" doppelt.`);

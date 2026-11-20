@@ -186,7 +186,7 @@ content:
     type: group
     items:
       - name: turnier-vereinsmeisterschaft
-        label: Jahrgänge Vereinsmeisterschaft
+        label: Vereinsmeisterschaft
         description: "Alle Sieger der Vereinsmeisterschaft, Jahr für Jahr."
         type: file
         path: inhalt/turniere/vereinsmeisterschaft.json
@@ -206,23 +206,24 @@ content:
               - { name: platz2, label: "Spalte 3", type: string }
               - { name: platz3, label: "Spalte 4", type: string }
               - { name: doppel, label: "Spalte 5", type: string }
+          # Kein Hilfetext an Listen: Pages CMS zeigt ihn unter JEDEM Eintrag (hier 50-mal). Das Wichtigste steht
+          # im Label (nur einmal sichtbar), alles Weitere in docs/ANLEITUNG-PFLEGE.md.
           - name: jahrgaenge
-            label: "Jahrgänge"
+            label: "Jahrgänge (Reihenfolge egal – die Website sortiert selbst)"
             type: object
-            description: "Die Reihenfolge ist egal: Die Website sortiert selbst, der neueste Jahrgang erscheint oben. Ein neuer Jahrgang: unten auf „Add an item“ klicken und ausfüllen. Ein leeres Feld erscheint auf der Seite als „—“. Eine zweite Paarung (z. B. bei Doppel) schreibst du in eine neue Zeile im selben Feld."
             list:
               collapsible:
                 collapsed: true
-                summary: "{jahr} · {platz1}"
+                summary: "{jahr} {platz1}"
             fields:
               - { name: jahr, label: "Jahr", type: string, required: true, description: "Zum Beispiel 2027." }
-              - { name: platz1, label: "Einzel 1. Platz (Sieger)", type: text, description: "Name des Siegers. Leer = „—“." }
+              - { name: platz1, label: "Einzel 1. Platz (Sieger)", type: text, description: "Leer = „—“." }
               - { name: platz2, label: "2. Platz", type: text, description: "Leer = „—“." }
-              - { name: platz3, label: "3. Platz", type: text, description: "Bei zwei Dritten: Namen mit „ / “ trennen oder in zwei Zeilen schreiben. Leer = „—“." }
-              - { name: doppel, label: "Doppel-Sieger", type: text, description: "Zum Beispiel „Weimar / Radspieler“. Mehrere Paarungen: jede in eine neue Zeile. Leer = „—“." }
+              - { name: platz3, label: "3. Platz", type: text, description: "Zwei Dritte: mit „ / “ trennen. Leer = „—“." }
+              - { name: doppel, label: "Doppel-Sieger", type: text, description: "Zum Beispiel „Weimar / Radspieler“. Mehrere Paarungen: je eine Zeile. Leer = „—“." }
 
       - name: turnier-facklerpokal
-        label: Jahrgänge Facklerpokal
+        label: Facklerpokal
         description: "Alle Sieger des Facklerpokals, Jahr für Jahr."
         type: file
         path: inhalt/turniere/facklerpokal.json
@@ -241,16 +242,15 @@ content:
               - { name: sieger, label: "Spalte 2", type: string }
               - { name: zweiter, label: "Spalte 3", type: string }
           - name: jahrgaenge
-            label: "Jahrgänge"
+            label: "Jahrgänge (Reihenfolge egal – die Website sortiert selbst)"
             type: object
-            description: "Die Reihenfolge ist egal: Die Website sortiert selbst, der neueste Jahrgang erscheint oben. Ein neuer Jahrgang: unten auf „Add an item“ klicken und ausfüllen. Ein leeres Feld erscheint auf der Seite als „—“. Eine zweite Paarung kommt in eine neue Zeile im selben Feld."
             list:
               collapsible:
                 collapsed: true
-                summary: "{jahr} · {sieger}"
+                summary: "{jahr} {sieger}"
             fields:
               - { name: jahr, label: "Jahr", type: string, required: true, description: "Zum Beispiel 2027." }
-              - { name: sieger, label: "Siegerdoppel", type: text, description: "Zum Beispiel „Rutsche / Götz“. Mehrere Paarungen: jede in eine neue Zeile. Leer = „—“." }
+              - { name: sieger, label: "Siegerdoppel", type: text, description: "Zum Beispiel „Rutsche / Götz“. Mehrere Paarungen: je eine Zeile. Leer = „—“." }
               - { name: zweiter, label: "2. Platz", type: text, description: "Zum Beispiel „Huber / Häußler“. Leer = „—“." }
 
   - name: einstellungen
@@ -276,16 +276,15 @@ content:
           - { name: text, label: "Beschriftung", type: string, description: "Zum Beispiel „Schnuppern“. Leer = der Knopf wird nicht angezeigt." }
           - { name: ziel, component: link_ziel, label: "Ziel", description: "Wohin der Knopf führt. Eine Seite der Website: training.html. Eine volle Adresse: https://… Leer = kein Knopf." }
       - name: menue
-        label: "Menü oben"
+        label: "Menü oben (Reihenfolge wie auf der Website)"
         type: object
-        description: "Die Menüpunkte in der Reihenfolge, wie sie oben erscheinen. Mit dem Griff links verschiebst du einen Punkt."
         list:
           collapsible:
             collapsed: true
             summary: "{index}. {titel}"
         fields:
           - { name: titel, label: "Name im Menü", type: string, required: true }
-          - { name: ziel, component: link_ziel, label: "Ziel", description: "Eine Seite der Website: training.html. Die Startseite ist index.html. Ein Abschnitt: kontakt.html#sponsoring. Eine fremde Seite: die volle Adresse mit https://" }
+          - { name: ziel, component: link_ziel, label: "Ziel", description: "Zum Beispiel training.html, index.html (Startseite), kontakt.html#sponsoring oder https://…" }
       - name: fusszeile
         label: "Fußzeile (ganz unten)"
         type: object
@@ -293,13 +292,12 @@ content:
           - { name: text, label: "Satz unter dem Wappen", type: text, description: "Ein kurzer Satz über den Verein. Leer = kein Satz." }
           - { name: logo_alt, label: "Beschreibung des Wappens", type: string, description: "Kurze Beschreibung des Wappens für Menschen, die das Bild nicht sehen können. Leer = keine Beschreibung." }
           - name: spalten
-            label: "Linkspalten"
+            label: "Linkspalten der Fußzeile"
             type: object
-            description: "Die Spalten mit Links in der Fußzeile."
             list:
               collapsible:
                 collapsed: true
-                summary: "{index}. {titel}"
+                summary: "Spalte {index}: {titel}"
             fields:
               - { name: titel, label: "Überschrift der Spalte", type: string }
               - name: links
@@ -308,19 +306,18 @@ content:
                 list:
                   collapsible:
                     collapsed: true
-                    summary: "{text}"
+                    summary: "Eintrag {index}: {text}"
                 fields:
                   - { name: text, label: "Angezeigter Text", type: string }
-                  - { name: ziel, component: link_ziel, label: "Ziel", description: "Eine Seite der Website: training.html. Eine fremde Seite: die volle Adresse mit https://. Leer = nur Text ohne Link." }
+                  - { name: ziel, component: link_ziel, label: "Ziel", description: "Zum Beispiel training.html oder https://… Leer = nur Text ohne Link." }
           - { name: copyright, label: "Zeile ganz unten links", type: string, description: "Zum Beispiel „© {jahr} ESV München-Ost“. Der Platzhalter {jahr} wird automatisch zur aktuellen Jahreszahl. Leer = keine Zeile." }
           - name: rechtliche_links
-            label: "Rechtliche Links (unten rechts)"
+            label: "Rechtliche Links (unten rechts, z. B. Impressum)"
             type: object
-            description: "Zum Beispiel Impressum und Datenschutz."
             list:
               collapsible:
                 collapsed: true
-                summary: "{text}"
+                summary: "Link {index}: {text}"
             fields:
               - { name: text, label: "Angezeigter Text", type: string }
               - { name: ziel, component: link_ziel, label: "Ziel", description: "Zum Beispiel impressum.html." }
@@ -403,11 +400,11 @@ components:
     pattern:
       regex: "^[A-Za-z0-9_-]*$"
       message: "Nur Buchstaben ohne Umlaute, Ziffern, Unterstrich und Bindestrich."
-    description: "Ein Kurzname, damit man direkt zu diesem Abschnitt springen kann. Heißt er zum Beispiel hallen, führt der Link training.html#hallen genau hierher. Nur Buchstaben ohne Umlaute, Ziffern und Bindestrich. Leer = man kann nicht direkt hierher springen."
+    description: "Kurzname zum direkten Hinspringen: hallen → Link training.html#hallen. Nur a–z, Ziffern, Bindestrich. Leer = keine Sprungmarke."
   link_ziel:
     label: "Ziel des Links"
     type: string
-    description: "Wohin der Link führt. Eine Seite der Website: training.html. Ein Abschnitt auf einer Seite: kontakt.html#sponsoring. Eine fremde Seite: die volle Adresse mit https://. Leer = kein Link."
+    description: "Zum Beispiel training.html, kontakt.html#sponsoring oder https://… Leer = kein Link."
   hintergrund:
     label: "Hintergrund"
     type: select
@@ -456,18 +453,20 @@ components:
       extensions: [xlsx, csv]
 
   # ---- Info-Paare (Begriff / Wert / Zusatz) -------------------------------------------------
+  # Listen (list: …) haben bewusst KEINEN Hilfetext (description): Pages CMS zeigt ihn unter jedem einzelnen
+  # Eintrag. Das Wichtigste steht kurz im Label. Die Zeilentitel (summary) haben immer ein festes Wort,
+  # damit eine Zeile nie leer ist; Fließtextfelder gehören nicht hinein (zeigten HTML).
   infos:
-    label: "Angaben"
+    label: "Angaben (Bezeichnung, Wert, Zusatz)"
     type: object
-    description: "Eine Liste aus Angaben, zum Beispiel „Heimat – Vereinshalle …“. Jede Angabe hat eine kleine goldene Bezeichnung, einen fetten Wert und eine kleine Zeile darunter."
     list:
       collapsible:
         collapsed: true
-        summary: "{index}. {begriff}"
+        summary: "Angabe {index}: {begriff}"
     fields:
-      - { name: begriff, label: "Bezeichnung", type: string, description: "Die kleine goldene Zeile, zum Beispiel „Heimat“. Leer = keine Bezeichnung." }
-      - { name: wert, component: fliesstext, label: "Wert (fett)", description: "Die eigentliche Angabe, zum Beispiel eine Adresse oder Telefonnummer. Hier genügt eine Zeile. Leer = nichts." }
-      - { name: zusatz, component: fliesstext, label: "Zusatz (kleine Zeile darunter)", description: "Eine kleine ergänzende Zeile. Hier genügt eine Zeile. Leer = keine Zusatzzeile." }
+      - { name: begriff, label: "Bezeichnung", type: string, description: "Die kleine goldene Zeile, zum Beispiel „Heimat“. Leer = keine." }
+      - { name: wert, component: fliesstext, label: "Wert (fett)", description: "Zum Beispiel eine Adresse. Eine Zeile genügt. Leer = nichts." }
+      - { name: zusatz, component: fliesstext, label: "Zusatz (kleine Zeile darunter)", description: "Eine Zeile genügt. Leer = keine Zusatzzeile." }
 
   # ---- Kopfbereiche ---------------------------------------------------------------------------
   kopf_einfach:
@@ -488,25 +487,23 @@ components:
       - { name: ueberschrift, component: ueberschrift, label: "Große Überschrift", description: "Die große Überschrift der Startseite." }
       - { name: text, component: fliesstext, label: "Einleitung", description: "Der Text unter der Überschrift. Leer = kein Text." }
       - name: buttons
-        label: "Knöpfe"
+        label: "Knöpfe unter dem Text"
         type: object
-        description: "Die Knöpfe unter dem Text. Leer = keine Knöpfe."
         list:
           collapsible:
             collapsed: true
-            summary: "{index}. {text}"
+            summary: "Knopf {index}: {text}"
         fields:
           - { name: text, label: "Beschriftung", type: string, description: "Zum Beispiel „Zum Schnuppertraining →“." }
           - { name: ziel, component: link_ziel, label: "Ziel" }
           - { name: stil, component: knopf_stil, label: "Aussehen" }
       - name: fakten
-        label: "Kurze Fakten-Zeile unter den Knöpfen"
+        label: "Fakten-Zeile unter den Knöpfen (je Eintrag ein Satzteil)"
         type: object
-        description: "Jeder Eintrag ist ein Satzteil: Text davor, ein fett hervorgehobener Teil und Text danach. Es muss nicht alles ausgefüllt sein. Leer = keine Fakten-Zeile."
         list:
           collapsible:
             collapsed: true
-            summary: "{index}. {vor} {fett} {nach}"
+            summary: "Fakt {index}: {vor} {fett} {nach}"
         fields:
           - { name: vor, label: "Text davor", type: string, description: "Leer = nichts davor." }
           - { name: fett, label: "Fett hervorgehoben", type: string, description: "Leer = nichts Fettes." }
@@ -525,7 +522,7 @@ components:
             list:
               collapsible:
                 collapsed: true
-                summary: "{index}. {fett}"
+                summary: "Zeile {index}: {fett} {text}"
             fields:
               - { name: fett, label: "Fette Zeile", type: string, description: "Zum Beispiel „Erwachsene“. Leer = keine fette Zeile." }
               - { name: text, label: "Zeile darunter", type: string, description: "Zum Beispiel „Mo ab 20:00 & Do ab 19:30 Uhr · Vereinshalle“. Leer = nichts darunter." }
@@ -540,11 +537,12 @@ components:
     label: "Abschnitte der Seite"
     type: block
     blockKey: _block
-    description: "Die Seite besteht aus Abschnitten, von oben nach unten. Mit „Add an item“ fügst du einen neuen Abschnitt hinzu und wählst dann seine Art. Mit dem Griff links verschiebst du einen Abschnitt, mit dem Papierkorb löschst du ihn. Rechts oben im Abschnitt steht seine Art."
+    # Zeilentitel: Nummer, kleine Zeile und Überschrift; Zahlenband und Zwei Spalten haben keine eigene
+    # Überschrift und zeigen ihren ersten Eintrag. Fehlende Felder ersetzt Pages CMS durch nichts.
     list:
       collapsible:
         collapsed: true
-        summary: "{index}. {ueberschrift}"
+        summary: "Abschnitt {index}: {kicker} {ueberschrift} {zahlen[0].zahl} {zahlen[0].text} {spalten[0].kicker} {spalten[0].ueberschrift}"
     blocks:
 
       # 1 -------------------------------------------------------------------------------------
@@ -556,7 +554,7 @@ components:
           - { name: kicker, component: kicker }
           - { name: ueberschrift, component: ueberschrift }
           - { name: text, component: fliesstext, label: "Text", description: "Der Haupttext links. Leer = kein Text." }
-          - { name: punkte, component: fliesstext, label: "Aufzählungspunkte", list: true, description: "Eine Liste mit goldenen Punkten unter dem Text. Jeder Eintrag ist ein Punkt, hier genügt eine Zeile. Leer = keine Punkte." }
+          - { name: punkte, component: fliesstext, label: "Aufzählungspunkte (je Eintrag ein Punkt, eine Zeile)", list: true, description: null }
           - { name: button_text, label: "Knopf: Beschriftung", type: string, description: "Der Knopf unter dem Text. Leer = kein Knopf." }
           - { name: button_ziel, component: link_ziel, label: "Knopf: Ziel" }
           - { name: button_stil, component: knopf_stil, label: "Knopf: Aussehen" }
@@ -567,7 +565,7 @@ components:
             fields:
               - { name: kicker, label: "Kleine Zeile oben im Kasten", type: string, description: "Leer = keine Zeile." }
               - { name: infos, component: infos, label: "Angaben im Kasten" }
-              - { name: liste, label: "Einfache Liste", type: string, list: true, description: "Eine schlichte Liste, zum Beispiel Partner und Förderer. Leer = keine Liste." }
+              - { name: liste, label: "Einfache Liste (z. B. Partner und Förderer)", type: string, list: true }
               - { name: hinweis, component: fliesstext, label: "Kleiner Hinweis unten", description: "Ein kleiner Satz unten im Kasten, hier genügt eine Zeile. Leer = kein Hinweis." }
 
       # 2 -------------------------------------------------------------------------------------
@@ -599,15 +597,14 @@ components:
                 - { value: standard, label: "Normal" }
                 - { value: turniere, label: "Zwei breite Karten (wie bei den Turnieren)" }
           - name: karten
-            label: "Karten"
+            label: "Karten (nur ausfüllen, was zu sehen sein soll)"
             type: object
-            description: "Die einzelnen Karten. Jede Karte braucht nur das, was du anzeigen willst – alles andere kannst du leer lassen."
             list:
               collapsible:
                 collapsed: true
-                summary: "{index}. {titel}"
+                summary: "Karte {index}: {kicker} {titel}"
             fields:
-              - { name: zwischentitel_davor, label: "Neue Reihe mit Zwischenüberschrift", type: string, description: "Wenn hier etwas steht, beginnt vor dieser Karte eine neue Reihe mit dieser Zwischenüberschrift, zum Beispiel „Damen & Jugend“. Leer = die Karte reiht sich normal ein." }
+              - { name: zwischentitel_davor, label: "Neue Reihe mit Zwischenüberschrift", type: string, description: "Vor dieser Karte beginnt eine neue Reihe mit dieser Überschrift, z. B. „Damen & Jugend“. Leer = keine neue Reihe." }
               - { name: kicker, label: "Kleine Zeile oben", type: string, description: "Leer = keine Zeile." }
               - { name: titel, label: "Titel der Karte", type: string, description: "Leer = kein Titel." }
               - { name: unterzeile, label: "Graue Zeile unter dem Titel", type: string, description: "Leer = keine Zeile." }
@@ -615,23 +612,22 @@ components:
               - { name: zeile2, label: "Zeile darunter", type: string, description: "Zum Beispiel PLZ und Ort. Leer = keine Zeile." }
               - { name: text, component: fliesstext, label: "Text der Karte", description: "Leer = kein Text." }
               - name: zeilen
-                label: "Zeilen mit Trennlinie"
+                label: "Zeilen mit Trennlinie (z. B. Trainingszeiten)"
                 type: object
-                description: "Zum Beispiel Trainingszeiten. Leer = keine Zeilen."
                 list:
                   collapsible:
                     collapsed: true
-                    summary: "{index}. {fett}"
+                    summary: "Zeile {index}: {fett} {text}"
                 fields:
-                  - { name: fett, label: "Fette Bezeichnung", type: string, description: "Zum Beispiel „Montag“. Leer = keine fette Bezeichnung." }
-                  - { name: text, label: "Text darunter", type: string, description: "Zum Beispiel „20:00–22:00 Uhr“. Leer = nichts darunter." }
+                  - { name: fett, label: "Fette Bezeichnung", type: string, description: "Zum Beispiel „Montag“. Leer = keine." }
+                  - { name: text, label: "Text darunter", type: string, description: "Zum Beispiel „20:00–22:00 Uhr“. Leer = nichts." }
               - { name: rangliste_titel, label: "Überschrift der Rangliste", type: string, description: "Zum Beispiel „Sieger Einzel 2026“. Leer = keine Rangliste." }
-              - { name: rangliste, label: "Rangliste (Platz 1, 2, 3 …)", type: string, list: true, description: "Ein Name pro Eintrag, der erste ist Platz 1. Die Nummern setzt die Seite selbst. Leer = keine Rangliste." }
+              - { name: rangliste, label: "Rangliste (ein Name je Eintrag, Platz 1 zuerst)", type: string, list: true }
               - { name: bild, component: bild, label: "Bild oben in der Karte", description: "Leer = kein Bild." }
               - { name: bild_alt, label: "Beschreibung des Bildes", type: string, description: "Ein kurzer Satz für Menschen, die das Bild nicht sehen können. Leer = keine Beschreibung." }
               - { name: link_text, label: "Link unten in der Karte: Text", type: string, description: "Zum Beispiel „Details →“. Leer = kein Link." }
               - { name: link_ziel, component: link_ziel, label: "Link unten in der Karte: Ziel" }
-          - { name: hinweise, component: fliesstext, label: "Kleine Hinweise unter den Karten", list: true, description: "Jeder Eintrag ist ein kleiner Hinweis, hier genügt eine Zeile. Leer = keine Hinweise." }
+          - { name: hinweise, component: fliesstext, label: "Kleine Hinweise unter den Karten (je Eintrag einer)", list: true, description: null }
 
       # 3 -------------------------------------------------------------------------------------
       - name: zahlenband
@@ -639,13 +635,12 @@ components:
         fields:
           - { name: anker, component: anker }
           - name: zahlen
-            label: "Zahlen"
+            label: "Zahlen (z. B. „50+“ – „Jahre im Verein“)"
             type: object
-            description: "Ein Band mit großen Zahlen, zum Beispiel „50+ – Jahre im Verein“. Leer = das Band erscheint nicht."
             list:
               collapsible:
                 collapsed: true
-                summary: "{zahl} {text}"
+                summary: "Zahl {index}: {zahl} {text}"
             fields:
               - { name: zahl, label: "Große Zahl", type: string, description: "Zum Beispiel „50+“. Leer = keine Zahl." }
               - { name: text, label: "Beschriftung", type: string, description: "Zum Beispiel „Jahre im Verein“. Leer = keine Beschriftung." }
@@ -669,13 +664,12 @@ components:
           - { name: kicker, component: kicker }
           - { name: ueberschrift, component: ueberschrift }
           - name: eintraege
-            label: "Einträge"
+            label: "Stationen (von oben nach unten)"
             type: object
-            description: "Die Stationen der Zeitleiste, von oben nach unten. Leer = keine Einträge."
             list:
               collapsible:
                 collapsed: true
-                summary: "{jahr} · {titel}"
+                summary: "Station {index}: {jahr} {titel}"
             fields:
               - { name: jahr, label: "Jahr oder Zeitraum", type: string, description: "Zum Beispiel „2020“ oder „bis 2020“. Leer = nichts links." }
               - { name: titel, label: "Fette Zeile", type: string, description: "Leer = keine fette Zeile." }
@@ -691,13 +685,12 @@ components:
           - { name: ueberschrift, component: ueberschrift }
           - { name: text, component: fliesstext, label: "Einleitung", description: "Ein kurzer grauer Text über den Kacheln. Leer = kein Text." }
           - name: gruppen
-            label: "Gruppen"
+            label: "Gruppen von Kacheln (z. B. „Rekordsieger Einzel“)"
             type: object
-            description: "Gruppen von Kacheln, zum Beispiel „Rekordsieger Einzel“. Leer = keine Gruppen."
             list:
               collapsible:
                 collapsed: true
-                summary: "{index}. {titel}"
+                summary: "Gruppe {index}: {titel}"
             fields:
               - { name: titel, label: "Überschrift der Gruppe", type: string, description: "Leer = keine Überschrift." }
               - name: eintraege
@@ -706,7 +699,7 @@ components:
                 list:
                   collapsible:
                     collapsed: true
-                    summary: "{name}: {zahl}"
+                    summary: "Kachel {index}: {name} {zahl}"
                 fields:
                   - { name: zahl, label: "Große Zahl", type: string, description: "Zum Beispiel „7“. Leer = keine Zahl." }
                   - { name: name, label: "Name", type: string, description: "Leer = kein Name." }
@@ -725,17 +718,16 @@ components:
           - { name: kein_treffer_text, label: "Text, wenn nichts gefunden wird", type: string, description: "Leer = „Kein Treffer – probier einen anderen Namen oder ein anderes Jahr.“" }
           - { name: hinweis, component: fliesstext, label: "Hinweis unter den Tabellen", description: "Ein kleiner Satz unter den Tabellen, hier genügt eine Zeile. Leer = kein Hinweis." }
           - name: weitere_reiter
-            label: "Weitere Reiter"
+            label: "Weitere Reiter (Vereinsmeisterschaft und Facklerpokal kommen immer dazu)"
             type: object
-            description: "Vereinsmeisterschaft und Facklerpokal erscheinen immer; ihre Jahrgänge pflegst du unter „Turniere“. Hier kannst du zusätzliche Reiter mit eigenen Tabellen anlegen. Leer = keine weiteren Reiter."
             list:
               collapsible:
                 collapsed: true
-                summary: "{index}. {titel}"
+                summary: "Reiter {index}: {titel}"
             fields:
               - { name: titel, label: "Name des Reiters", type: string, description: "Leer = „Tabelle 1“, „Tabelle 2“ usw." }
-              - { name: excel, component: tabelle_datei, label: "Excel-Datei", description: "Als .xlsx speichern; die erste Zeile wird zur Kopfzeile. Leer = stattdessen gilt das Feld darunter." }
-              - { name: eingefuegt, label: "Aus Excel eingefügt", type: text, description: "In Excel die Zellen markieren, kopieren und hier einfügen. Die erste Zeile wird zur Kopfzeile. Wenn oben eine Excel-Datei gewählt ist, gilt die Datei. Leer = der Reiter bleibt leer." }
+              - { name: excel, component: tabelle_datei, label: "Excel-Datei", description: "Als .xlsx; erste Zeile = Kopfzeile. Leer = es gilt das Feld darunter." }
+              - { name: eingefuegt, label: "Aus Excel eingefügt", type: text, description: "Zellen in Excel kopieren und hier einfügen; erste Zeile = Kopfzeile. Eine Excel-Datei oben hat Vorrang." }
 
       # 8 -------------------------------------------------------------------------------------
       - name: kontakt
@@ -765,13 +757,12 @@ components:
           - { name: hintergrund, component: hintergrund }
           - { name: anker, component: anker }
           - name: spalten
-            label: "Spalten"
+            label: "Spalten (nebeneinander, am Handy untereinander)"
             type: object
-            description: "Die Spalten stehen nebeneinander, am Handy untereinander. Leer = der Abschnitt erscheint nicht."
             list:
               collapsible:
                 collapsed: true
-                summary: "{index}. {ueberschrift}"
+                summary: "Spalte {index}: {kicker} {ueberschrift}"
             fields:
               - { name: anker, component: anker }
               - { name: kicker, component: kicker }
@@ -834,14 +825,13 @@ components:
           - name: bilder
             label: "Bilder"
             type: object
-            description: "Die einzelnen Bilder. Leer = es wird nichts angezeigt."
             list:
               collapsible:
                 collapsed: true
-                summary: "{index}. {unterschrift}"
+                summary: "Bild {index}: {unterschrift} {bild}"
             fields:
-              - { name: bild, component: bild, label: "Bild", description: "Ein Bild hochladen oder aus den vorhandenen wählen. Neue Bilder bekommen am besten einen neuen Dateinamen. Das Bild wird nie größer gezeigt, als es hochgeladen wurde." }
-              - { name: beschreibung, label: "Beschreibung des Bildes", type: string, description: "Ein kurzer Satz für Menschen, die das Bild nicht sehen können, und für Google. Leer = keine Beschreibung." }
+              - { name: bild, component: bild, label: "Bild", description: "Hochladen oder auswählen; ein neues Bild mit neuem Dateinamen. Es wird nie größer gezeigt als hochgeladen." }
+              - { name: beschreibung, label: "Beschreibung des Bildes", type: string, description: "Ein kurzer Satz für Menschen, die das Bild nicht sehen können. Leer = keine." }
               - { name: unterschrift, label: "Sichtbare Bildunterschrift", type: string, description: "Steht unter dem Bild. Leer = keine Unterschrift." }
 
 # ---------------------------------------------------------------------------------------------

@@ -1,0 +1,203 @@
+{
+  "browsertitel": "ESV München-Ost · Tischtennis — Verein, Training & Schnuppern in München",
+  "beschreibung": "Tischtennis beim ESV München-Ost: 12 Mannschaften von der Bezirksklasse C bis zur Bezirksoberliga, Kinder- und Jugendtraining, Schnuppern jederzeit ohne Anmeldung.",
+  "menue_titel": "Start",
+  "sitemap_prioritaet": "1.0",
+  "kopf": {
+    "kicker": "ESV München-Ost e.V.",
+    "ueberschrift": "Tischtennis mitten in München-Ost (Probe).",
+    "text": "<p>Bei uns kommen Gemütlichkeit und Breitensport zusammen. Vom Bezirksoberliga- bis zum engagierten Bezirksklassespieler – wer einen Schläger halten kann, ist herzlich willkommen.</p>",
+    "buttons": [
+      {
+        "text": "Zum Schnuppertraining →",
+        "ziel": "training.html",
+        "stil": "gold"
+      },
+      {
+        "text": "Unsere Mannschaften",
+        "ziel": "mannschaften.html",
+        "stil": "rahmen"
+      }
+    ],
+    "fakten": [
+      {
+        "vor": "Gegründet vor",
+        "fett": "über 50 Jahren"
+      },
+      {
+        "vor": "Berg am Laim · Baumkirchen Mitte"
+      },
+      {
+        "fett": "12",
+        "nach": "Mannschaften"
+      }
+    ],
+    "bild": "/medien/bilder/hero-halle.jpg",
+    "bild_beschreibung": "Spieler beim Tischtennis in der Vereinshalle",
+    "karte": {
+      "titel": "Training diese Woche",
+      "zeilen": [
+        {
+          "fett": "Erwachsene",
+          "text": "Mo ab 20:00 & Do ab 19:30 Uhr · Vereinshalle"
+        },
+        {
+          "fett": "Kinder & Jugend",
+          "text": "Mo & Do 18:00–19:30 · Di & Fr nachmittags"
+        },
+        {
+          "fett": "Schnuppern",
+          "text": "Jederzeit möglich – ganz ohne Anmeldung"
+        }
+      ],
+      "fuss_text": "Auch in den Ferien (Do)",
+      "fuss_link_text": "Alle Zeiten →",
+      "fuss_link_ziel": "training.html"
+    }
+  },
+  "bausteine": [
+    {
+      "_block": "zahlenband",
+      "zahlen": [
+        {
+          "zahl": "50+",
+          "text": "Jahre im Verein"
+        },
+        {
+          "zahl": "9",
+          "text": "Herrenmannschaften"
+        },
+        {
+          "zahl": "1",
+          "text": "Damenmannschaft"
+        },
+        {
+          "zahl": "2",
+          "text": "Jugendmannschaften"
+        },
+        {
+          "zahl": "2",
+          "text": "Spielstätten"
+        }
+      ]
+    },
+    {
+      "_block": "text_mit_kasten",
+      "hintergrund": "normal",
+      "kicker": "Willkommen beim ESV",
+      "ueberschrift": "Ein Verein, der zusammenhält.",
+      "text": "<p>Der ESV München-Ost ist der Eisenbahner-Sportverein im Münchner Osten – und seine Tischtennis-Abteilung gehört zu den größten und aktivsten in ganz Oberbayern. Bei uns spielen Vereinsmeister neben Hobbyspielern, Jugendliche neben alten Hasen.</p><p>Was uns ausmacht, ist nicht nur der Sport: Nach dem Training geht es in guter ESV-Tradition meist noch in eine nahegelegene Wirtschaft oder in unsere Gemeinschaftsräume – zum geselligen Ausklang in entspannter Runde. Wer ein geselliger Typ ist und schon einmal einen Schläger in der Hand hatte, ist bei uns genau richtig.</p>",
+      "punkte": [
+        "<p><strong>Breitensport für jede Spielstärke.</strong> Von der Bezirksklasse C bis zur Bezirksoberliga findet jeder sein Team.</p>",
+        "<p><strong>Kinder &amp; Jugend.</strong> Eigenes Nachwuchstraining in zwei Hallen – Schnuppern jederzeit, ganz ohne Anmeldung.</p>",
+        "<p><strong>Vereinsleben.</strong> <a href=\"vereinsmeisterschaft.html\">Vereinsmeisterschaft</a>, Facklerpokal und der gesellige Ausklang gehören fest dazu.</p>"
+      ],
+      "button_stil": "gold",
+      "kasten": {
+        "infos": [
+          {
+            "begriff": "Heimat",
+            "wert": "<p>Vereinshalle Hermann-Weinhauser-Str. 7</p>",
+            "zusatz": "<p>3-fach-Sporthalle, Baumkirchen Mitte</p>"
+          },
+          {
+            "begriff": "Spielklassen",
+            "wert": "<p>Bezirksklasse C – Bezirksoberliga</p>",
+            "zusatz": "<p></p>"
+          },
+          {
+            "begriff": "Erwachsenentraining",
+            "wert": "<p>Do ab 19:30 Uhr</p>",
+            "zusatz": "<p>auch während der Schulferien</p>"
+          },
+          {
+            "begriff": "Geschäftsstelle",
+            "wert": "<p>089 4310654</p>",
+            "zusatz": "<p>für Hobbyspieler:innen &amp; Anfragen</p>"
+          }
+        ],
+        "hinweis": "<p></p>"
+      }
+    },
+    {
+      "_block": "karten",
+      "hintergrund": "abgesetzt",
+      "kicker": "Mannschaften",
+      "ueberschrift": "Zwölf Teams, eine Abteilung",
+      "link_rechts_text": "Alle Mannschaften & Tabellen →",
+      "link_rechts_ziel": "mannschaften.html",
+      "spalten": "3",
+      "raster": "standard",
+      "karten": [
+        {
+          "titel": "Herren I",
+          "text": "<p>Bezirksoberliga · Spitzenteam</p>",
+          "link_text": "Details →",
+          "link_ziel": "mannschaften.html"
+        },
+        {
+          "titel": "Herren II",
+          "text": "<p>Bezirksoberliga</p>",
+          "link_text": "Details →",
+          "link_ziel": "mannschaften.html"
+        },
+        {
+          "titel": "Herren III–IX",
+          "text": "<p>Bezirksliga bis Bezirksklasse C</p>",
+          "link_text": "Details →",
+          "link_ziel": "mannschaften.html"
+        },
+        {
+          "titel": "Damen",
+          "text": "<p>Bezirksoberliga</p>",
+          "link_text": "Details →",
+          "link_ziel": "mannschaften.html"
+        },
+        {
+          "titel": "Jugend I & II",
+          "text": "<p>Bezirksklasse C</p>",
+          "link_text": "Details →",
+          "link_ziel": "mannschaften.html"
+        },
+        {
+          "titel": "Vereinsmeisterschaft",
+          "text": "<p>Alle Sieger seit 1979 – Einzel, Doppel und Facklerpokal.</p>",
+          "link_text": "Ehrentafel →",
+          "link_ziel": "vereinsmeisterschaft.html"
+        },
+        {
+          "titel": "Foto aus der Vereinshalle",
+          "text": "<p>Foto folgt – Aufnahmen aus Halle und Training werden ergänzt.</p>"
+        }
+      ]
+    },
+    {
+      "_block": "text_mit_kasten",
+      "hintergrund": "normal",
+      "kicker": "Mitmachen",
+      "ueberschrift": "Einfach mal vorbeikommen.",
+      "text": "<p>Du warst schon einmal mit dem Schläger in der Hand? Dann komm donnerstags ab 19:30 Uhr – auch in den Schulferien – zum Erwachsenentraining in die Vereinshalle. Kinder und Jugendliche sind während der Schulzeit jederzeit zum Schnuppertraining eingeladen.</p><p>Eine Anmeldung ist nicht nötig – unsere Trainerinnen und Trainer sind vor Ort und beantworten gern alle Fragen. Interessierte Hobbyspieler:innen erreichen die Geschäftsstelle unter <a href=\"tel:+49894310654\">089 4310654</a>.</p>",
+      "button_text": "Kontakt aufnehmen",
+      "button_ziel": "kontakt.html",
+      "button_stil": "gold",
+      "kasten": {
+        "kicker": "Partner & Förderer",
+        "liste": [
+          "Hauptverein ESV München-Ost",
+          "Referat für Bildung & Sport München",
+          "Freistaat Bayern",
+          "Contra",
+          "Alkoholfrei Sport genießen"
+        ],
+        "hinweis": "<p>Sie möchten die Abteilung unterstützen? <a href=\"kontakt.html#sponsoring\">Sponsor werden →</a></p>"
+      }
+    },
+    {
+      "_block": "aufruf",
+      "ueberschrift": "Lust auf eine Runde Tischtennis?",
+      "text": "<p>Komm zum nächsten Training vorbei oder schreib uns – wir freuen uns auf dich.</p>",
+      "button_text": "Kontakt & Anfahrt",
+      "button_ziel": "kontakt.html"
+    }
+  ]
+}
